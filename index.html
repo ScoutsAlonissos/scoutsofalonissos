@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#142d53">
+  <meta name="description" content="1ο Σύστημα Προσκόπων Αλοννήσου. Μια παρέα που εξερευνά, δημιουργεί και προσφέρει στο νησί της από το 2009.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="1ο Σύστημα Προσκόπων Αλοννήσου · Έσο Έτοιμος">
+  <meta property="og:description" content="Ένα νησί. Μια παρέα. Αμέτρητες ιστορίες.">
+  <meta property="og:image" content="assets/seal.webp">
+  <title>1ο Σύστημα Προσκόπων Αλοννήσου · Έσο Έτοιμος</title>
+  <link rel="icon" href="assets/seal.webp" type="image/webp">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Μετάβαση στο περιεχόμενο</a>
+
+  <svg class="svg-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-outer-arrow" viewBox="0 0 24 24"><path d="M5 19 19 5M8 5h11v11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-wave" viewBox="0 0 40 40"><path d="M2 15c6 0 6 7 12 7s6-7 12-7 6 7 12 7M2 25c6 0 6 7 12 7s6-7 12-7 6 7 12 7" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-film" viewBox="0 0 40 40"><rect x="4" y="11" width="32" height="22" rx="2" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="m12 11 5 8m4-8 5 8M4 19h32M15 25l11-6v12z" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/></symbol>
+    <symbol id="i-hands" viewBox="0 0 40 40"><path d="M5 27 15 17l7 5 8-7 5 4-11 13-8-5-7 7-4-7Zm1-1 4 4m18-13 4 4" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 40 40"><circle cx="20" cy="20" r="15" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="m25.5 14.5-3.5 8-8 3.5 3.5-8z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><circle cx="20" cy="20" r="1.5" fill="currentColor"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="m3 7 9 7 9-7" stroke="currentColor" stroke-width="1.8" fill="none"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="2.6" y="2.6" width="18.8" height="18.8" rx="5.5" stroke="currentColor" fill="none" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" fill="none" stroke-width="1.8"/><circle cx="17.6" cy="6.5" r="1.15" fill="currentColor"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 12 7-12 7z" fill="currentColor"/></symbol>
+  </svg>
+
+  <header class="site-header" id="top">
+    <div class="header-inner container">
+      <a class="brand" href="#top" aria-label="1ο Σύστημα Προσκόπων Αλοννήσου · αρχική">
+        <img class="brand-seal" src="assets/seal.webp" alt="" width="56" height="56">
+        <span class="brand-text"><strong data-i18n="brandA">1ο ΣΥΣΤΗΜΑ ΠΡΟΣΚΟΠΩΝ</strong><small data-i18n="brandB">ΑΛΟΝΝΗΣΟΥ</small></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Κύρια πλοήγηση" data-i18n-aria="navLabel">
+        <a href="#about" data-i18n="navAbout">Η παρέα μας</a>
+        <a href="#activities" data-i18n="navActivities">Τι κάνουμε</a>
+        <a href="#films" data-i18n="navFilms">Οι ιστορίες μας</a>
+        <a href="#clubhouse" data-i18n="navHome">Η λέσχη</a>
+      </nav>
+      <div class="header-actions">
+        <button class="language-button" type="button" id="langToggle" aria-label="Switch to English"><span id="languageLabel">EN</span><span class="language-swap" aria-hidden="true">↗</span></button>
+        <a class="header-join" href="#contact"><span data-i18n="joinNav">Έλα στην παρέα</span><svg aria-hidden="true"><use href="#i-outer-arrow"/></svg></a>
+        <button class="menu-button" type="button" id="menuToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Άνοιγμα μενού"><span></span><span></span></button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Μενού κινητού" hidden>
+      <a href="#about" data-i18n="navAbout">Η παρέα μας</a>
+      <a href="#activities" data-i18n="navActivities">Τι κάνουμε</a>
+      <a href="#films" data-i18n="navFilms">Οι ιστορίες μας</a>
+      <a href="#clubhouse" data-i18n="navHome">Η λέσχη</a>
+      <a href="#contact" data-i18n="navContact">Επικοινωνία</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO: navy, marine-paper contours, and the original wood-and-rope emblem -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-contours" aria-hidden="true"></div>
+      <div class="hero-bubble bubble-one" aria-hidden="true"></div>
+      <div class="hero-bubble bubble-two" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow hero-eyebrow"><span class="eyebrow-dot"></span><span data-i18n="heroEyebrow">ΑΛΟΝΝΗΣΟΣ · ΒΟΡΕΙΕΣ ΣΠΟΡΑΔΕΣ · ΑΠΟ ΤΟ 2009</span></div>
+          <h1 id="hero-title"><span data-i18n="heroLine1">Ένα νησί.</span><br><span data-i18n="heroLine2">Μια παρέα.</span><br><em data-i18n="heroLine3">Αμέτρητες ιστορίες.</em></h1>
+          <p class="hero-description" data-i18n="heroDescription">Στη θάλασσα, στο βουνό, πίσω από μια κάμερα ή δίπλα σε όποιον μας χρειάζεται. Ανακαλύπτουμε τον κόσμο ξεκινώντας από τον τόπο μας.</p>
+          <div class="hero-buttons">
+            <a class="button button-cream" href="#about"><span data-i18n="discoverButton">Γνώρισέ μας</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="button button-outline" href="#activities"><span data-i18n="exploreButton">Οι δράσεις μας</span><svg aria-hidden="true"><use href="#i-outer-arrow"/></svg></a>
+          </div>
+          <div class="hero-note"><span class="hero-note-line"></span><span data-i18n="heroSmall">1ο Σύστημα Προσκόπων Αλοννήσου · Σώμα Ελλήνων Προσκόπων</span></div>
+        </div>
+        <div class="hero-art" aria-label="Το σήμα του 1ου Συστήματος Προσκόπων Αλοννήσου">
+          <div class="hero-map-shape" aria-hidden="true"></div>
+          <div class="hero-seal-shadow" aria-hidden="true"></div>
+          <img src="assets/seal.webp" width="1020" height="1020" class="hero-seal" alt="Το ξύλινο προσκοπικό μας έμβλημα, με φώκια, σκοινί και το σύνθημα Έσο Έτοιμος" fetchpriority="high">
+          <span class="hero-side-label" aria-hidden="true">SCOUTS OF ALONISSOS / 01</span>
+          <div class="hero-sticker"><span>✳</span><strong data-i18n="heroStamp">ΕΣΟ<br>ΕΤΟΙΜΟΣ</strong></div>
+        </div>
+      </div>
+      <div class="hero-bottomline" aria-hidden="true"><span>✳</span><span>ΕΞΕΡΕΥΝΩ · ΔΗΜΙΟΥΡΓΩ · ΠΡΟΣΦΕΡΩ</span><span>✳</span></div>
+    </section>
+
+    <div class="ribbon" aria-hidden="true"><div class="ribbon-track">ΕΣΟ ΕΤΟΙΜΟΣ <span>✳</span> BE PREPARED <span>✳</span> ΑΛΟΝΝΗΣΟΣ <span>✳</span> SCOUTS OF GREECE <span>✳</span> ΕΣΟ ΕΤΟΙΜΟΣ <span>✳</span> BE PREPARED <span>✳</span> ΑΛΟΝΝΗΣΟΣ <span>✳</span> SCOUTS OF GREECE <span>✳</span></div></div>
+
+    <!-- ABOUT: original identity, real group image and heritage of the Scout house -->
+    <section class="section about-section" id="about" aria-labelledby="about-heading">
+      <div class="container about-grid">
+        <div class="about-images reveal">
+          <div class="photo-mat group-photo"><img src="assets/scouts-group.webp" alt="Πρόσκοποι της Αλοννήσου μαζί σε ομαδική φωτογραφία" loading="lazy" width="545" height="364"><span class="photo-caption" data-i18n="photoGroup">Η παρέα μας, μαζί</span></div>
+          <div class="photo-mat wall-photo"><img src="assets/heritage-wall.webp" alt="Τα αναμνηστικά και το ξύλινο έμβλημα στον χώρο των Προσκόπων" loading="lazy" width="680" height="453"></div>
+          <div class="photo-paper-sticker"><span>01</span><small data-i18n="aboutSticker">ΜΙΑ ΜΕΓΑΛΗ<br>ΠΑΡΕΑ</small></div>
+        </div>
+        <div class="about-content reveal">
+          <p class="section-kicker"><span class="kicker-star">✳</span><span data-i18n="aboutKicker">ΠΟΙΟΙ ΕΙΜΑΣΤΕ</span></p>
+          <h2 id="about-heading" class="section-title" data-i18n="aboutTitle">Το νησί είναι το σπίτι μας. <em>Ο κόσμος, η αυλή μας.</em></h2>
+          <p class="lead" data-i18n="aboutLead">Είμαστε το 1ο Σύστημα Προσκόπων Αλοννήσου. Από το 2009 μεγαλώνουμε μαζί, μαθαίνουμε μέσα από την πράξη και δίνουμε πίσω στον τόπο που αγαπάμε.</p>
+          <p class="body-copy" data-i18n="aboutBody">Κάθε εξόρμηση, κάθε εθελοντική δράση, κάθε μικρή ή μεγάλη δημιουργία είναι μια ευκαιρία να δοκιμάσουμε κάτι καινούριο — πάντα ως ομάδα.</p>
+          <div class="about-facts">
+            <div><strong>2009</strong><span data-i18n="since">Η ΑΡΧΗ ΜΑΣ</span></div>
+            <div><strong>01</strong><span data-i18n="oneIsland">ΝΗΣΙ, ΠΟΛΛΕΣ ΙΣΤΟΡΙΕΣ</span></div>
+            <div><strong>∞</strong><span data-i18n="allAdventures">ΠΕΡΙΠΕΤΕΙΕΣ</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACTIVITIES -->
+    <section class="section activity-section" id="activities" aria-labelledby="activities-heading">
+      <div class="container">
+        <div class="section-heading-row reveal">
+          <div><p class="section-kicker"><span class="kicker-star">✳</span><span data-i18n="activitiesKicker">Η ΖΩΗ ΜΑΣ ΣΕ ΔΡΑΣΗ</span></p><h2 id="activities-heading" class="section-title" data-i18n="activitiesTitle">Δεν μένουμε <em>ποτέ ακίνητοι.</em></h2></div>
+          <p class="section-aside" data-i18n="activitiesIntro">Από το θαλάσσιο πάρκο μέχρι τα μονοπάτια και τους δρόμους του νησιού, όπου υπάρχει μια ιδέα, υπάρχει και μια καινούρια περιπέτεια.</p>
+        </div>
+        <div class="activity-grid">
+          <article class="activity-card activity-sea reveal">
+            <div class="activity-image"><img src="assets/coast.webp" alt="Βραχώδης ακτή με γαλάζια νερά στην Αλόννησο" loading="lazy" width="521" height="522"><span class="image-tag" data-i18n="natureTag">Η ΦΥΣΗ ΜΑΣ</span></div>
+            <div class="activity-card-copy"><span class="activity-number">01 /</span><svg aria-hidden="true"><use href="#i-wave"/></svg><h3 data-i18n="natureTitle">Στη φύση, με σεβασμό.</h3><p data-i18n="natureBody">Γνωρίζουμε και προστατεύουμε τον θαλάσσιο κόσμο, τις ακτές και τα δάση του νησιού μας.</p></div>
+          </article>
+          <article class="activity-card activity-film reveal">
+            <div class="activity-image"><img src="assets/fishing-boat.webp" alt="Παραδοσιακό αλιευτικό σκάφος σε όρμο της Αλοννήσου" loading="lazy" width="350" height="350"><span class="image-tag" data-i18n="filmTag">ΙΣΤΟΡΙΕΣ ΤΟΥ ΤΟΠΟΥ</span></div>
+            <div class="activity-card-copy"><span class="activity-number">02 /</span><svg aria-hidden="true"><use href="#i-film"/></svg><h3 data-i18n="filmTitle">Πίσω από την κάμερα.</h3><p data-i18n="filmBody">Φτιάχνουμε ταινίες, ερευνούμε την ιστορία μας και ακούμε τους ανθρώπους που έχουν κάτι να πουν.</p></div>
+          </article>
+          <article class="activity-card activity-give reveal">
+            <div class="activity-image"><img src="assets/cat-shelters.webp" alt="Εθελοντές φτιάχνουν ξύλινα σπιτάκια για αδέσποτες γάτες" loading="lazy" width="196" height="196"><span class="image-tag" data-i18n="giveTag">ΜΑΖΙ ΓΙΑ ΤΟ ΝΗΣΙ</span></div>
+            <div class="activity-card-copy"><span class="activity-number">03 /</span><svg aria-hidden="true"><use href="#i-hands"/></svg><h3 data-i18n="giveTitle">Κάνουμε την προσφορά πράξη.</h3><p data-i18n="giveBody">Καθαρισμοί, συνεργασίες, φροντίδα για ανθρώπους και ζώα: μικρές πράξεις με μεγάλο νόημα.</p></div>
+          </article>
+          <article class="activity-card activity-adventure reveal">
+            <div class="activity-image"><img src="assets/scouts-outdoors.webp" alt="Πρόσκοποι σε υπαίθρια δράση" loading="lazy" width="191" height="191"><span class="image-tag" data-i18n="adventureTag">ΠΑΝΤΑ ΕΞΩ</span></div>
+            <div class="activity-card-copy"><span class="activity-number">04 /</span><svg aria-hidden="true"><use href="#i-compass"/></svg><h3 data-i18n="adventureTitle">Ακολουθούμε την περιπέτεια.</h3><p data-i18n="adventureBody">Εξορμήσεις, κατασκηνώσεις, νέες δεξιότητες και φιλίες που κρατούν περισσότερο από μια διαδρομή.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILM feature, patterned after marine-park leaflets -->
+    <section class="films-section" id="films" aria-labelledby="films-heading">
+      <div class="films-decor" aria-hidden="true"></div>
+      <div class="container films-layout">
+        <div class="film-visual reveal">
+          <div class="film-map-window"><img src="assets/marine-map.webp" alt="Εικονογραφημένος θαλάσσιος χάρτης των Σποράδων από τις αφίσες της ομάδας" loading="lazy" width="960" height="1117"></div>
+          <div class="film-picture film-picture-top"><img src="assets/beach.webp" alt="Ακτογραμμή και παραλία της Αλοννήσου από ψηλά" loading="lazy" width="331" height="332"></div>
+          <div class="film-picture film-picture-bottom"><img src="assets/fishing-boat.webp" alt="Αλιευτικό στο θαλάσσιο πάρκο" loading="lazy" width="350" height="350"></div>
+          <div class="film-label" data-i18n="filmVisualLabel">ΑΠΟ ΤΟ ΝΗΣΙ<br>ΣΤΗΝ ΟΘΟΝΗ ↗</div>
+        </div>
+        <div class="film-content reveal">
+          <p class="section-kicker light-kicker"><span class="kicker-star">✳</span><span data-i18n="filmsKicker">ΟΙ ΙΣΤΟΡΙΕΣ ΠΟΥ ΑΦΗΓΟΥΜΑΣΤΕ</span></p>
+          <h2 id="films-heading" class="section-title inverse-title" data-i18n="filmsTitle">Ο τόπος μας έχει <em>φωνή.</em> Εμείς κρατάμε την κάμερα.</h2>
+          <p data-i18n="filmsBody">Μαθαίνουμε να βλέπουμε τον τόπο μας με άλλα μάτια: μέσα από τους ανθρώπους του, τη φύση και τις ιστορίες του. Η πρώτη μας ταινία αφηγείται τον πλούτο του Εθνικού Θαλάσσιου Πάρκου Αλοννήσου και Βορείων Σποράδων.</p>
+          <a href="https://youtu.be/nqwA_6MNozM" class="button button-mint" target="_blank" rel="noopener noreferrer"><svg class="play-inline" aria-hidden="true"><use href="#i-play"/></svg><span data-i18n="watchFilm">Δες το ντοκιμαντέρ μας</span><svg aria-hidden="true"><use href="#i-outer-arrow"/></svg></a>
+          <div class="film-divider"></div>
+          <p class="film-secondary-label" data-i18n="newStoryLabel">Η ΕΠΟΜΕΝΗ ΙΣΤΟΡΙΑ</p>
+          <p class="film-secondary-body" data-i18n="newStoryBody">Μια νέα γενιά Ανιχνευτών ερευνά την παράκτια αλιεία, μαζί με το Ίδρυμα Thalassa και τον Αλιευτικό Σύλλογο Αλοννήσου. Η νέα ταινία βρίσκεται σε δημιουργία.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MILESTONES, including corrected Agrinio / Volos record -->
+    <section class="section timeline-section" aria-labelledby="timeline-heading">
+      <div class="container">
+        <div class="timeline-head reveal"><p class="section-kicker"><span class="kicker-star">✳</span><span data-i18n="timeKicker">ΜΙΚΡΟ ΗΜΕΡΟΛΟΓΙΟ</span></p><h2 class="section-title" id="timeline-heading" data-i18n="timeTitle">Μερικές στάσεις <em>στη διαδρομή μας.</em></h2></div>
+        <div class="timeline-track">
+          <article class="timeline-item reveal"><span class="timeline-dot"></span><strong>2009</strong><h3 data-i18n="time1Title">Η αρχή</h3><p data-i18n="time1Body">Ξεκινά η ιστορία του 1ου Συστήματος Προσκόπων Αλοννήσου.</p></article>
+          <article class="timeline-item reveal"><span class="timeline-dot"></span><strong>2022</strong><h3 data-i18n="time2Title">Αγρίνιο · ΠΑΠΕ</h3><p data-i18n="time2Body">Παρουσιάζουμε την έρευνά μας για το Υποβρύχιο Μουσείο Αλοννήσου.</p></article>
+          <article class="timeline-item reveal"><span class="timeline-dot"></span><strong>2023—24</strong><h3 data-i18n="time3Title">Ταινίες & δημιουργία</h3><p data-i18n="time3Body">Συμμετέχουμε σε πολιτιστικές συναντήσεις, κινηματογραφικές προβολές και δράσεις.</p></article>
+          <article class="timeline-item reveal"><span class="timeline-dot"></span><strong>2025</strong><h3 data-i18n="time4Title">Η περιπέτεια του Βόλου</h3><p data-i18n="time4Body">Η διήμερη εκδρομή μας γίνεται πενθήμερη, όταν ο καιρός καθυστερεί την επιστροφή.</p></article>
+          <article class="timeline-item reveal"><span class="timeline-dot"></span><strong>2026</strong><h3 data-i18n="time5Title">Ιστορίες της θάλασσας</h3><p data-i18n="time5Body">Στην ΠΑΠΕ Τρικάλων παρουσιάζουμε έρευνα για την παράκτια αλιεία.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLUBHOUSE: visual identities of the finished wood space and room still being built -->
+    <section class="section clubhouse-section" id="clubhouse" aria-labelledby="clubhouse-heading">
+      <div class="container">
+        <div class="clubhouse-head reveal"><div><p class="section-kicker"><span class="kicker-star">✳</span><span data-i18n="clubKicker">ΜΕΣΑ ΣΤΗ ΛΕΣΧΗ ΜΑΣ</span></p><h2 class="section-title" id="clubhouse-heading" data-i18n="clubTitle">Οι τοίχοι μας έχουν <em>τις δικές τους ιστορίες.</em></h2></div><p class="section-aside" data-i18n="clubIntro">Ξύλο, αναμνηστικά, ζωγραφιές, χρώματα και ιδέες. Ο χώρος μας αλλάζει μαζί μας — κάποια κομμάτια του ακόμη ετοιμάζονται.</p></div>
+        <div class="clubhouse-grid">
+          <figure class="club-video-card reveal">
+            <div class="club-video-top"><span class="club-video-kicker">01 / THE CLUBHOUSE</span><span class="club-live-dot"></span></div>
+            <video controls preload="none" playsinline poster="assets/clubroom-video-cover.webp" width="960" height="540" aria-label="Βίντεο από την ξύλινη αίθουσα της προσκοπικής λέσχης"><source src="assets/clubroom-tour.mp4" type="video/mp4"><span data-i18n="videoFallback">Ο περιηγητής σας δεν υποστηρίζει αναπαραγωγή βίντεο.</span></video>
+            <figcaption><strong data-i18n="woodTitle">Το ξύλινο δωμάτιο</strong><span data-i18n="woodDesc">Οι ιστορίες, τα σήματα και οι αναμνήσεις μας στους τοίχους.</span></figcaption>
+          </figure>
+          <figure class="club-photo-card room-mural reveal"><img src="assets/clubroom-new-mural.webp" alt="Ζωγραφισμένοι προσκοπικοί χαρακτήρες και μπλε έπιπλα σε χώρο της λέσχης που διαμορφώνεται" loading="lazy" width="1200" height="900"><figcaption><strong data-i18n="newRoomTitle">Το νέο μας δωμάτιο</strong><span class="tag-under-construction" data-i18n="underConstruction">ΥΠΟ ΔΙΑΜΟΡΦΩΣΗ</span></figcaption></figure>
+          <figure class="club-photo-card room-sail reveal"><img src="assets/clubroom-new-sail.webp" alt="Χειροποίητο καράβι, λουλούδια στους τοίχους και μπλε παγκάκια στον υπό διαμόρφωση χώρο" loading="lazy" width="900" height="1200"><figcaption><span data-i18n="roomSail">Φτιαγμένο με φαντασία και μεράκι.</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- POSTER BOARD: clearly labeled archive, not current announcements -->
+    <section class="poster-section section" aria-labelledby="poster-heading">
+      <div class="container poster-grid">
+        <div class="poster-content reveal"><p class="section-kicker"><span class="kicker-star">✳</span><span data-i18n="posterKicker">ΑΠΟ ΤΟΝ ΠΙΝΑΚΑ ΜΑΣ</span></p><h2 class="section-title" id="poster-heading" data-i18n="posterTitle">Λίγο από το χρώμα <em>της παρέας μας.</em></h2><p data-i18n="posterDescription">Αφίσες, προσκλήσεις και μικρές ανακοινώσεις που σχεδιάζουμε για όσα ζούμε μαζί. Αυτές είναι δύο στιγμές από το αρχείο μας το 2026.</p><div class="poster-legend"><span class="pin-dot"></span><span data-i18n="posterArchive">ΑΡΧΕΙΟ ΑΦΙΣΩΝ · 2026</span></div></div>
+        <div class="bulletin-board reveal">
+          <div class="board-rope" aria-hidden="true"></div>
+          <figure class="pinned-poster poster-pape"><div class="poster-pin"></div><img src="assets/pape-fishing-2026.webp" alt="Αφίσα έρευνας της Κοινότητας Ανιχνευτών Αλοννήσου για την παράκτια αλιεία στην ΠΑΠΕ Τρικάλων" loading="lazy" width="600" height="778"><figcaption data-i18n="posterFishing">Έρευνα για την αλιεία</figcaption></figure>
+          <figure class="pinned-poster poster-invite"><div class="poster-pin"></div><img src="assets/vasilopita-2026.webp" alt="Γαλάζια αφίσα για τη βασιλόπιτα του 2026" loading="lazy" width="563" height="733"><figcaption data-i18n="posterCake">Η βασιλόπιτά μας</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact" aria-labelledby="contact-heading">
+      <div class="contact-waves" aria-hidden="true"></div>
+      <div class="container contact-inner reveal">
+        <p class="section-kicker light-kicker"><span class="kicker-star">✳</span><span data-i18n="contactKicker">Η ΕΠΟΜΕΝΗ ΠΕΡΙΠΕΤΕΙΑ</span></p>
+        <h2 id="contact-heading" data-i18n="contactTitle">Κάθε καινούριος φίλος,<br>μια καινούρια ιστορία.</h2>
+        <p data-i18n="contactBody">Θέλεις να μάθεις περισσότερα για τους Προσκόπους της Αλοννήσου, να έρθεις στην παρέα ή να συνεργαστούμε; Στείλε μας ένα μήνυμα.</p>
+        <div class="contact-actions"><a class="button button-cream" href="mailto:1palonnisou@sep.org.gr"><svg aria-hidden="true"><use href="#i-mail"/></svg><span data-i18n="contactEmail">Στείλε μας email</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="button button-outline" href="https://www.instagram.com/scoutsofalonissos/" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-instagram"/></svg><span>Instagram</span><svg aria-hidden="true"><use href="#i-outer-arrow"/></svg></a></div>
+        <p class="contact-mail">1palonnisou@sep.org.gr <span aria-hidden="true">·</span> @scoutsofalonissos</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><a href="#top" class="footer-brand"><img src="assets/seal.webp" alt="" width="64" height="64"><span><strong data-i18n="footerName">1ο Σύστημα Προσκόπων Αλοννήσου</strong><small data-i18n="footerAssociation">Σώμα Ελλήνων Προσκόπων</small></span></a><span class="footer-motto" data-i18n="footerMotto">ΕΞΕΡΕΥΝΟΥΜΕ · ΔΗΜΙΟΥΡΓΟΥΜΕ · ΠΡΟΣΦΕΡΟΥΜΕ</span><a href="#top" class="back-to-top"><span data-i18n="backToTop">ΣΤΗΝ ΑΡΧΗ</span> ↑</a></div></footer>
+</body>
+</html>
