@@ -1,1 +1,276 @@
-<!doctype html><html lang="el"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Το ξύλινο σπιτάκι · Πρόσκοποι Αλοννήσου</title><style>*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 85% 12%,#247d89 0%,transparent 36%),#112d52;color:#fff;font:16px/1.7 'Trebuchet MS',Arial,sans-serif}main{max-width:950px;margin:0 auto;padding:38px 26px 100px}nav{display:flex;gap:18px;align-items:center;margin-bottom:9vh}nav img{width:62px}a{color:inherit}a.back{font-size:13px;text-decoration:none;font-weight:bold;border:1px solid #bfe4d9;border-radius:100px;padding:10px 18px}a.back:hover{background:#fff;color:#132d53}h1{font-size:clamp(34px,7vw,72px);line-height:1.12;letter-spacing:-.05em;margin:22px 0}p{max-width:650px;color:#d8e7ee}strong{color:#8be9d3}footer{opacity:.7;margin-top:60px;font-size:12px}section img{width:min(320px,90%);border:8px solid #fff;display:block;margin-top:26px}section a{color:#96f0d9}</style></head><body><main><nav><img src="../assets/seal.webp" alt="Έμβλημα Προσκόπων Αλοννήσου"><a class="back" href="../index.html">← Πίσω στην αρχική / Back home</a></nav><section><p><strong>1ο ΣΥΣΤΗΜΑ ΠΡΟΣΚΟΠΩΝ ΑΛΟΝΝΗΣΟΥ</strong></p><h1>Το ξύλινο σπιτάκι</h1><p>Ετοιμάζουμε περισσότερες φωτογραφίες και ιστορίες από τον ξύλινο χώρο μας.</p><p><strong>COMING SOON</strong> · The wooden hut</p><p>More photos and stories from our wooden hut are coming soon.</p><img src="../assets/wooden-hut-room.webp" alt="Το ξύλινο σπιτάκι" loading="lazy"></section><footer>ΕΣΟ ΕΤΟΙΜΟΣ · SCOUTS OF ALONISSOS</footer></main></body></html>
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ξύλινο Σπιτάκι · Λέσχη Κοινότητας Ανιχνευτών και Αρχηγείο</title>
+  <style>
+    :root{
+      --ink:#243227;
+      --wood:#7b4f34;
+      --wood-dark:#5b3825;
+      --wood-light:#bf8a5c;
+      --paper:#f4ecdb;
+      --paper-2:#efe4ce;
+      --pine:#3f6d3d;
+      --pine-dark:#2c512b;
+      --gold:#d3b04d;
+      --gold-dark:#aa8830;
+      --cream:#fff9ee;
+      --shadow:0 18px 45px rgba(60,35,16,.16);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      font:16px/1.7 "Trebuchet MS", Arial, sans-serif;
+      background:
+        radial-gradient(circle at 18% 14%, rgba(255,255,255,.55), transparent 24%),
+        radial-gradient(circle at 88% 18%, rgba(255,255,255,.38), transparent 24%),
+        linear-gradient(180deg, rgba(255,255,255,.26), rgba(255,255,255,0) 32%),
+        repeating-linear-gradient(
+          0deg,
+          rgba(90,56,30,.04) 0,
+          rgba(90,56,30,.04) 2px,
+          rgba(255,255,255,0) 2px,
+          rgba(255,255,255,0) 22px
+        ),
+        linear-gradient(135deg,#e5d2b8 0%,#f3e8d5 35%,#e7d6bf 100%);
+      min-height:100vh;
+    }
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(123,79,52,.07), transparent 18%),
+        radial-gradient(circle at 80% 62%, rgba(123,79,52,.08), transparent 20%),
+        radial-gradient(circle at 60% 80%, rgba(123,79,52,.06), transparent 16%);
+      pointer-events:none;
+      opacity:.8;
+    }
+    .wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:26px 20px 90px}
+    .topbar{
+      display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;
+      margin-bottom:24px;
+    }
+    .brand{display:flex;align-items:center;gap:14px}
+    .brand img{width:58px;height:58px;object-fit:contain}
+    .brand strong{display:block;font-size:14px;letter-spacing:.08em}
+    .brand span{display:block;font-size:13px;opacity:.72}
+    .back{
+      text-decoration:none;color:var(--pine-dark);font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;
+      border:2px solid rgba(44,81,43,.28);padding:11px 18px;border-radius:999px;background:rgba(255,249,238,.74);
+      box-shadow:0 10px 28px rgba(66,50,30,.08);
+    }
+    .hero{
+      display:grid;grid-template-columns:1.08fr .92fr;gap:34px;align-items:start;
+      background:linear-gradient(180deg, rgba(255,249,238,.92), rgba(244,236,219,.85));
+      border:1px solid rgba(91,56,37,.1);border-radius:34px;padding:34px;box-shadow:var(--shadow);
+      position:relative;overflow:hidden;
+    }
+    .hero::after{
+      content:"";position:absolute;inset:auto -90px -110px auto;width:330px;height:330px;border-radius:50%;
+      background:radial-gradient(circle at 30% 30%, rgba(63,109,61,.16), rgba(63,109,61,.03) 60%, transparent 60%);
+      pointer-events:none;
+    }
+    .eyebrow{margin:0 0 10px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#576350;font-weight:800}
+    h1{font-size:clamp(2.3rem,4.7vw,4.9rem);line-height:.98;margin:0 0 14px;color:var(--wood-dark);letter-spacing:-.05em}
+    h1 span{display:block;color:var(--pine)}
+    .lead{font-size:1.06rem;max-width:62ch;color:#4d473f;margin:0 0 18px}
+    .hero p{margin:0 0 14px}
+    .hero-side{display:grid;gap:18px}
+    .meta-card,.quote-card{
+      background:rgba(255,250,241,.92);border:1px solid rgba(91,56,37,.12);border-radius:24px;padding:20px 22px;
+      box-shadow:0 12px 24px rgba(74,49,22,.08)
+    }
+    .meta-card h2,.quote-card h2,.section-head h2{margin:0 0 10px;font-size:1.25rem;color:var(--wood-dark)}
+    .meta-list{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+    .meta-list li{display:flex;gap:10px;align-items:flex-start}
+    .meta-label{min-width:108px;font-weight:800;color:var(--pine-dark)}
+    .quote-card{border-left:8px solid var(--gold)}
+    .quote-card p{margin:0;color:#544d46}
+    .quote-card strong{color:var(--wood-dark)}
+
+    .flags-section,.photos-section,.memory-section,.details-section{margin-top:30px}
+    .section-panel{
+      background:rgba(255,250,241,.84);border:1px solid rgba(91,56,37,.1);border-radius:30px;padding:28px;box-shadow:var(--shadow)
+    }
+    .section-head{display:flex;justify-content:space-between;gap:18px;align-items:end;flex-wrap:wrap;margin-bottom:18px}
+    .section-head p{max-width:560px;margin:0;color:#5b554d}
+
+    .flags{display:grid;grid-template-columns:repeat(5,minmax(120px,1fr));gap:14px;align-items:start}
+    .flag{position:relative;padding:16px 16px 18px;text-align:center;color:#fff;font-weight:800;letter-spacing:.06em;text-transform:uppercase;filter:drop-shadow(0 10px 18px rgba(42,34,21,.15))}
+    .flag.swallowtail{clip-path:polygon(0 0,100% 0,100% 76%,80% 76%,70% 100%,60% 76%,0 76%)}
+    .flag.green{background:linear-gradient(180deg,#5d8f43,#355f2d)}
+    .flag.yellow{background:linear-gradient(180deg,#edd66e,#caab3a);color:#473507;border-radius:14px;clip-path:none;padding:14px 12px 12px}
+    .flag .small{display:block;font-size:11px;letter-spacing:.12em;opacity:.9}
+    .flag .big{display:block;font-size:1rem;line-height:1.1;margin-top:4px}
+    .flag.yellow img{width:58px;height:58px;object-fit:contain;display:block;margin:0 auto 6px}
+    .flag::before{content:"";position:absolute;left:18px;top:-14px;width:calc(100% - 36px);height:18px;border-radius:999px;background:linear-gradient(180deg,#875636,#6d442c)}
+    .flag::after{content:"";position:absolute;top:-4px;left:50%;width:2px;height:18px;background:#5b3825;transform:translateX(-50%)}
+
+    .photo-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}
+    figure.photo-card{margin:0;background:#fff;border-radius:26px;padding:12px;box-shadow:0 18px 30px rgba(78,54,25,.13);border:1px solid rgba(91,56,37,.1)}
+    .photo-card img{display:block;width:100%;height:100%;min-height:300px;object-fit:cover;border-radius:18px}
+    .photo-card figcaption{padding:12px 4px 2px;color:#5d564c;font-size:.95rem}
+    .photo-card strong{display:block;color:var(--wood-dark);font-size:1rem;margin-bottom:4px}
+
+    .memory-grid{display:grid;grid-template-columns:repeat(5,minmax(120px,1fr));gap:18px;align-items:start}
+    .memory-item{position:relative;display:grid;place-items:center;padding:16px;text-align:center;min-height:132px;background:var(--paper-2);border:2px solid rgba(91,56,37,.18);color:#5a4737;box-shadow:0 14px 22px rgba(73,51,28,.08)}
+    .memory-item strong{display:block;font-size:1rem;color:var(--wood-dark);line-height:1.15;margin-bottom:4px}
+    .memory-item span{display:block;font-size:.82rem;line-height:1.4;max-width:14ch}
+    .memory-item.circle{border-radius:50%}
+    .memory-item.oval{border-radius:999px / 70%}
+    .memory-item.rounded{border-radius:24px}
+    .memory-item.tag{clip-path:polygon(8% 0,100% 0,100% 100%,8% 100%,0 50%)}
+    .memory-item.shield{clip-path:polygon(50% 0,92% 12%,92% 55%,50% 100%,8% 55%,8% 12%)}
+
+    .details-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .detail-card{background:#fffdf7;border:1px solid rgba(91,56,37,.12);border-radius:24px;padding:22px;box-shadow:0 12px 24px rgba(74,49,22,.08)}
+    .detail-card h3{margin:0 0 10px;color:var(--pine-dark);font-size:1.15rem}
+    .detail-card ul{margin:0;padding-left:20px;color:#5c564f}
+    .detail-card li+li{margin-top:7px}
+    .detail-card p{margin:0;color:#5c564f}
+
+    .footnote{margin-top:20px;font-size:.9rem;color:#6b6155}
+    footer{margin-top:30px;text-align:center;color:#6d6155;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+
+    @media (max-width: 980px){
+      .hero,.photo-grid,.details-grid{grid-template-columns:1fr}
+      .memory-grid{grid-template-columns:repeat(3,minmax(120px,1fr))}
+      .flags{grid-template-columns:repeat(3,minmax(120px,1fr))}
+    }
+    @media (max-width: 680px){
+      .wrap{padding:18px 14px 70px}
+      .hero,.section-panel{padding:22px}
+      .flags{grid-template-columns:repeat(2,minmax(120px,1fr))}
+      .flag.yellow{grid-column:1/-1;max-width:220px;justify-self:center}
+      .memory-grid{grid-template-columns:repeat(2,minmax(120px,1fr))}
+      .topbar{align-items:flex-start}
+      .brand{max-width:220px}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <img src="../assets/seal.webp" alt="Έμβλημα 1ου Συστήματος Προσκόπων Αλοννήσου">
+        <div>
+          <strong>1ο Σύστημα Προσκόπων Αλοννήσου</strong>
+          <span>Λέσχη Κοινότητας Ανιχνευτών και Αρχηγείο</span>
+        </div>
+      </div>
+      <a class="back" href="../index.html">← Πίσω στην αρχική</a>
+    </div>
+
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Ξύλινο Σπιτάκι · Explorers Unit & HQ</p>
+        <h1>Η ζεστή γωνιά <span>της Κοινότητας.</span></h1>
+        <p class="lead">Ο ξύλινος χώρος μας είναι η λέσχη της <strong>Κοινότητας Ανιχνευτών</strong> και το <strong>Αρχηγείο</strong> μας — ένα μέρος με ξύλο, αναμνηστικά, σύμβολα, ιστορίες και μυρωδιά από δράση.</p>
+        <p>Εδώ σχεδιάζουμε εξορμήσεις, θυμόμαστε παλιές στιγμές, κρεμάμε μικρά κομμάτια της ιστορίας μας στους τοίχους και αφήνουμε χώρο για τις επόμενες ιδέες.</p>
+      </div>
+      <div class="hero-side">
+        <div class="meta-card">
+          <h2>Πού βρίσκεται</h2>
+          <ul class="meta-list">
+            <li><span class="meta-label">Χώρος</span><span>Λέσχη Κοινότητας Ανιχνευτών και Αρχηγείο</span></li>
+            <li><span class="meta-label">Τοποθεσία</span><span>ACS</span></li>
+            <li><span class="meta-label">Για ποιους</span><span>Ανιχνευτές, βαθμοφόρους και προετοιμασία δράσεων.</span></li>
+          </ul>
+        </div>
+        <div class="quote-card">
+          <h2>Η αίσθηση του χώρου</h2>
+          <p><strong>Πιο ζεστός, πιο ξύλινος, πιο προσκοπικός.</strong><br>Ένας χώρος που μοιάζει να μεγάλωσε μαζί μας: με σημαίες, βραβεία, μικρές κατασκευές, σήματα και ιστορίες που φαίνονται παντού.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="flags-section section-panel">
+      <div class="section-head">
+        <div>
+          <h2>Οι σημαίες μας</h2>
+          <p>Στην κορυφή μπαίνουν οι μικρές ομάδες και τα σύμβολά τους — όπως μέσα στη λέσχη, έτσι κι εδώ.</p>
+        </div>
+      </div>
+      <div class="flags">
+        <div class="flag swallowtail green"><span class="small">Patrol</span><span class="big">Lizzards</span></div>
+        <div class="flag swallowtail green"><span class="small">Patrol</span><span class="big">Wolves</span></div>
+        <div class="flag yellow"><img src="../assets/seal.webp" alt=""><span class="small">Scout Monk Seal</span><span class="big">1ο ΣΠΑ</span></div>
+        <div class="flag swallowtail green"><span class="small">Patrol</span><span class="big">Bunnies</span></div>
+        <div class="flag swallowtail green"><span class="small">Patrol</span><span class="big">Parrots</span></div>
+      </div>
+    </section>
+
+    <section class="photos-section section-panel">
+      <div class="section-head">
+        <div>
+          <h2>Ο χώρος από κοντά</h2>
+          <p>Το ξύλινο δωμάτιο και ο τοίχος με τα αναμνηστικά δίνουν αμέσως το ύφος του χώρου.</p>
+        </div>
+      </div>
+      <div class="photo-grid">
+        <figure class="photo-card">
+          <img src="../assets/wooden-hut-room.webp" alt="Το ξύλινο σπιτάκι της Κοινότητας Ανιχνευτών" loading="lazy">
+          <figcaption>
+            <strong>Το ξύλινο σπιτάκι</strong>
+            Χαμηλός φωτισμός, ξύλο, γωνιές για συζήτηση και σχέδια για την επόμενη δράση.
+          </figcaption>
+        </figure>
+        <figure class="photo-card">
+          <img src="../assets/heritage-wall.webp" alt="Ο τοίχος με τα αναμνηστικά" loading="lazy">
+          <figcaption>
+            <strong>Ο τοίχος των αναμνήσεων</strong>
+            Πινακίδες, σήματα, βραβεία, μικρές δημιουργίες και κομμάτια από την κοινή πορεία της ομάδας.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="memory-section section-panel">
+      <div class="section-head">
+        <div>
+          <h2>Σχήματα μνήμης</h2>
+          <p>Μικρές φόρμες που θυμίζουν όσα γεμίζουν τον χώρο: ξύλινα ταμπελάκια, σήματα, κονκάρδες, αναμνηστικά και αυτοσχέδιες κατασκευές.</p>
+        </div>
+      </div>
+      <div class="memory-grid">
+        <div class="memory-item shield"><div><strong>Σήματα</strong><span>από δράσεις και εκδρομές</span></div></div>
+        <div class="memory-item oval"><div><strong>Ξύλινες πινακίδες</strong><span>με ονόματα, σύμβολα και χρόνια</span></div></div>
+        <div class="memory-item circle"><div><strong>Κονκάρδες</strong><span>και μικρά ενθύμια</span></div></div>
+        <div class="memory-item rounded"><div><strong>Νεckerchiefs</strong><span>κόμποι, κορδόνια και χρώματα</span></div></div>
+        <div class="memory-item tag"><div><strong>Πρωτότυπες ιδέες</strong><span>που έμειναν στους τοίχους</span></div></div>
+      </div>
+    </section>
+
+    <section class="details-section section-panel">
+      <div class="section-head">
+        <div>
+          <h2>Τι θέλουμε να νιώθει αυτό το page</h2>
+        </div>
+      </div>
+      <div class="details-grid">
+        <article class="detail-card">
+          <h3>Χαρακτήρας</h3>
+          <ul>
+            <li>ζεστός και ξύλινος</li>
+            <li>λίγο «αρχηγείο», λίγο γωνιά λέσχης</li>
+            <li>προσκοπικός χωρίς να γίνεται αυστηρός</li>
+            <li>γεμάτος ίχνη από παλιές ιστορίες</li>
+          </ul>
+        </article>
+        <article class="detail-card">
+          <h3>Τι μπορεί να μπει αργότερα</h3>
+          <p>Αργότερα η σελίδα μπορεί να εμπλουτιστεί με περισσότερες φωτογραφίες, αφηγήσεις από περιπολίες, μικρά αντικείμενα-σύμβολα και ιστορίες πίσω από συγκεκριμένα αναμνηστικά του τοίχου.</p>
+        </article>
+      </div>
+      <p class="footnote">Μπορείς φυσικά να αλλάξεις τα ονόματα των patrol flags ή να βάλεις δικά σου μικρά εικονίδια αν θέλεις ακόμη πιο προσωπικό αποτέλεσμα.</p>
+    </section>
+
+    <footer>Έσο Έτοιμος · 1ο Σύστημα Προσκόπων Αλοννήσου</footer>
+  </main>
+</body>
+</html>
