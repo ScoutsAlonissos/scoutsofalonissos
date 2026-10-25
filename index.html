@@ -1,0 +1,773 @@
+<!doctype html>
+<html lang="el">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#142d53" name="theme-color"/>
+<meta content="1ο Σύστημα Προσκόπων Αλοννήσου. Μια παρέα που εξερευνά, δημιουργεί και προσφέρει στο νησί της από το 2009." name="description"/>
+<meta content="website" property="og:type"/>
+<meta content="1ο Σύστημα Προσκόπων Αλοννήσου · Έσο Έτοιμος" property="og:title"/>
+<meta content="Ένα νησί. Μια παρέα. Αμέτρητες ιστορίες." property="og:description"/>
+<meta content="assets/seal.webp" property="og:image"/>
+<title>1ο Σύστημα Προσκόπων Αλοννήσου · Έσο Έτοιμος</title>
+<link href="assets/seal.webp" rel="icon" type="image/webp"/>
+<style>:root {
+  --navy:#132d53;
+  --navy-deep:#0c2446;
+  --navy-muted:#224675;
+  --blue:#4175be;
+  --sky:#a0c8ef;
+  --teal:#1bb9aa;
+  --aqua:#88ebd3;
+  --cream:#f5efe3;
+  --paper:#fbf7ed;
+  --cream-mid:#e7dbc5;
+  --ink:#24324a;
+  --wood:#a97650;
+  --muted:#697586;
+  --shadow:0 25px 60px rgba(11,35,66,.17);
+  --radius:16px;
+  --max:1220px;
+  --font: 'Trebuchet MS','DejaVu Sans','Segoe UI',Arial,sans-serif;
+  --mono:'Courier New','DejaVu Sans Mono',monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:89px}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+img,svg{display:block;max-width:100%}
+svg{width:24px;height:24px}
+figure,h1,h2,h3,p{margin:0}
+.container{width:min(var(--max),calc(100% - 88px));margin-inline:auto}
+.svg-defs{height:0;width:0;position:absolute;overflow:hidden}
+.skip-link{position:fixed;top:-100px;left:10px;background:var(--paper);color:var(--navy);z-index:100;padding:12px 20px;border:2px solid var(--navy)}
+.skip-link:focus{top:8px}
+:focus-visible{outline:3px solid var(--teal);outline-offset:4px}
+/* header */
+.site-header{background:var(--navy-deep);position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(255,255,255,.13)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:25px;min-height:88px}
+.brand{display:flex;align-items:center;gap:11px;min-width:240px;color:#fff}
+.brand-seal{width:57px;height:57px;object-fit:contain;filter:drop-shadow(0 3px 4px rgba(0,0,0,.3))}
+.brand-text{display:flex;flex-direction:column;gap:4px}
+.brand-text strong{font-size:11px;letter-spacing:.045em;font-weight:900}
+.brand-text small{font-size:15px;letter-spacing:.16em;font-weight:900}
+.desktop-nav{display:flex;align-items:center;gap:26px;margin-left:auto}
+.desktop-nav a{color:#e7f0fa;font-size:12px;font-weight:800;position:relative;white-space:nowrap;transition:color .2s}
+.desktop-nav a:after{content:'';position:absolute;left:0;right:100%;height:2px;bottom:-8px;background:var(--aqua);transition:right .25s}
+.desktop-nav a:hover{color:var(--aqua)}
+.desktop-nav a:hover:after{right:0}
+.header-actions{display:flex;align-items:center;gap:12px}
+.language-button{border:1px solid #6083a3;background:transparent;color:#fff;display:flex;align-items:center;gap:5px;border-radius:99px;padding:10px 11px;font-family:var(--mono);font-size:12px;font-weight:bold;cursor:pointer}
+.language-button:hover{border-color:var(--aqua);color:var(--aqua)}
+.language-swap{color:var(--teal);font-size:12px}
+.header-join{display:flex;align-items:center;gap:8px;border-radius:99px;padding:13px 17px;background:var(--teal);color:#062b3e;font-weight:900;font-size:12px;white-space:nowrap;transition:transform .2s,background .2s}
+.header-join svg{width:16px;height:16px}
+.header-join:hover{transform:translateY(-2px);background:var(--aqua)}
+.menu-button{display:none;border:0;background:transparent;color:#fff;padding:12px;cursor:pointer}
+.menu-button span{display:block;width:23px;height:2px;background:currentColor;margin:6px 0;transition:transform .2s}
+.menu-button[aria-expanded='true'] span:first-child{transform:translateY(4px) rotate(45deg)}
+.menu-button[aria-expanded='true'] span:last-child{transform:translateY(-4px) rotate(-45deg)}
+.mobile-nav[hidden]{display:none}
+/* hero */
+.hero{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse 1300px 570px at 75% 75%,#23527f 0%,transparent 80%),linear-gradient(114deg,#132e54 0%,#13385e 62%,#146576 125%);color:white;min-height:690px}
+.hero:before{content:'';position:absolute;inset:0;background-image:repeating-radial-gradient(ellipse 470px 280px at 102% 16%, transparent 0 28px, rgba(149,217,223,.14) 29px 30px,transparent 31px 56px);opacity:.56;z-index:-1;pointer-events:none}
+.hero-contours{position:absolute;right:-60px;top:-165px;width:65%;height:850px;opacity:.08;transform:rotate(-11deg);background:url('assets/marine-map.webp') center/cover no-repeat;mask-image:radial-gradient(ellipse at center,#000 30%,transparent 70%);pointer-events:none}
+.hero-bubble{position:absolute;border:1px solid rgba(165,233,217,.2);border-radius:50%;pointer-events:none}
+.bubble-one{width:420px;height:420px;left:-280px;top:85px;box-shadow:0 0 0 26px rgba(165,233,217,.035),0 0 0 51px rgba(165,233,217,.025)}
+.bubble-two{width:200px;height:200px;right:-100px;bottom:-55px;box-shadow:0 0 0 28px rgba(165,233,217,.045),0 0 0 55px rgba(165,233,217,.04)}
+.hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:15px;align-items:center;min-height:650px;padding-block:63px 76px}
+.hero-copy{position:relative;z-index:3;padding-top:12px}
+.eyebrow,.section-kicker{font:900 11px/1.6 var(--mono);letter-spacing:.13em}
+.hero-eyebrow{display:flex;align-items:center;gap:11px;color:var(--aqua);margin-bottom:31px}
+.eyebrow-dot{width:9px;height:9px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 5px rgba(30,203,173,.15)}
+h1{font-weight:900;letter-spacing:-.072em;font-size:clamp(49px,5.2vw,74px);line-height:1.12;max-width:760px}
+h1 em{font-style:normal;color:var(--aqua);letter-spacing:-.065em;white-space:normal}
+.hero-description{color:#dfebf1;font-size:16px;line-height:1.9;max-width:520px;margin-top:26px}
+.hero-buttons,.contact-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:33px}
+.button{display:inline-flex;align-items:center;justify-content:center;gap:12px;border:1px solid transparent;min-height:52px;border-radius:100px;padding:14px 22px;font-size:13px;font-weight:900;white-space:nowrap;transition:transform .2s,background .2s,border-color .2s}
+.button svg{width:18px;height:18px;flex-shrink:0}
+.button:hover{transform:translateY(-3px)}
+.button-cream{background:var(--cream);color:var(--navy-deep)}
+.button-cream:hover{background:#fff}
+.button-outline{border-color:#a6d5e4;color:#f6fbfa;background:transparent}
+.button-outline:hover{background:rgba(255,255,255,.12)}
+.button-mint{background:var(--aqua);color:var(--navy-deep)}
+.button-mint:hover{background:#beffe9}
+.hero-note{display:flex;align-items:center;gap:12px;font:700 10px/1.4 var(--mono);color:#a5c4d0;margin-top:39px}
+.hero-note-line{width:26px;height:1px;background:var(--teal);flex:none}
+.hero-art{position:relative;display:grid;place-items:center;align-self:stretch;min-height:480px;z-index:2}
+.hero-map-shape{position:absolute;inset:8% 0 2% 3%;border-radius:47% 53% 43% 57%/53% 44% 56% 47%;background:linear-gradient(135deg,rgba(39,188,175,.2),rgba(107,197,197,.07));transform:rotate(-12deg);box-shadow:0 0 0 1px rgba(145,227,211,.19),0 0 0 23px rgba(44,153,165,.05),0 0 0 48px rgba(44,153,165,.035)}
+.hero-seal-shadow{position:absolute;top:72%;left:17%;width:66%;height:80px;background:rgba(0,8,24,.5);border-radius:50%;filter:blur(30px)}
+.hero-seal{width:min(108%,520px);height:auto;position:relative;transform:rotate(6deg);filter:drop-shadow(11px 21px 10px rgba(4,13,25,.35))}
+.hero-side-label{position:absolute;right:-10px;top:50%;transform:translate(43%,-50%) rotate(90deg);font:700 10px var(--mono);letter-spacing:.27em;color:rgba(207,238,245,.6)}
+.hero-sticker{position:absolute;bottom:12%;left:-8%;background:var(--aqua);color:var(--navy);border:3px solid var(--navy);outline:2px dashed rgba(255,255,255,.6);outline-offset:5px;width:119px;height:119px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(-15deg);box-shadow:7px 11px 0 rgba(7,22,38,.18)}
+.hero-sticker span{font-size:21px;line-height:1}
+.hero-sticker strong{font-size:14px;text-align:center;line-height:1.15;letter-spacing:.025em}
+.hero-bottomline{position:absolute;bottom:0;left:0;right:0;background:rgba(3,22,45,.23);border-top:1px solid rgba(176,237,240,.15);display:flex;align-items:center;justify-content:center;gap:33px;padding:13px 12px;color:#c1e9e6;font:700 10px var(--mono);letter-spacing:.18em}
+.hero-bottomline span:first-child,.hero-bottomline span:last-child{font-size:16px;color:var(--aqua)}
+.ribbon{background:var(--aqua);color:var(--navy);overflow:hidden;height:43px;display:flex;align-items:center;border-bottom:2px solid var(--navy)}
+.ribbon-track{white-space:nowrap;min-width:max-content;animation:ribbon 35s linear infinite;font:900 13px var(--mono);letter-spacing:.11em}
+.ribbon-track span{margin-inline:24px}
+@keyframes ribbon{to{transform:translateX(-50%)}}
+/* shared section */
+.section{padding:112px 0}
+.section-kicker{display:flex;gap:11px;align-items:center;color:#3879a3;margin-bottom:19px}
+.kicker-star{color:var(--teal);font-size:19px;line-height:1}
+.section-title{font-size:clamp(38px,4.15vw,59px);line-height:1.14;letter-spacing:-.057em;color:var(--navy);font-weight:900;max-width:750px}
+.section-title em{font-style:normal;color:#3b75af}
+.lead{font-size:17px;line-height:1.85;color:#394960;font-weight:700}
+.body-copy{font-size:15px;line-height:1.95;color:#5e6b78}
+/* about */
+.about-section{background:var(--paper);position:relative}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:8%;align-items:center}
+.about-images{position:relative;min-height:510px}
+.photo-mat{background:white;border:10px solid #fff;box-shadow:var(--shadow);position:absolute}
+.photo-mat img{width:100%;height:100%;object-fit:cover}
+.group-photo{left:0;top:34px;width:86%;height:300px;transform:rotate(-4deg)}
+.group-photo img{object-position:center 48%}
+.photo-caption{position:absolute;bottom:-39px;left:6px;color:#6d6257;font:700 11px var(--mono);white-space:nowrap}
+.wall-photo{width:56%;height:215px;right:0;bottom:23px;transform:rotate(8deg);border-width:9px}
+.photo-paper-sticker{position:absolute;left:15px;bottom:0;background:var(--teal);color:var(--navy);border-radius:50%;width:120px;height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transform:rotate(-12deg);box-shadow:5px 5px 0 #d5d8c2}
+.photo-paper-sticker span{font-size:30px;line-height:1;font-weight:900}
+.photo-paper-sticker small{font:900 10px/1.25 var(--mono)}
+.about-content .section-title{margin-bottom:29px}
+.about-content .body-copy{margin-top:19px}
+.about-facts{margin-top:35px;padding-top:24px;border-top:1px solid #dfdaca;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.about-facts>div{display:flex;flex-direction:column;gap:7px}
+.about-facts strong{font-size:37px;line-height:1;color:var(--navy)}
+.about-facts span{font:800 10px/1.5 var(--mono);color:#607180}
+/* activities */
+.activity-section{background:linear-gradient(180deg,#f4efe4,#ede9db)}
+.section-heading-row,.clubhouse-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:42px}
+.section-aside{font-size:15px;line-height:1.8;max-width:365px;color:#667080}
+.activity-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.activity-card{border-radius:12px;background:var(--paper);box-shadow:0 4px 0 #ded5c7,0 22px 35px rgba(26,50,76,.045);overflow:hidden;transition:transform .25s,box-shadow .25s}
+.activity-card:hover{transform:translateY(-8px) rotate(-.4deg);box-shadow:0 6px 0 #ded5c7,0 25px 45px rgba(26,50,76,.14)}
+.activity-image{height:220px;position:relative;overflow:hidden;background:#8cc3d3}
+.activity-image img{height:100%;width:100%;object-fit:cover;transition:transform .35s}
+.activity-card:hover .activity-image img{transform:scale(1.07)}
+.activity-give img,.activity-adventure img{filter:saturate(.9)}
+.image-tag{position:absolute;left:13px;bottom:13px;background:var(--navy);color:white;font:900 10px var(--mono);letter-spacing:.07em;padding:9px 10px;border-radius:3px}
+.activity-card-copy{position:relative;padding:28px 24px 32px}
+.activity-number{font:900 10px var(--mono);color:#5986a0;letter-spacing:.13em}
+.activity-card-copy>svg{position:absolute;right:25px;top:24px;width:32px;height:32px;color:var(--teal)}
+.activity-card h3{font-size:20px;line-height:1.22;letter-spacing:-.04em;color:var(--navy);margin:20px 0 12px}
+.activity-card p{font-size:13px;line-height:1.8;color:#6c7481}
+/* films */
+.films-section{padding:112px 0;background:linear-gradient(116deg,#173e67 0%,#102d53 68%,#10284e 100%);color:#edf5f4;position:relative;overflow:hidden;isolation:isolate}
+.films-section:before{content:'';position:absolute;inset:0;background:repeating-radial-gradient(ellipse 380px 210px at -6% 46%,transparent 0 29px,rgba(130,231,211,.1) 30px 32px,transparent 33px 62px);opacity:.65;z-index:-1}
+.films-decor{position:absolute;right:-170px;top:-260px;height:620px;width:620px;border-radius:50%;border:1px solid rgba(132,231,211,.12);box-shadow:0 0 0 26px rgba(132,231,211,.025),0 0 0 52px rgba(132,231,211,.027),0 0 0 79px rgba(132,231,211,.02)}
+.films-layout{display:grid;grid-template-columns:1fr 1fr;gap:9%;align-items:center}
+.film-visual{height:575px;position:relative}
+.film-map-window{position:absolute;inset:0 19% 7% 0;overflow:hidden;clip-path:polygon(12% 0,91% 0,100% 15%,100% 100%,0 100%,0 13%);box-shadow:var(--shadow);border:9px solid rgba(255,255,255,.17)}
+.film-map-window img{width:100%;height:100%;object-fit:cover}
+.film-picture{position:absolute;border:7px solid white;box-shadow:0 14px 27px rgba(0,0,0,.27);border-radius:50%;overflow:hidden;background:var(--blue)}
+.film-picture img{width:100%;height:100%;object-fit:cover}
+.film-picture-top{width:235px;height:235px;right:0;top:60px}
+.film-picture-bottom{width:170px;height:170px;right:13px;bottom:26px}
+.film-label{position:absolute;left:30px;bottom:25px;background:var(--navy);color:white;padding:17px 22px;font:900 15px/1.27 var(--mono);letter-spacing:.04em;transform:rotate(-3deg);box-shadow:6px 6px 0 var(--aqua)}
+.light-kicker{color:var(--aqua)}
+.inverse-title{color:#fff;max-width:570px;margin-bottom:25px}
+.inverse-title em{color:var(--aqua)}
+.film-content>p:not(.section-kicker):not(.film-secondary-label):not(.film-secondary-body){font-size:15px;line-height:1.95;color:#d5e5ec;max-width:520px}
+.film-content .button{margin-top:32px}
+.film-content .play-inline{width:14px;height:14px}
+.film-divider{height:1px;background:rgba(169,225,227,.21);margin-top:36px;margin-bottom:23px}
+.film-secondary-label{font:900 11px var(--mono);letter-spacing:.15em;color:var(--aqua);margin-bottom:12px}
+.film-secondary-body{font-size:14px;line-height:1.9;color:#c6dce7}
+/* timeline */
+.timeline-section{background:#f9f5eb;padding-bottom:100px}
+.timeline-head{margin-bottom:50px}
+.timeline-track{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:27px;position:relative}
+.timeline-track:before{content:'';position:absolute;top:9px;left:0;right:0;border-top:2px dashed #97bbc8}
+.timeline-item{position:relative;padding-top:35px}
+.timeline-dot{position:absolute;top:1px;left:0;width:19px;height:19px;border:5px solid #f9f5eb;box-shadow:0 0 0 1px #69a5b8;background:var(--teal);border-radius:50%;z-index:1}
+.timeline-item>strong{display:block;font-size:31px;letter-spacing:-.06em;color:var(--navy);font-weight:900}
+.timeline-item h3{font-size:14px;color:#326e99;line-height:1.5;margin:12px 0 9px;font-weight:900}
+.timeline-item p{font-size:12px;line-height:1.9;color:#69788b}
+/* clubhouse */
+.clubhouse-section{background:#e7f0ec;position:relative}
+.clubhouse-section:before{content:'';position:absolute;top:0;left:0;right:0;height:18px;background:repeating-linear-gradient(90deg,#224e73 0 24px,#2b7994 24px 48px,#1f536f 48px 72px);opacity:.12}
+.clubhouse-grid{display:grid;grid-template-columns:1.45fr .82fr .7fr;gap:20px;align-items:stretch}
+.club-photo-card{position:relative;min-height:430px;overflow:hidden;background:#87b6c8;border:8px solid #fff;box-shadow:0 17px 34px rgba(29,65,81,.12)}
+.club-photo-card img{position:absolute;width:100%;height:100%;object-fit:cover}
+.room-mural img{object-position:44% center}
+.room-sail img{object-position:55% 42%}
+.club-photo-card:after{content:'';position:absolute;left:0;right:0;bottom:0;height:39%;background:linear-gradient(transparent,rgba(12,28,49,.8))}
+.club-photo-card figcaption{position:absolute;bottom:19px;left:17px;right:17px;z-index:1;display:flex;flex-direction:column;align-items:start;gap:10px;color:white;font-size:14px;font-weight:900;line-height:1.4}
+.tag-under-construction{font:900 9px var(--mono);letter-spacing:.025em;padding:8px 9px;background:var(--aqua);color:var(--navy);border-radius:2px}
+/* poster board */
+.poster-section{background:var(--paper);overflow:hidden}
+.poster-grid{display:grid;grid-template-columns:.8fr 1.2fr;align-items:center;gap:9%}
+.poster-content .section-title{margin-bottom:25px}
+.poster-content>p:not(.section-kicker){max-width:420px;font-size:15px;line-height:1.9;color:#647184}
+.poster-legend{display:flex;align-items:center;gap:12px;margin-top:34px;font:900 11px var(--mono);letter-spacing:.05em;color:var(--navy)}
+.pin-dot{display:inline-block;width:16px;height:16px;border-radius:50%;background:#e47b60;box-shadow:0 0 0 4px #f9e6c9}
+.bulletin-board{background:linear-gradient(145deg,#d5ac7e,#ae7b50);box-shadow:inset 0 0 0 12px rgba(119,74,37,.3),0 22px 40px rgba(20,41,64,.19);border:12px solid #8d6443;position:relative;min-height:520px;display:flex;align-items:center;justify-content:center;gap:28px;padding:40px 40px 28px}
+.bulletin-board:before{content:'';position:absolute;inset:0;opacity:.15;background:repeating-linear-gradient(0deg,transparent 0 4px,#5b3229 4.5px 5px)}
+.board-rope{position:absolute;right:-42px;top:-50px;height:120px;width:190px;border:15px double #e5c492;border-radius:50%;transform:rotate(21deg);pointer-events:none}
+.pinned-poster{position:relative;z-index:1;background:#fff;padding:8px 8px 17px;box-shadow:0 12px 18px rgba(40,39,33,.27);width:46%;min-width:0}
+.pinned-poster img{height:370px;width:100%;object-fit:cover;object-position:top}
+.pinned-poster figcaption{font:900 10px var(--mono);color:#3b4050;padding:10px 4px 0;text-align:center}
+.poster-pape{transform:rotate(-8deg);margin-top:-19px}
+.poster-invite{transform:rotate(7deg);margin-top:31px}
+.poster-pin{position:absolute;left:50%;top:-8px;width:17px;height:17px;border-radius:50%;background:#e66b50;box-shadow:0 3px 2px #733b30,0 0 0 3px rgba(255,255,255,.2);z-index:2}
+/* contact */
+.contact-section{background:radial-gradient(ellipse 600px 300px at 85% 100%,rgba(33,178,163,.16),transparent),var(--navy);color:#fff;position:relative;overflow:hidden;text-align:center;padding:108px 0 115px}
+.contact-waves{position:absolute;inset:0;background:repeating-radial-gradient(ellipse 450px 240px at 50% 110%,transparent 0 40px,rgba(159,224,227,.13) 41px 42px,transparent 43px 70px);opacity:.55}
+.contact-inner{position:relative;display:flex;flex-direction:column;align-items:center}
+.contact-section .section-kicker{margin-bottom:25px}
+.contact-section h2{font-size:clamp(37px,5vw,67px);line-height:1.16;letter-spacing:-.06em;max-width:910px}
+.contact-inner>p:not(.section-kicker):not(.contact-mail){font-size:16px;line-height:1.9;color:#d9e8eb;max-width:630px;margin-top:24px}
+.contact-actions{justify-content:center;margin-top:32px}
+.contact-mail{color:#9bb9c9;font:700 12px var(--mono);margin-top:25px;line-height:1.6}
+/* footer */
+.site-footer{background:#0c213c;color:#dcebf0;padding:22px 0}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:23px}
+.footer-brand{display:flex;align-items:center;gap:11px}
+.footer-brand img{width:57px;height:57px;object-fit:contain}
+.footer-brand span{display:flex;flex-direction:column;gap:6px}
+.footer-brand strong{font-size:12px}
+.footer-brand small{font-size:10px;color:#94b3c6}
+.footer-motto{font:900 10px var(--mono);letter-spacing:.07em;color:#8db6bd}
+.back-to-top{font:900 10px var(--mono);letter-spacing:.08em;border-bottom:1px solid #a2ced1;padding:10px 0;white-space:nowrap}
+/* reveal progressive enhancement */
+.js-ready .reveal{opacity:0;transform:translateY(27px);transition:opacity .65s ease,transform .65s ease}
+.js-ready .reveal.is-visible{opacity:1;transform:none}
+/* responsive */
+@media (max-width:1160px){
+  .desktop-nav{gap:14px}
+  .desktop-nav a{font-size:11px}
+  .brand{min-width:205px}
+  .brand-text strong{font-size:10px}
+  .brand-text small{font-size:13px}
+  .hero-seal{width:min(110%,490px)}
+  .hero-sticker{left:-2%}
+  .activity-card-copy{padding:24px 18px 26px}
+  .activity-card h3{font-size:18px}
+  .activity-image{height:185px}
+  .clubhouse-grid{grid-template-columns:1.2fr 1fr}
+  .room-sail{display:none}
+}
+@media (max-width:900px){
+  .container{width:min(var(--max),calc(100% - 48px))}
+  .desktop-nav,.header-join{display:none}
+  .menu-button{display:block}
+  .header-inner{min-height:77px}
+  .mobile-nav:not([hidden]){display:flex;flex-direction:column;border-top:1px solid rgba(255,255,255,.12);background:#0d2647;padding:17px 24px 25px}
+  .mobile-nav a{color:white;font-size:15px;font-weight:800;padding:13px;border-bottom:1px solid rgba(255,255,255,.1)}
+  .hero-grid{grid-template-columns:1fr .8fr;min-height:600px;gap:8px}
+  h1{font-size:clamp(45px,6vw,68px)}
+  .hero-seal{width:110%}
+  .hero-description{font-size:14px}
+  .hero-sticker{width:86px;height:86px;bottom:17%;left:0}
+  .hero-sticker strong{font-size:11px}
+  .hero-side-label{display:none}
+  .section{padding:83px 0}
+  .about-grid{gap:6%}
+  .about-images{min-height:430px}
+  .group-photo{height:245px}
+  .wall-photo{height:180px}
+  .about-facts strong{font-size:30px}
+  .activity-grid{grid-template-columns:repeat(2,1fr)}
+  .activity-image{height:250px}
+  .films-layout{gap:5%}
+  .film-visual{height:470px}
+  .film-picture-top{width:155px;height:155px}
+  .film-picture-bottom{width:129px;height:129px}
+  .film-label{font-size:12px}
+  .timeline-track{grid-template-columns:repeat(3,1fr);row-gap:40px}
+  .timeline-track:before{display:none}
+  .timeline-dot{top:0}
+  .poster-grid{gap:4%}
+  .bulletin-board{padding:28px 24px;min-height:430px;gap:14px}
+  .pinned-poster img{height:286px}
+}
+@media (max-width:640px){
+  .container{width:calc(100% - 36px)}
+  html{scroll-padding-top:78px}
+  .site-header{position:sticky}
+  .header-inner{gap:5px}
+  .brand{gap:7px;min-width:0}
+  .brand-seal{width:44px;height:44px}
+  .brand-text strong{font-size:8px}
+  .brand-text small{font-size:11px;letter-spacing:.13em}
+  .language-button{padding:9px}
+  .hero-grid{grid-template-columns:1fr;padding:63px 0 80px;gap:14px}
+  .hero-copy{padding:0 3px}
+  .hero-eyebrow{font-size:9px;letter-spacing:.06em;margin-bottom:27px}
+  h1{font-size:clamp(43px,10.8vw,64px)}
+  h1 em{white-space:normal}
+  .hero-description{font-size:14px;line-height:1.75;max-width:460px;margin-top:23px}
+  .hero-buttons{gap:9px}
+  .hero-buttons .button{padding:12px 17px;font-size:12px;min-height:47px}
+  .hero-note{margin-top:23px;font-size:9px}
+  .hero-art{min-height:300px;max-width:420px;margin-inline:auto;width:100%}
+  .hero-map-shape{inset:7% 12%}
+  .hero-seal{width:min(79%,355px);transform:rotate(4deg)}
+  .hero-sticker{left:10%;bottom:10%;width:88px;height:88px}
+  .hero-bottomline{font-size:8px;letter-spacing:.07em;gap:13px}
+  .ribbon{height:35px}
+  .ribbon-track{font-size:11px}
+  .ribbon-track span{margin-inline:15px}
+  .section{padding:76px 0}
+  .section-title{font-size:clamp(36px,8.5vw,47px)}
+  .about-grid{grid-template-columns:1fr;gap:22px}
+  .about-images{min-height:395px;max-width:500px;width:100%;margin-inline:auto}
+  .group-photo{top:18px;height:235px}
+  .wall-photo{bottom:24px;height:174px}
+  .photo-paper-sticker{bottom:0;width:95px;height:95px}
+  .photo-paper-sticker span{font-size:24px}
+  .photo-paper-sticker small{font-size:8px}
+  .about-content .section-title{margin-bottom:20px}
+  .lead{font-size:15px}
+  .body-copy{font-size:14px}
+  .about-facts{margin-top:26px}
+  .about-facts strong{font-size:28px}
+  .about-facts span{font-size:8px}
+  .section-heading-row,.clubhouse-head{display:block;margin-bottom:28px}
+  .section-aside{margin-top:20px;font-size:14px}
+  .activity-grid{grid-template-columns:1fr;gap:17px}
+  .activity-card{display:grid;grid-template-columns:38% 62%;min-height:210px}
+  .activity-image{height:auto;min-height:210px}
+  .activity-card-copy{padding:17px 18px 21px}
+  .activity-card-copy>svg{width:24px;height:24px;right:19px;top:18px}
+  .activity-card h3{font-size:18px;margin:17px 0 10px}
+  .activity-card p{font-size:12px;line-height:1.7}
+  .image-tag{font-size:8px;left:8px;bottom:9px;padding:8px 7px}
+  .films-section{padding:75px 0}
+  .films-layout{grid-template-columns:1fr}
+  .film-visual{max-width:490px;width:100%;height:370px;margin:0 auto 39px}
+  .film-map-window{inset:0 17% 8% 0}
+  .film-picture-top{width:150px;height:150px;right:0;top:28px}
+  .film-picture-bottom{width:118px;height:118px;right:15px;bottom:0}
+  .film-label{font-size:10px;left:9px;bottom:13px;padding:12px}
+  .inverse-title{font-size:clamp(34px,8.2vw,46px)}
+  .film-content>p:not(.section-kicker):not(.film-secondary-label):not(.film-secondary-body){font-size:14px}
+  .timeline-track{grid-template-columns:repeat(2,1fr);gap:26px 23px}
+  .timeline-head{margin-bottom:31px}
+  .timeline-item{padding-top:31px}
+  .timeline-item>strong{font-size:27px}
+  .timeline-item p{font-size:12px}
+  .clubhouse-grid{grid-template-columns:1fr}
+  .club-photo-card{min-height:340px}
+  .room-sail{display:block}
+  .room-sail img{object-position:50% 45%}
+  .poster-grid{grid-template-columns:1fr;gap:35px}
+  .bulletin-board{width:100%;min-height:390px;padding:22px;gap:9px}
+  .pinned-poster img{height:280px}
+  .pinned-poster figcaption{font-size:9px}
+  .contact-section{padding:75px 0 82px}
+  .contact-section h2{font-size:clamp(35px,8.5vw,51px)}
+  .contact-inner>p:not(.section-kicker):not(.contact-mail){font-size:14px}
+  .contact-actions .button{padding:12px 17px;font-size:12px}
+  .contact-mail{font-size:10px;word-break:break-word}
+  .footer-inner{flex-wrap:wrap}
+  .footer-motto{display:none}
+}
+@media (max-width:370px){
+  .brand-text strong{font-size:7px}
+  .brand-text small{font-size:10px}
+  .brand-seal{width:39px;height:39px}
+  h1{font-size:40px}
+  .activity-card{grid-template-columns:35% 65%}
+  .activity-card-copy{padding:15px 12px}
+  .activity-card h3{font-size:16px}
+  .film-visual{height:320px}
+  .bulletin-board{padding:18px 14px}
+  .pinned-poster img{height:236px}
+}
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}.js-ready .reveal{opacity:1;transform:none}}
+
+
+/* v2: News ticker, actual film poster, hut photos and scrapbook gallery */
+.header-social,.mobile-social,.footer-social{display:flex;align-items:center;gap:5px}
+.header-social a,.mobile-social a,.footer-social a{display:grid;place-items:center;width:34px;height:34px;color:#e4f4f7;border-radius:50%;transition:background .2s,color .2s}
+.header-social a:hover,.mobile-social a:hover,.footer-social a:hover{background:rgba(136,235,211,.14);color:var(--aqua)}
+.header-social svg,.mobile-social svg,.footer-social svg{width:18px;height:18px}
+.header-social{border-right:1px solid rgba(255,255,255,.15);padding-right:9px}
+.mobile-social{padding:12px 12px 1px;gap:12px}
+.mobile-social a{border:1px solid rgba(255,255,255,.22);width:45px;height:45px}
+.ribbon{position:relative}
+.ribbon-track{display:flex;align-items:center;gap:0;animation:ribbon 44s linear infinite}
+.ribbon-label{color:#114355;background:#b5f3dc;border-radius:20px;padding:7px 13px;font-size:10px;letter-spacing:.06em;margin-inline:12px;white-space:nowrap}
+.ribbon-story{display:inline-flex;gap:11px;align-items:center;padding:10px 24px 10px 8px;min-width:max-content;transition:opacity .2s}
+.ribbon-story:hover{text-decoration:underline}
+.ribbon-star{color:#176c79;font-size:17px;margin:0}
+.ribbon:hover .ribbon-track,.ribbon:focus-within .ribbon-track{animation-play-state:paused}
+.about-images .wall-photo{bottom:60px}
+.about-content .body-copy{margin-bottom:5px}
+.documentary-poster{width:min(100%,470px);position:relative;margin-inline:auto;filter:drop-shadow(10px 18px 25px rgba(0,0,0,.3));transform:rotate(-2deg);border:11px solid rgba(252,249,240,.9);background:white;align-self:center}
+.documentary-poster img{display:block;width:100%;height:auto}
+.documentary-poster figcaption{position:absolute;left:50%;bottom:-20px;transform:translateX(-50%) rotate(2deg);background:var(--aqua);color:var(--navy);font:900 10px/1.3 var(--mono);letter-spacing:.07em;padding:10px 15px;white-space:nowrap;box-shadow:4px 5px 0 rgba(3,12,28,.28)}
+.clubhouse-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:23px}
+.hut-card{background:var(--paper);border:7px solid white;box-shadow:0 18px 45px rgba(29,65,81,.14);display:flex;flex-direction:column;min-width:0;position:relative}
+.hut-photos{display:grid;grid-template-columns:1fr 1fr;gap:6px;background:#153455;height:335px;overflow:hidden}
+.hut-photos img{width:100%;height:100%;object-fit:cover;min-width:0;transition:transform .35s}
+.hut-card:hover .hut-photos img{transform:scale(1.04)}
+.hut-wood .hut-photos img:first-child{object-position:center center}
+.hut-wood .hut-photos img:nth-child(2){object-position:center center}
+.hut-painted .hut-photos img:first-child{object-position:55% center}
+.hut-painted .hut-photos img:nth-child(2){object-position:50% 50%}
+.hut-details{padding:25px 27px 27px;display:flex;justify-content:space-between;align-items:end;gap:28px;flex:1}
+.hut-details h3{font-size:clamp(20px,2vw,26px);font-weight:900;letter-spacing:-.045em;color:var(--navy);margin:10px 0 8px}
+.hut-details p{font-size:12px;color:#607282;line-height:1.7;max-width:300px}
+.hut-index{font:900 10px var(--mono);letter-spacing:.1em;color:#3a8f9d}
+.hut-details .tag-under-construction{display:inline-block;margin-top:13px}
+.hut-link{flex:none;display:inline-flex;align-items:center;gap:7px;background:var(--navy);color:white;border-radius:100px;font-size:12px;font-weight:900;padding:12px 15px;white-space:nowrap}
+.hut-link svg{width:15px;height:15px}
+.hut-link:hover{background:#3178aa}
+.gallery-preview-grid{align-items:center}
+.button-gallery{margin-top:29px;background:var(--navy);color:white}
+.button-gallery:hover{background:#31678f}
+.poster-content .gallery-soon{font:700 11px var(--mono)!important;margin-top:15px;color:#85909a!important}
+.gallery-board{min-height:490px;padding:0;display:block;position:relative;background:radial-gradient(circle at 70% 20%,#c89a69,#b78a5b 58%,#9a6b45);border:12px solid #825b3f;box-shadow:inset 0 0 0 8px rgba(244,214,174,.13),0 22px 40px rgba(20,41,64,.19)}
+.gallery-polaroid{background:#faf9f4;padding:8px 8px 23px;box-shadow:0 9px 12px rgba(40,39,33,.3);position:absolute;z-index:1;transition:transform .3s}
+.gallery-polaroid img{width:100%;height:100%;object-fit:cover;display:block}
+.gallery-polaroid figcaption{font:900 10px var(--mono);color:#424859;text-align:center;padding:6px 0 0}
+.gallery-shot-one{left:7%;top:9%;width:50%;height:205px;transform:rotate(-8deg)}
+.gallery-shot-two{right:8%;top:9%;width:34%;height:183px;transform:rotate(8deg)}
+.gallery-shot-three{left:13%;bottom:6%;width:33%;height:171px;transform:rotate(7deg)}
+.gallery-shot-four{right:11%;bottom:8%;width:46%;height:196px;transform:rotate(-7deg)}
+.gallery-board:hover .gallery-shot-one{transform:rotate(-5deg) translateY(-4px)}
+.gallery-board:hover .gallery-shot-two{transform:rotate(5deg) translateY(-4px)}
+.gallery-board:hover .gallery-shot-three{transform:rotate(4deg) translateY(-4px)}
+.gallery-board:hover .gallery-shot-four{transform:rotate(-4deg) translateY(-4px)}
+.gallery-polaroid .poster-pin{width:13px;height:13px;top:-7px;left:49%;background:#d56150}
+.gallery-board-overlay{position:absolute;inset:0;z-index:4}
+.footer-social a{color:#d3eaf0;border:1px solid rgba(255,255,255,.16)}
+@media (max-width:1240px){.desktop-nav{gap:14px}.header-social{display:none}}
+@media (max-width:900px){.header-social{display:none}}
+@media (max-width:820px){.clubhouse-pair{grid-template-columns:1fr}.hut-photos{height:380px}.hut-details{align-items:center}.documentary-poster{width:min(81%,420px);margin-bottom:50px}}
+@media (max-width:640px){
+  .about-images .wall-photo{bottom:35px}
+  .documentary-poster{width:min(85%,340px);margin:0 auto 34px}
+  .hut-photos{height:250px}
+  .hut-details{padding:19px 14px 20px;align-items:start;flex-direction:column;gap:17px}
+  .hut-link{font-size:11px}
+  .gallery-board{min-height:392px}
+  .gallery-shot-one{height:165px}.gallery-shot-two{height:148px}.gallery-shot-three{height:143px}.gallery-shot-four{height:162px}
+  .gallery-polaroid{padding:6px 6px 17px}
+  .gallery-polaroid figcaption{font-size:8px}
+  .ribbon-track{animation-duration:51s}
+  .footer-social{margin-left:auto}
+}
+@media (max-width:390px){.hut-photos{height:210px}.gallery-board{min-height:325px}.gallery-shot-one{height:136px}.gallery-shot-two{height:121px}.gallery-shot-three{height:120px}.gallery-shot-four{height:132px}}
+@media(prefers-reduced-motion:reduce){.ribbon{overflow-x:auto}.ribbon-track{animation:none}}</style></head>
+<body>
+<a class="skip-link" data-i18n="skip" href="#main">Μετάβαση στο περιεχόμενο</a>
+<svg aria-hidden="true" class="svg-defs" xmlns="http://www.w3.org/2000/svg">
+<symbol id="i-arrow" viewbox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></symbol>
+<symbol id="i-outer-arrow" viewbox="0 0 24 24"><path d="M5 19 19 5M8 5h11v11" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></symbol>
+<symbol id="i-wave" viewbox="0 0 40 40"><path d="M2 15c6 0 6 7 12 7s6-7 12-7 6 7 12 7M2 25c6 0 6 7 12 7s6-7 12-7 6 7 12 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2.8"></path></symbol>
+<symbol id="i-film" viewbox="0 0 40 40"><rect fill="none" height="22" rx="2" stroke="currentColor" stroke-width="2.4" width="32" x="4" y="11"></rect><path d="m12 11 5 8m4-8 5 8M4 19h32M15 25l11-6v12z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2.1"></path></symbol>
+<symbol id="i-hands" viewbox="0 0 40 40"><path d="M5 27 15 17l7 5 8-7 5 4-11 13-8-5-7 7-4-7Zm1-1 4 4m18-13 4 4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"></path></symbol>
+<symbol id="i-compass" viewbox="0 0 40 40"><circle cx="20" cy="20" fill="none" r="15" stroke="currentColor" stroke-width="2.4"></circle><path d="m25.5 14.5-3.5 8-8 3.5 3.5-8z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2.4"></path><circle cx="20" cy="20" fill="currentColor" r="1.5"></circle></symbol>
+<symbol id="i-mail" viewbox="0 0 24 24"><rect fill="none" height="14" rx="2" stroke="currentColor" stroke-width="1.8" width="18" x="3" y="5"></rect><path d="m3 7 9 7 9-7" fill="none" stroke="currentColor" stroke-width="1.8"></path></symbol>
+<symbol id="i-instagram" viewbox="0 0 24 24"><rect fill="none" height="18.8" rx="5.5" stroke="currentColor" stroke-width="1.8" width="18.8" x="2.6" y="2.6"></rect><circle cx="12" cy="12" fill="none" r="4" stroke="currentColor" stroke-width="1.8"></circle><circle cx="17.6" cy="6.5" fill="currentColor" r="1.15"></circle></symbol><symbol id="i-facebook" viewbox="0 0 24 24"><path d="M14.2 21v-8h2.8l.45-3.2h-3.25V7.8c0-.93.27-1.56 1.62-1.56H17.6V3.38A24.6 24.6 0 0 0 15 3.2c-2.73 0-4.62 1.67-4.62 4.74V9.8H7.6V13h2.78v8z" fill="currentColor"></path></symbol><symbol id="i-youtube" viewbox="0 0 24 24"><rect fill="none" height="14" rx="4" stroke="currentColor" stroke-width="1.7" width="20" x="2" y="5"></rect><path d="m10 9 6 3-6 3z" fill="currentColor"></path></symbol>
+<symbol id="i-play" viewbox="0 0 24 24"><path d="m8 5 12 7-12 7z" fill="currentColor"></path></symbol>
+</svg>
+<header class="site-header" id="top">
+<div class="header-inner container">
+<a aria-label="1ο Σύστημα Προσκόπων Αλοννήσου · αρχική" class="brand" href="#top">
+<img alt="" class="brand-seal" height="56" src="assets/seal.webp" width="56"/>
+<span class="brand-text"><strong data-i18n="brandA">1ο ΣΥΣΤΗΜΑ ΠΡΟΣΚΟΠΩΝ</strong><small data-i18n="brandB">ΑΛΟΝΝΗΣΟΥ</small></span>
+</a>
+<nav aria-label="Κύρια πλοήγηση" class="desktop-nav" data-i18n-aria="navLabel">
+<a data-i18n="navAbout" href="#about">Η παρέα μας</a>
+<a data-i18n="navActivities" href="#activities">Τι κάνουμε</a>
+<a data-i18n="navFilms" href="#films">Οι ιστορίες μας</a>
+<a data-i18n="navHome" href="#clubhouse">Η λέσχη</a><a data-i18n="navArticles" href="articles/index.html">Άρθρα</a>
+</nav>
+<div class="header-actions"><div aria-label="Social media" class="header-social">
+<a aria-label="Facebook" href="https://www.facebook.com/61557879605892/" rel="noopener noreferrer" target="_blank" title="Facebook"><svg aria-hidden="true"><use href="#i-facebook"></use></svg></a>
+<a aria-label="Instagram" href="https://www.instagram.com/scoutsofalonissos/" rel="noopener noreferrer" target="_blank" title="Instagram"><svg aria-hidden="true"><use href="#i-instagram"></use></svg></a>
+<a aria-label="YouTube — ντοκιμαντέρ" href="https://youtu.be/nqwA_6MNozM" rel="noopener noreferrer" target="_blank" title="YouTube — το ντοκιμαντέρ μας"><svg aria-hidden="true"><use href="#i-youtube"></use></svg></a>
+</div>
+<button aria-label="Switch to English" class="language-button" id="langToggle" type="button"><span id="languageLabel">EN</span><span aria-hidden="true" class="language-swap">↗</span></button>
+<a class="header-join" href="contact.html"><span data-i18n="contactNav">Επικοινωνία</span><svg aria-hidden="true"><use href="#i-outer-arrow"></use></svg></a>
+<button aria-controls="mobileNav" aria-expanded="false" aria-label="Άνοιγμα μενού" class="menu-button" id="menuToggle" type="button"><span></span><span></span></button>
+</div>
+</div>
+<nav aria-label="Μενού κινητού" class="mobile-nav" hidden="" id="mobileNav">
+<a data-i18n="navAbout" href="#about">Η παρέα μας</a>
+<a data-i18n="navActivities" href="#activities">Τι κάνουμε</a>
+<a data-i18n="navFilms" href="#films">Οι ιστορίες μας</a>
+<a data-i18n="navHome" href="#clubhouse">Η λέσχη</a>
+<a data-i18n="navArticles" href="articles/index.html">Άρθρα</a><a data-i18n="navContact" href="contact.html">Επικοινωνία</a>
+<div class="mobile-social"><a aria-label="Facebook" href="https://www.facebook.com/61557879605892/" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true"><use href="#i-facebook"></use></svg></a><a aria-label="Instagram" href="https://www.instagram.com/scoutsofalonissos/" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true"><use href="#i-instagram"></use></svg></a><a aria-label="YouTube — ντοκιμαντέρ" href="https://youtu.be/nqwA_6MNozM" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true"><use href="#i-youtube"></use></svg></a></div></nav>
+</header>
+<main id="main">
+<!-- HERO: navy, marine-paper contours, and the original wood-and-rope emblem -->
+<section aria-labelledby="hero-title" class="hero">
+<div aria-hidden="true" class="hero-contours"></div>
+<div aria-hidden="true" class="hero-bubble bubble-one"></div>
+<div aria-hidden="true" class="hero-bubble bubble-two"></div>
+<div class="container hero-grid">
+<div class="hero-copy">
+<div class="eyebrow hero-eyebrow"><span class="eyebrow-dot"></span><span data-i18n="heroEyebrow">ΑΛΟΝΝΗΣΟΣ · ΒΟΡΕΙΕΣ ΣΠΟΡΑΔΕΣ · ΑΠΟ ΤΟ 2009</span></div>
+<h1 id="hero-title"><span data-i18n="heroLine1">Ένα νησί.</span><br/><span data-i18n="heroLine2">Μια παρέα.</span><br/><em data-i18n="heroLine3">Αμέτρητες ιστορίες.</em></h1>
+<p class="hero-description" data-i18n="heroDescription">Στη θάλασσα, στο βουνό, πίσω από μια κάμερα ή δίπλα σε όποιον μας χρειάζεται. Ανακαλύπτουμε τον κόσμο ξεκινώντας από τον τόπο μας.</p>
+<div class="hero-buttons">
+<a class="button button-cream" href="#about"><span data-i18n="discoverButton">Γνώρισέ μας</span><svg aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+<a class="button button-outline" href="#activities"><span data-i18n="exploreButton">Οι δράσεις μας</span><svg aria-hidden="true"><use href="#i-outer-arrow"></use></svg></a>
+</div>
+<div class="hero-note"><span class="hero-note-line"></span><span data-i18n="heroSmall">1ο Σύστημα Προσκόπων Αλοννήσου · Σώμα Ελλήνων Προσκόπων</span></div>
+</div>
+<div aria-label="Το σήμα του 1ου Συστήματος Προσκόπων Αλοννήσου" class="hero-art">
+<div aria-hidden="true" class="hero-map-shape"></div>
+<div aria-hidden="true" class="hero-seal-shadow"></div>
+<img alt="Το ξύλινο προσκοπικό μας έμβλημα, με φώκια, σκοινί και το σύνθημα Έσο Έτοιμος" class="hero-seal" fetchpriority="high" height="1020" src="assets/seal.webp" width="1020"/>
+<span aria-hidden="true" class="hero-side-label">SCOUTS OF ALONISSOS / 01</span>
+<div class="hero-sticker"><span>✳</span><strong data-i18n="heroStamp">ΕΣΟ<br/>ΕΤΟΙΜΟΣ</strong></div>
+</div>
+</div>
+<div aria-hidden="true" class="hero-bottomline"><span>✳</span><span>ΕΞΕΡΕΥΝΩ · ΔΗΜΙΟΥΡΓΩ · ΠΡΟΣΦΕΡΩ</span><span>✳</span></div>
+</section>
+<div aria-label="Τελευταία νέα" class="ribbon"><div class="ribbon-track"><span class="ribbon-label" data-i18n="latestLabel">ΤΕΛΕΥΤΑΙΑ ΝΕΑ</span><a class="ribbon-story" data-i18n="headline1" href="articles/index.html"><span aria-hidden="true" class="ribbon-star">✳</span>41η ΠΑΠΕ Τρικάλων — Οι ιστορίες της παράκτιας αλιείας</a><a class="ribbon-story" data-i18n="headline2" href="articles/index.html"><span aria-hidden="true" class="ribbon-star">✳</span>Νέα ταινία: ακούμε τους ψαράδες της Αλοννήσου</a><a class="ribbon-story" data-i18n="headline3" href="articles/index.html"><span aria-hidden="true" class="ribbon-star">✳</span>Φτιάχνουμε καταφύγια για τις αδέσποτες γάτες</a><a class="ribbon-story" data-i18n="headline4" href="articles/index.html"><span aria-hidden="true" class="ribbon-star">✳</span>Βόλος 2025 — Η διήμερη που έγινε πενθήμερη</a><span aria-hidden="true" class="ribbon-label" data-i18n="latestLabel">ΤΕΛΕΥΤΑΙΑ ΝΕΑ</span><a aria-hidden="true" class="ribbon-story" data-i18n="headline1" href="articles/index.html" tabindex="-1"><span aria-hidden="true" class="ribbon-star">✳</span>41η ΠΑΠΕ Τρικάλων — Οι ιστορίες της παράκτιας αλιείας</a><a aria-hidden="true" class="ribbon-story" data-i18n="headline2" href="articles/index.html" tabindex="-1"><span aria-hidden="true" class="ribbon-star">✳</span>Νέα ταινία: ακούμε τους ψαράδες της Αλοννήσου</a><a aria-hidden="true" class="ribbon-story" data-i18n="headline3" href="articles/index.html" tabindex="-1"><span aria-hidden="true" class="ribbon-star">✳</span>Φτιάχνουμε καταφύγια για τις αδέσποτες γάτες</a><a aria-hidden="true" class="ribbon-story" data-i18n="headline4" href="articles/index.html" tabindex="-1"><span aria-hidden="true" class="ribbon-star">✳</span>Βόλος 2025 — Η διήμερη που έγινε πενθήμερη</a></div></div>
+<!-- ABOUT: original identity, real group image and heritage of the Scout house -->
+<section aria-labelledby="about-heading" class="section about-section" id="about">
+<div class="container about-grid">
+<div class="about-images reveal">
+<div class="photo-mat group-photo"><img alt="Πρόσκοποι της Αλοννήσου μαζί σε ομαδική φωτογραφία" height="364" loading="lazy" src="assets/scouts-group.webp" width="545"/><span class="photo-caption" data-i18n="photoGroup">Η παρέα μας, μαζί</span></div>
+<div class="photo-mat wall-photo"><img alt="Τα αναμνηστικά και το ξύλινο έμβλημα στον χώρο των Προσκόπων" height="453" loading="lazy" src="assets/heritage-wall.webp" width="680"/></div>
+</div>
+<div class="about-content reveal">
+<p class="section-kicker"><span class="kicker-star">✳</span><span data-i18n="aboutKicker">ΠΟΙΟΙ ΕΙΜΑΣΤΕ</span></p>
+<h2 class="section-title" data-i18n="aboutTitle" id="about-heading">Το νησί είναι το σπίτι μας. <em>Ο κόσμος, η αυλή μας.</em></h2>
+<p class="lead" data-i18n="aboutLead">Είμαστε το 1ο Σύστημα Προσκόπων Αλοννήσου. Από το 2009 μεγαλώνουμε μαζί, μαθαίνουμε μέσα από την πράξη και δίνουμε πίσω στον τόπο που αγαπάμε.</p>
+<p class="body-copy" data-i18n="aboutBody">Κάθε εξόρμηση, κάθε εθελοντική δράση, κάθε μικρή ή μεγάλη δημιουργία είναι μια ευκαιρία να δοκιμάσουμε κάτι καινούριο — πάντα ως ομάδα.</p>
+</div>
+</div>
+</section>
+<!-- ACTIVITIES -->
+<section aria-labelledby="activities-heading" class="section activity-section" id="activities">
+<div class="container">
+<div class="section-heading-row reveal">
+<div><p class="section-kicker"><span class="kicker-star">✳</span><span data-i18n="activitiesKicker">Η ΖΩΗ ΜΑΣ ΣΕ ΔΡΑΣΗ</span></p><h2 class="section-title" data-i18n="activitiesTitle" id="activities-heading">Δεν μένουμε <em>ποτέ ακίνητοι.</em></h2></div>
+<p class="section-aside" data-i18n="activitiesIntro">Από το θαλάσσιο πάρκο μέχρι τα μονοπάτια και τους δρόμους του νησιού, όπου υπάρχει μια ιδέα, υπάρχει και μια καινούρια περιπέτεια.</p>
+</div>
+<div class="activity-grid">
+<article class="activity-card activity-sea reveal">
+<div class="activity-image"><img alt="Βραχώδης ακτή με γαλάζια νερά στην Αλόννησο" height="522" loading="lazy" src="assets/coast.webp" width="521"/><span class="image-tag" data-i18n="natureTag">Η ΦΥΣΗ ΜΑΣ</span></div>
+<div class="activity-card-copy"><span class="activity-number">01 /</span><svg aria-hidden="true"><use href="#i-wave"></use></svg><h3 data-i18n="natureTitle">Στη φύση, με σεβασμό.</h3><p data-i18n="natureBody">Γνωρίζουμε και προστατεύουμε τον θαλάσσιο κόσμο, τις ακτές και τα δάση του νησιού μας.</p></div>
+</article>
+<article class="activity-card activity-film reveal">
+<div class="activity-image"><img alt="Παραδοσιακό αλιευτικό σκάφος σε όρμο της Αλοννήσου" height="350" loading="lazy" src="assets/fishing-boat.webp" width="350"/><span class="image-tag" data-i18n="filmTag">ΙΣΤΟΡΙΕΣ ΤΟΥ ΤΟΠΟΥ</span></div>
+<div class="activity-card-copy"><span class="activity-number">02 /</span><svg aria-hidden="true"><use href="#i-film"></use></svg><h3 data-i18n="filmTitle">Πίσω από την κάμερα.</h3><p data-i18n="filmBody">Φτιάχνουμε ταινίες, ερευνούμε την ιστορία μας και ακούμε τους ανθρώπους που έχουν κάτι να πουν.</p></div>
+</article>
+<article class="activity-card activity-give reveal">
+<div class="activity-image"><img alt="Εθελοντές φτιάχνουν ξύλινα σπιτάκια για αδέσποτες γάτες" height="196" loading="lazy" src="assets/cat-shelters.webp" width="196"/><span class="image-tag" data-i18n="giveTag">ΜΑΖΙ ΓΙΑ ΤΟ ΝΗΣΙ</span></div>
+<div class="activity-card-copy"><span class="activity-number">03 /</span><svg aria-hidden="true"><use href="#i-hands"></use></svg><h3 data-i18n="giveTitle">Κάνουμε την προσφορά πράξη.</h3><p data-i18n="giveBody">Καθαρισμοί, συνεργασίες, φροντίδα για ανθρώπους και ζώα: μικρές πράξεις με μεγάλο νόημα.</p></div>
+</article>
+<article class="activity-card activity-adventure reveal">
+<div class="activity-image"><img alt="Πρόσκοποι σε υπαίθρια δράση" height="191" loading="lazy" src="assets/scouts-outdoors.webp" width="191"/><span class="image-tag" data-i18n="adventureTag">ΠΑΝΤΑ ΕΞΩ</span></div>
+<div class="activity-card-copy"><span class="activity-number">04 /</span><svg aria-hidden="true"><use href="#i-compass"></use></svg><h3 data-i18n="adventureTitle">Ακολουθούμε την περιπέτεια.</h3><p data-i18n="adventureBody">Εξορμήσεις, κατασκηνώσεις, νέες δεξιότητες και φιλίες που κρατούν περισσότερο από μια διαδρομή.</p></div>
+</article>
+</div>
+</div>
+</section>
+<!-- FILM feature, patterned after marine-park leaflets -->
+<section aria-labelledby="films-heading" class="films-section" id="films">
+<div aria-hidden="true" class="films-decor"></div>
+<div class="container films-layout">
+<figure class="documentary-poster reveal"><img alt="Η επίσημη αφίσα του ντοκιμαντέρ Θαλάσσιο Πάρκο Αλοννήσου – Ο φυσικός πλούτος μέσα στον Γαλαξία του Αιγαίου, με μεσογειακή φώκια" height="1200" loading="lazy" src="assets/documentary-official-poster.webp" width="878"/><figcaption data-i18n="officialPoster">ΕΠΙΣΗΜΗ ΑΦΙΣΑ ΝΤΟΚΙΜΑΝΤΕΡ</figcaption></figure>
+<div class="film-content reveal">
+<p class="section-kicker light-kicker"><span class="kicker-star">✳</span><span data-i18n="filmsKicker">ΟΙ ΙΣΤΟΡΙΕΣ ΠΟΥ ΑΦΗΓΟΥΜΑΣΤΕ</span></p>
+<h2 class="section-title inverse-title" data-i18n="filmsTitle" id="films-heading">Ο τόπος μας έχει <em>φωνή.</em> Εμείς κρατάμε την κάμερα.</h2>
+<p data-i18n="filmsBody">Μαθαίνουμε να βλέπουμε τον τόπο μας με άλλα μάτια: μέσα από τους ανθρώπους του, τη φύση και τις ιστορίες του. Η πρώτη μας ταινία αφηγείται τον πλούτο του Εθνικού Θαλάσσιου Πάρκου Αλοννήσου και Βορείων Σποράδων.</p>
+<a class="button button-mint" href="https://youtu.be/nqwA_6MNozM" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" class="play-inline"><use href="#i-play"></use></svg><span data-i18n="watchFilm">Δες το ντοκιμαντέρ μας</span><svg aria-hidden="true"><use href="#i-outer-arrow"></use></svg></a>
+<div class="film-divider"></div>
+<p class="film-secondary-label" data-i18n="newStoryLabel">Η ΕΠΟΜΕΝΗ ΙΣΤΟΡΙΑ</p>
+<p class="film-secondary-body" data-i18n="newStoryBody">Μια νέα γενιά Ανιχνευτών ερευνά την παράκτια αλιεία, μαζί με το Ίδρυμα Thalassa και τον Αλιευτικό Σύλλογο Αλοννήσου. Η νέα ταινία βρίσκεται σε δημιουργία.</p>
+</div>
+</div>
+</section>
+<!-- MILESTONES, including corrected Agrinio / Volos record -->
+<section aria-labelledby="timeline-heading" class="section timeline-section">
+<div class="container">
+<div class="timeline-head reveal"><p class="section-kicker"><span class="kicker-star">✳</span><span data-i18n="timeKicker">ΜΙΚΡΟ ΗΜΕΡΟΛΟΓΙΟ</span></p><h2 class="section-title" data-i18n="timeTitle" id="timeline-heading">Μερικές στάσεις <em>στη διαδρομή μας.</em></h2></div>
+<div class="timeline-track">
+<article class="timeline-item reveal"><span class="timeline-dot"></span><strong>2009</strong><h3 data-i18n="time1Title">Η αρχή</h3><p data-i18n="time1Body">Ξεκινά η ιστορία του 1ου Συστήματος Προσκόπων Αλοννήσου.</p></article>
+<article class="timeline-item reveal"><span class="timeline-dot"></span><strong>2022</strong><h3 data-i18n="time2Title">Αγρίνιο · ΠΑΠΕ</h3><p data-i18n="time2Body">Παρουσιάζουμε την έρευνά μας για το Υποβρύχιο Μουσείο Αλοννήσου.</p></article>
+<article class="timeline-item reveal"><span class="timeline-dot"></span><strong>2023—24</strong><h3 data-i18n="time3Title">Ταινίες &amp; δημιουργία</h3><p data-i18n="time3Body">Συμμετέχουμε σε πολιτιστικές συναντήσεις, κινηματογραφικές προβολές και δράσεις.</p></article>
+<article class="timeline-item reveal"><span class="timeline-dot"></span><strong>2025</strong><h3 data-i18n="time4Title">Η περιπέτεια του Βόλου</h3><p data-i18n="time4Body">Η διήμερη εκδρομή μας γίνεται πενθήμερη, όταν ο καιρός καθυστερεί την επιστροφή.</p></article>
+<article class="timeline-item reveal"><span class="timeline-dot"></span><strong>2026</strong><h3 data-i18n="time5Title">Ιστορίες της θάλασσας</h3><p data-i18n="time5Body">Στην ΠΑΠΕ Τρικάλων παρουσιάζουμε έρευνα για την παράκτια αλιεία.</p></article>
+</div>
+</div>
+</section>
+ HUTS: two photos each and separate future pages; no video 
+<section aria-labelledby="clubhouse-heading" class="section clubhouse-section" id="clubhouse">
+<div class="container">
+<div class="clubhouse-head reveal"><div><p class="section-kicker"><span class="kicker-star">✳</span><span data-i18n="clubKicker">ΜΕΣΑ ΣΤΗ ΛΕΣΧΗ ΜΑΣ</span></p><h2 class="section-title" data-i18n="clubTitle" id="clubhouse-heading">Οι τοίχοι μας έχουν <em>τις δικές τους ιστορίες.</em></h2></div><p class="section-aside" data-i18n="clubIntro">Ξύλο, αναμνηστικά, ζωγραφιές, χρώματα και ιδέες. Ο χώρος μας αλλάζει μαζί μας — κάποια κομμάτια του ακόμη ετοιμάζονται.</p></div>
+<div class="clubhouse-grid clubhouse-pair">
+<article class="hut-card hut-wood reveal">
+<div class="hut-photos"><img alt="Ξύλινο εσωτερικό της προσκοπικής λέσχης με αναμνηστικά στους τοίχους" height="820" loading="lazy" src="assets/wooden-hut-room.webp" width="900"/><img alt="Ξύλινο προσκοπικό έμβλημα και αναμνηστικά στον τοίχο του ξύλινου χώρου" height="453" loading="lazy" src="assets/heritage-wall.webp" width="680"/></div>
+<div class="hut-details"><div><span class="hut-index">01 / WOODEN HUT</span><h3 data-i18n="woodTitle">Το ξύλινο σπιτάκι</h3><p data-i18n="woodDesc">Εδώ ζουν οι παλιές μας ιστορίες, τα σήματα και οι αναμνήσεις.</p></div><a class="hut-link" href="huts/wooden.html"><span data-i18n="exploreHut">Γνώρισε τον χώρο</span><svg aria-hidden="true"><use href="#i-arrow"></use></svg></a></div>
+</article>
+<article class="hut-card hut-painted reveal">
+<div class="hut-photos"><img alt="Οι ζωγραφισμένες μορφές ζώων και τα μπλε έπιπλα στον νέο χώρο" height="900" loading="lazy" src="assets/clubroom-new-mural.webp" width="1200"/><img alt="Χειροποίητο καράβι και λουλούδια στον νέο χώρο" height="1200" loading="lazy" src="assets/clubroom-new-sail.webp" width="900"/></div>
+<div class="hut-details"><div><span class="hut-index">02 / PAINTED HUT</span><h3 data-i18n="newRoomTitle">Το ζωγραφιστό σπιτάκι</h3><p data-i18n="paintDesc">Ένα καινούριο μέρος γεμάτο χρώμα, ιδέες και δουλειά που συνεχίζεται.</p><span class="tag-under-construction" data-i18n="underConstruction">ΥΠΟ ΔΙΑΜΟΡΦΩΣΗ</span></div><a class="hut-link" href="huts/painted.html"><span data-i18n="exploreHut">Γνώρισε τον χώρο</span><svg aria-hidden="true"><use href="#i-arrow"></use></svg></a></div>
+</article>
+</div>
+</div>
+</section>
+ PHOTO BOARD: a preview linking to the future gallery 
+<section aria-labelledby="poster-heading" class="poster-section section">
+<div class="container poster-grid gallery-preview-grid">
+<div class="poster-content reveal"><p class="section-kicker"><span class="kicker-star">✳</span><span data-i18n="galleryKicker">ΦΩΤΟΓΡΑΦΙΕΣ ΑΠΟ ΤΗΝ ΠΑΡΕΑ ΜΑΣ</span></p><h2 class="section-title" data-i18n="galleryTitle" id="poster-heading">Μια εικόνα, <em>χίλιες ιστορίες.</em></h2><p data-i18n="galleryDesc">Κάθε εξόρμηση, κάθε κατασκευή και κάθε παρέα αφήνει μια ανάμνηση. Ανοίξαμε τον πίνακά μας για να μοιραστούμε μερικές από αυτές.</p><a class="button button-gallery" href="gallery.html"><span data-i18n="galleryCTA">Δες τη συλλογή φωτογραφιών</span><svg aria-hidden="true"><use href="#i-outer-arrow"></use></svg></a><p class="gallery-soon" data-i18n="gallerySoon">Η πλήρης συλλογή θα προστεθεί σύντομα.</p></div>
+<div aria-label="Πίνακας με φωτογραφίες από τη δράση της ομάδας" class="bulletin-board gallery-board reveal">
+<div aria-hidden="true" class="board-rope"></div>
+<figure class="gallery-polaroid gallery-shot-one"><span class="poster-pin"></span><img alt="Ομαδική φωτογραφία των Προσκόπων Αλοννήσου" height="364" loading="lazy" src="assets/scouts-group.webp" width="545"/><figcaption data-i18n="galleryCaption1">Μαζί, πάντα</figcaption></figure>
+<figure class="gallery-polaroid gallery-shot-two"><span class="poster-pin"></span><img alt="Το γαλάζιο της ακτής της Αλοννήσου" height="332" loading="lazy" src="assets/beach.webp" width="331"/><figcaption data-i18n="galleryCaption2">Το νησί μας</figcaption></figure>
+<figure class="gallery-polaroid gallery-shot-three"><span class="poster-pin"></span><img alt="Προσκοπικές αναμνήσεις και ξύλινο έμβλημα" height="453" loading="lazy" src="assets/heritage-wall.webp" width="680"/><figcaption data-i18n="galleryCaption3">Οι αναμνήσεις</figcaption></figure>
+<figure class="gallery-polaroid gallery-shot-four"><span class="poster-pin"></span><img alt="Πρόσκοποι σε εξωτερική δραστηριότητα" height="350" loading="lazy" src="assets/scouts-outdoors.webp" width="350"/><figcaption data-i18n="galleryCaption4">Στιγμές δράσης</figcaption></figure>
+<a aria-label="Δες τη συλλογή φωτογραφιών" class="gallery-board-overlay" href="gallery.html"></a>
+</div>
+</div>
+</section>
+<!-- CONTACT -->
+<section aria-labelledby="contact-heading" class="contact-section" id="contact">
+<div aria-hidden="true" class="contact-waves"></div>
+<div class="container contact-inner reveal">
+<p class="section-kicker light-kicker"><span class="kicker-star">✳</span><span data-i18n="contactKicker">Η ΕΠΟΜΕΝΗ ΠΕΡΙΠΕΤΕΙΑ</span></p>
+<h2 data-i18n="contactTitle" id="contact-heading">Κάθε καινούριος φίλος,<br/>μια καινούρια ιστορία.</h2>
+<p data-i18n="contactBody">Θέλεις να μάθεις περισσότερα για τους Προσκόπους της Αλοννήσου, να έρθεις στην παρέα ή να συνεργαστούμε; Στείλε μας ένα μήνυμα.</p>
+<div class="contact-actions"><a class="button button-cream" href="contact.html"><svg aria-hidden="true"><use href="#i-mail"></use></svg><span data-i18n="contactEmail">Σελίδα επικοινωνίας</span><svg aria-hidden="true"><use href="#i-arrow"></use></svg></a><a class="button button-outline" href="https://www.instagram.com/scoutsofalonissos/" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true"><use href="#i-instagram"></use></svg><span>Instagram</span><svg aria-hidden="true"><use href="#i-outer-arrow"></use></svg></a></div>
+<p class="contact-mail">1palonnisou@sep.org.gr <span aria-hidden="true">·</span> @scoutsofalonissos</p>
+</div>
+</section>
+</main>
+<footer class="site-footer"><div class="container footer-inner"><a class="footer-brand" href="#top"><img alt="" height="64" src="assets/seal.webp" width="64"/><span><strong data-i18n="footerName">1ο Σύστημα Προσκόπων Αλοννήσου</strong><small data-i18n="footerAssociation">Σώμα Ελλήνων Προσκόπων</small></span></a><span class="footer-motto" data-i18n="footerMotto">ΕΞΕΡΕΥΝΟΥΜΕ · ΔΗΜΙΟΥΡΓΟΥΜΕ · ΠΡΟΣΦΕΡΟΥΜΕ</span><nav aria-label="Social media" class="footer-social"><a aria-label="Facebook" href="https://www.facebook.com/61557879605892/" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true"><use href="#i-facebook"></use></svg></a><a aria-label="Instagram" href="https://www.instagram.com/scoutsofalonissos/" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true"><use href="#i-instagram"></use></svg></a><a aria-label="YouTube documentary" href="https://youtu.be/nqwA_6MNozM" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true"><use href="#i-youtube"></use></svg></a></nav><a class="back-to-top" href="#top"><span data-i18n="backToTop">ΣΤΗΝ ΑΡΧΗ</span> ↑</a></div></footer>
+<script>/* 1st Alonissos Scout Group — offline-first, dependency-free site interactions. */
+(() => {
+  'use strict';
+  const translations = {
+    en: {
+      skip: 'Skip to content', navLabel: 'Main navigation',
+      latestLabel: 'LATEST STORIES',
+      headline1: '41st PAPE in Trikala — Stories of coastal fishing',
+      headline2: 'New film: Listening to Alonissos fishers',
+      headline3: 'Building shelters for stray cats',
+      headline4: 'Volos 2025 — A two-day trip that became five',
+      officialPoster: 'OFFICIAL DOCUMENTARY POSTER',
+      exploreHut: 'Explore this hut', paintDesc: 'A new space full of colors, ideas and a lot of work still in progress.',
+      galleryKicker: 'MEMORIES FROM OUR GROUP', galleryTitle: 'One photograph, <em>a thousand stories.</em>',
+      galleryDesc: 'Every outing, every project and every gathering leaves a memory. Here are a few pinned to our noticeboard.',
+      galleryCTA: 'See our photo gallery', gallerySoon: 'The full gallery is coming soon.',
+      galleryCaption1: 'Together, always', galleryCaption2: 'Our island', galleryCaption3: 'Our memories', galleryCaption4: 'Scouting moments',
+
+      brandA: '1ST SCOUT GROUP', brandB: 'OF ALONISSOS',
+      navAbout: 'Our group', navActivities: 'What we do', navFilms: 'Our stories', navHome: 'Our huts', navContact: 'Contact', navArticles: 'Articles', contactNav: 'Contact us', joinNav: 'Contact us',
+      heroEyebrow: 'ALONISSOS · NORTHERN SPORADES · SINCE 2009',
+      heroLine1: 'One island.', heroLine2: 'One group.', heroLine3: 'Endless stories.',
+      heroDescription: 'Out on the sea, up in the mountains, behind a camera or helping those around us. We discover the world, starting right here at home.',
+      discoverButton: 'Meet the group', exploreButton: 'What we do',
+      heroSmall: '1st Scout Group of Alonissos · Scouts of Greece', heroStamp: 'BE<br>PREPARED',
+      aboutKicker: 'WHO WE ARE',
+      aboutTitle: 'Our island is home. <em>The world is our playground.</em>',
+      aboutLead: 'We are the 1st Scout Group of Alonissos. Since 2009, we have grown together, learned by doing, and given back to the island we love.',
+      aboutBody: 'Every outing, every volunteering project, every small or big creation is a chance to try something new — always as a team.',
+      photoGroup: 'Our group together', aboutSticker: 'ONE BIG<br>SCOUT FAMILY',
+      since: 'WHERE IT BEGAN', oneIsland: 'ISLAND, MANY STORIES', allAdventures: 'ADVENTURES',
+      activitiesKicker: 'SCOUTING IN ACTION', activitiesTitle: 'Never <em>standing still.</em>',
+      activitiesIntro: 'From the Marine Park to the island’s paths and streets, every idea can become a new adventure.',
+      natureTag: 'OUR NATURAL WORLD', natureTitle: 'With nature, with respect.', natureBody: 'We discover and protect the marine life, shores and woodlands of our island.',
+      filmTag: 'LOCAL STORIES', filmTitle: 'Behind the camera.', filmBody: 'We make films, explore local history and listen to people with stories to share.',
+      giveTag: 'FOR OUR ISLAND', giveTitle: 'Turning care into action.', giveBody: 'Cleanups, partnerships, caring for people and animals: small actions that make a difference.',
+      adventureTag: 'OUT IN THE WORLD', adventureTitle: 'Following adventure.', adventureBody: 'Hikes, camps, new skills and friendships that last long after the trip ends.',
+      filmsKicker: 'STORIES WE TELL', filmsTitle: 'Our island has <em>a voice.</em> We hold the camera.',
+      filmsBody: 'We discover our home through the people who live here, its nature and its stories. Our first documentary explores the natural wealth of Alonissos and Northern Sporades National Marine Park.',
+      filmVisualLabel: 'FROM ISLAND<br>TO SCREEN ↗', watchFilm: 'Watch our documentary',
+      newStoryLabel: 'THE NEXT CHAPTER',
+      newStoryBody: 'A new generation of Venture Scouts is researching coastal fishing together with Thalassa Foundation and the Alonissos Fishers Association. Their new film is in production.',
+      timeKicker: 'A LITTLE LOGBOOK', timeTitle: 'A few stops <em>along the way.</em>',
+      time1Title: 'The beginning', time1Body: 'The 1st Scout Group of Alonissos is founded.',
+      time2Title: 'Agrinio · PAPE', time2Body: 'We present research about the Underwater Museum of Alonissos.',
+      time3Title: 'Films & creativity', time3Body: 'Cultural gatherings, film screenings and creative projects become part of our journey.',
+      time4Title: 'The Volos adventure', time4Body: 'A two-day trip turns into five days when weather delays the journey home.',
+      time5Title: 'Stories from the sea', time5Body: 'At PAPE in Trikala, we present our research on coastal fishing.',
+      clubKicker: 'INSIDE OUR CLUBHOUSE', clubTitle: 'Our walls have <em>stories of their own.</em>',
+      clubIntro: 'Wood, mementos, murals, colors and ideas. Our place changes as we do — and some corners are still being made.',
+      woodTitle: 'Our wooden hut', woodDesc: 'Our memories, badges and stories, right there on the walls.',
+      newRoomTitle: 'Our painted hut', underConstruction: 'WORK IN PROGRESS',
+      roomSail: 'Built with imagination and a lot of heart.',
+      posterKicker: 'FROM OUR NOTICEBOARD', posterTitle: 'A little of <em>our colorful world.</em>',
+      posterDescription: 'Posters, invitations and little announcements we design for life together. These two moments are from our 2026 archive.',
+      posterArchive: 'POSTER ARCHIVE · 2026', posterFishing: 'Researching coastal fishing', posterCake: 'Our New Year cake gathering',
+      contactKicker: 'YOUR NEXT ADVENTURE', contactTitle: 'Every new friend,<br>another new story.',
+      contactBody: 'Interested in Scouting on Alonissos, joining our group or working together? We would love to hear from you.',
+      contactEmail: 'Contact page',
+      footerName: '1st Scout Group of Alonissos', footerAssociation: 'Scouts of Greece', footerMotto: 'EXPLORE · CREATE · GIVE BACK', backToTop: 'BACK TO TOP'
+    },
+    el: {
+      // Greek defaults are in the HTML for SEO, accessibility and a fully usable no-JS page.
+      heroStamp: 'ΕΣΟ<br>ΕΤΟΙΜΟΣ', aboutTitle: 'Το νησί είναι το σπίτι μας. <em>Ο κόσμος, η αυλή μας.</em>',
+      activitiesTitle: 'Δεν μένουμε <em>ποτέ ακίνητοι.</em>',
+      filmsTitle: 'Ο τόπος μας έχει <em>φωνή.</em> Εμείς κρατάμε την κάμερα.',
+      filmVisualLabel: 'ΑΠΟ ΤΟ ΝΗΣΙ<br>ΣΤΗΝ ΟΘΟΝΗ ↗',
+      timeTitle: 'Μερικές στάσεις <em>στη διαδρομή μας.</em>',
+      clubTitle: 'Οι τοίχοι μας έχουν <em>τις δικές τους ιστορίες.</em>',
+      posterTitle: 'Λίγο από το χρώμα <em>της παρέας μας.</em>',
+      contactTitle: 'Κάθε καινούριος φίλος,<br>μια καινούρια ιστορία.', aboutSticker: 'ΜΙΑ ΜΕΓΑΛΗ<br>ΠΑΡΕΑ'
+    }
+  };
+
+  // The original Greek strings come directly from the page rather than being duplicated.
+  const strings = Array.from(document.querySelectorAll('[data-i18n]'));
+  const original = new Map(strings.map(el => [el, el.innerHTML]));
+  const langToggle = document.getElementById('langToggle');
+  const langLabel = document.getElementById('languageLabel');
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileNav = document.getElementById('mobileNav');
+  let currentLang = 'el';
+
+  function setLanguage(lang) {
+    currentLang = lang === 'en' ? 'en' : 'el';
+    strings.forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (currentLang === 'el') el.innerHTML = original.get(el);
+      else if (Object.prototype.hasOwnProperty.call(translations.en, key)) el.innerHTML = translations.en[key];
+    });
+    document.documentElement.lang = currentLang;
+    langLabel.textContent = currentLang === 'el' ? 'EN' : 'EL';
+    langToggle.setAttribute('aria-label',currentLang === 'el' ? 'Switch to English' : 'Αλλαγή στα Ελληνικά');
+    const mainNav = document.querySelector('.desktop-nav');
+    mainNav.setAttribute('aria-label',currentLang === 'el' ? 'Κύρια πλοήγηση' : 'Main navigation');
+    mobileNav.setAttribute('aria-label',currentLang === 'el' ? 'Μενού κινητού' : 'Mobile navigation');
+    menuToggle.setAttribute('aria-label',currentLang === 'el' ? 'Άνοιγμα μενού' : 'Toggle menu');
+    document.title = currentLang === 'el' ? '1ο Σύστημα Προσκόπων Αλοννήσου · Έσο Έτοιμος' : '1st Scout Group of Alonissos · Be Prepared';
+    document.querySelector('meta[name="description"]').content = currentLang === 'el'
+      ? '1ο Σύστημα Προσκόπων Αλοννήσου. Μια παρέα που εξερευνά, δημιουργεί και προσφέρει στο νησί της από το 2009.'
+      : '1st Scout Group of Alonissos. Exploring, creating and giving back to our island since 2009.';
+    try { localStorage.setItem('alonissos-site-language', currentLang); } catch (_) {}
+  }
+  langToggle.addEventListener('click', () => setLanguage(currentLang === 'el' ? 'en' : 'el'));
+  try { if (localStorage.getItem('alonissos-site-language') === 'en') setLanguage('en'); } catch (_) {}
+
+  function closeMenu() { mobileNav.hidden = true; menuToggle.setAttribute('aria-expanded','false'); }
+  menuToggle.addEventListener('click', () => {
+    const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+    mobileNav.hidden = isOpen;
+    menuToggle.setAttribute('aria-expanded',String(!isOpen));
+  });
+  mobileNav.querySelectorAll('a').forEach(link => link.addEventListener('click',closeMenu));
+  document.addEventListener('keydown',e => { if(e.key === 'Escape') closeMenu(); });
+  document.addEventListener('click',e => {
+    if (!mobileNav.hidden && !mobileNav.contains(e.target) && !menuToggle.contains(e.target)) closeMenu();
+  });
+
+  // A light touch of animation, disabled automatically for reduced-motion users.
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('js-ready');
+    const observer = new IntersectionObserver(entries => {
+      for (const entry of entries) if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible'); observer.unobserve(entry.target);
+      }
+    },{rootMargin:'0px 0px -35px 0px',threshold:.07});
+    document.querySelectorAll('.reveal').forEach(item => observer.observe(item));
+  }
+})();
+</script></body>
+</html>

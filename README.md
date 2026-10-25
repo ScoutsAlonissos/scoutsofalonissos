@@ -1,40 +1,50 @@
-# 1ο Σύστημα Προσκόπων Αλοννήσου — Homepage
+# 1ο Σύστημα Προσκόπων Αλοννήσου · Homepage v2
 
-A responsive, bilingual (Greek / English), self-contained static homepage built for **GitHub Pages**. No build step, framework, fonts, cookies, trackers or third-party scripts are required.
+## GitHub Pages install / update
 
-## Deploy on GitHub Pages
+Replace your repository's `index.html` and upload the `assets/` folder (and the placeholder pages if you want working links immediately). The HTML already contains **all CSS and JavaScript**, so you **do not need** `styles.css` or `script.js`. This is intentional for easy copy/paste deployment. Existing files can remain but are unused.
 
-1. Create a new repository, for example `scouts-alonissos`.
-2. Upload the **contents of this folder** (`index.html`, `styles.css`, `script.js`, `assets/`, `.nojekyll`, etc.) to the repository's `main` branch. Do not upload the enclosing folder as a subfolder unless you specifically want that URL path.
-3. In GitHub, open **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**, select **main** and **/(root)**, then save.
-5. Once published, the site will be available at `https://YOUR-USERNAME.github.io/scouts-alonissos/` (or the repository name you chose).
+### File tree
 
-Alternatively, use a GitHub Pages site repository called `YOUR-USERNAME.github.io` to publish at the site root.
+```
+index.html
+contact.html                       # Placeholder; replace when ready
+gallery.html                       # Placeholder; replace when ready
+articles/index.html               # Placeholder; replace when ready
+huts/wooden.html                  # Placeholder; replace when ready
+huts/painted.html                 # Placeholder; replace when ready
+assets/                            # All WebP images
+.nojekyll
+```
 
-## Editing
+### New assets (copy to the existing `assets/` folder)
 
-- Main content is in `index.html`, with Greek as the default language.
-- English translation strings and the language toggle are in `script.js`.
-- Styling and responsive layouts are in `styles.css`.
-- Photos, the original group seal, illustrations, and a compressed 22-second clubhouse tour are in `assets/`.
-- The language selection is remembered locally when browser storage is available; the website otherwise works without storage.
+- `assets/documentary-official-poster.webp` — **user-provided official poster** of the Marine Park documentary.
+- `assets/wooden-hut-room.webp` — static still of the wooden room cropped from the supplied tour video. The video is **not** included or referenced.
 
-## Content notes
+### Existing images still used
 
-- The **unfinished painted room** is marked **ΥΠΟ ΔΙΑΜΟΡΦΩΣΗ / WORK IN PROGRESS**.
-- The 2026 posters appear as an **archive** rather than new upcoming events.
-- The 2022 PAPE Agrinio entry is **only** the Underwater Museum presentation.
-- In 2025 the group went to **Volos**, where bad weather extended a two-day excursion to five days. The site does **not** claim the group attended the Alimos PAPE.
-- The new coastal-fishing documentary is described as **in production**, not released.
-- The documentary link (`https://youtu.be/nqwA_6MNozM`) comes from the QR code in the supplied Scout brochure.
-- The contact email and social media handle come from the supplied brochure. Check them before publication.
-- Please review permissions for any photograph or video of people before publishing a public website.
+`seal.webp`, `scouts-group.webp`, `heritage-wall.webp`, `clubroom-new-mural.webp`, `clubroom-new-sail.webp`, `beach.webp`, `scouts-outdoors.webp`, `cat-shelters.webp`, `coast.webp`, `fishing-boat.webp`, and others retained from the previous site.
 
-## Performance and accessibility
+### Update the destination links when their pages are complete
 
-- Images use compact WebP assets and `loading="lazy"` where appropriate.
-- The original 165 MB video was compressed to ~1.5 MB, with click-to-play controls and no autoplay.
-- Responsive layouts cover desktops, tablets and phones.
-- Keyboard navigation, skip link, accessible labels, semantic headings and reduced-motion support are included.
-- The site has no external dependencies, except outbound YouTube and Instagram links.
+- Wood hut: `huts/wooden.html`
+- Painted hut: `huts/painted.html`
+- Gallery: `gallery.html`
+- Contact: `contact.html`
+- Articles: `articles/index.html`; the scrolling headlines currently go here until dedicated article URLs exist.
+
+### Social URLs
+
+- Facebook: `https://www.facebook.com/61557879605892/` (public group-page lead)
+- Instagram: `https://www.instagram.com/scoutsofalonissos/`
+- YouTube: `https://youtu.be/nqwA_6MNozM` (the documentary, **not a verified group-channel URL**). Replace the YouTube icon link with the group's channel URL when you have it.
+
+### Notes
+
+- The painted room remains labeled **ΥΠΟ ΔΙΑΜΟΡΦΩΣΗ**.
+- The slide bar now shows potential headlines based on historical events; article pages are not yet published.
+- All page placeholders avoid broken links until you build their final versions.
+- Both Greek and English are retained; Greek is the initial language.
+- The video is not packaged, embedded, or linked anywhere on the new site.
+- Follow any photo/video usage permissions before publishing images of youth participants.
