@@ -8,59 +8,75 @@
 <link rel="icon" href="../assets/seal.webp" type="image/webp">
 <title>Λέσχη Κοινότητας Ανιχνευτών · Πρόσκοποι Αλοννήσου</title>
 <style>
-:root{--navy:#10294b;--teal:#36b5ad;--cream:#f7f0e2;--paper:#fffcf4;--wood:#8e603c;--brown:#503525;--green:#37663e;--max:1200px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--brown);font-family:'Trebuchet MS','DejaVu Sans',Arial,sans-serif;background:var(--cream);-webkit-font-smoothing:antialiased}
+:root{
+  --navy:#0f2848;
+  --teal:#36b5ad;
+  --cream:#f4ecde;
+  --paper:#fffaf1;
+  --wood:#9a6a46;
+  --wood-dark:#5f3e2a;
+  --brown:#4f3425;
+  --gold:#dec15a;
+  --green:#4f8747;
+  --green-dark:#31572f;
+  --gray:#9aa0a8;
+  --gray-dark:#565c64;
+  --blue:#5d83cc;
+  --blue-dark:#2e4f8f;
+  --red:#d55a56;
+  --red-dark:#863833;
+  --max:1200px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--brown);font-family:'Trebuchet MS','DejaVu Sans',Arial,sans-serif;background:var(--cream);-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}img{display:block;max-width:100%}p,h1,h2,figure{margin:0}.container{max-width:var(--max);width:calc(100% - 72px);margin:auto}
 :focus-visible{outline:3px solid var(--teal);outline-offset:4px}
-/* Same navy navigation and compact branding as the homepage. */
-.site-header{background:#0c2446;color:#fff;position:relative;z-index:10;border-bottom:1px solid rgba(255,255,255,.15)}
+.site-header{background:#0c2446;color:#fff;position:relative;z-index:20;border-bottom:1px solid rgba(255,255,255,.15)}
 .header-inner{min-height:86px;display:flex;align-items:center;gap:26px;justify-content:space-between}
 .brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:.055em;font-size:12px;line-height:1.35}
 .brand img{width:55px;height:55px;object-fit:contain}
-.top-actions{display:flex;align-items:center;gap:10px}
-.nav-link{font-size:12px;font-weight:800;padding:12px 18px;border:1px solid rgba(255,255,255,.32);border-radius:100px;transition:background .2s}
-.nav-link:hover{background:rgba(255,255,255,.1)}
-.nav-link.contact{color:#042e35;background:#7be2d0;border-color:#7be2d0}
-.nav-link.contact:hover{background:#a5f0e4}
-/* Warm timber, faded keepsake silhouettes and patrol pennants are decoration, not content cards. */
+.top-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.nav-link,.lang-toggle{font-size:12px;font-weight:800;padding:12px 18px;border:1px solid rgba(255,255,255,.32);border-radius:100px;transition:background .2s, color .2s;cursor:pointer;background:transparent;color:#fff;font-family:inherit}
+.nav-link:hover,.lang-toggle:hover{background:rgba(255,255,255,.1)}
+.lang-toggle.active{background:#7be2d0;border-color:#7be2d0;color:#042e35}
 main{overflow:hidden}
-.wood-hero{position:relative;isolation:isolate;min-height:660px;background:
-  radial-gradient(ellipse at 13% 10%,rgba(255,255,255,.78) 0%,transparent 48%),
-  linear-gradient(114deg,rgba(249,241,222,.9) 2%,rgba(224,191,148,.73) 75%,rgba(162,110,72,.64)),
-  repeating-linear-gradient(2deg,rgba(114,72,40,.15) 0 2px,transparent 2px 42px),
+.wood-hero{position:relative;isolation:isolate;min-height:690px;background:
+  radial-gradient(ellipse at 13% 10%,rgba(255,255,255,.82) 0%,transparent 48%),
+  linear-gradient(114deg,rgba(249,241,222,.92) 2%,rgba(225,194,153,.76) 75%,rgba(160,110,74,.67)),
+  repeating-linear-gradient(2deg,rgba(114,72,40,.14) 0 2px,transparent 2px 42px),
   #e4cba9;
   border-bottom:8px solid #a9754f;
 }
 .wood-hero:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.38;background:
   repeating-radial-gradient(ellipse 390px 220px at 95% 42%,transparent 0 15px,rgba(92,55,29,.14) 16px 18px,transparent 19px 32px),
   repeating-radial-gradient(ellipse 380px 200px at 1% 89%,transparent 0 17px,rgba(92,55,29,.1) 18px 19px,transparent 20px 34px)}
-.hero-inner{position:relative;z-index:2;min-height:660px;display:grid;grid-template-columns:1.04fr .96fr;gap:7%;align-items:center;padding:125px 0 94px}
+.hero-inner{position:relative;z-index:2;min-height:690px;display:grid;grid-template-columns:1.03fr .97fr;gap:6%;align-items:center;padding:138px 0 100px}
+.hero-copy{position:relative;z-index:2}
 .eyebrow{color:#467350;text-transform:uppercase;letter-spacing:.19em;font:bold 12px 'Courier New',monospace;margin-bottom:21px}
-h1{font-size:clamp(52px,6.3vw,92px);letter-spacing:-.075em;line-height:1.03;color:#4d3425;font-weight:900;max-width:730px;text-wrap:balance}
+h1{font-size:clamp(48px,6.2vw,88px);letter-spacing:-.075em;line-height:1.02;color:#4d3425;font-weight:900;max-width:700px;text-wrap:balance}
 h1 em{font-style:normal;color:#386c49}
-.hero-subtitle{margin-top:22px;font-size:16px;line-height:1.6;font-weight:800;color:#66513d}
-.location{display:inline-flex;align-items:center;gap:13px;border:1px solid rgba(83,56,35,.25);background:rgba(255,251,241,.73);box-shadow:0 7px 25px rgba(78,52,28,.08);color:#4d3b2c;border-radius:99px;padding:12px 21px;margin-top:31px;font-size:15px;font-weight:800}
+.hero-text{margin-top:22px;max-width:58ch;font-size:18px;line-height:1.72;color:#5a4535;font-weight:700}
+.location{display:inline-flex;align-items:center;gap:13px;border:1px solid rgba(83,56,35,.25);background:rgba(255,251,241,.76);box-shadow:0 7px 25px rgba(78,52,28,.08);color:#4d3b2c;border-radius:99px;padding:12px 21px;margin-top:28px;font-size:15px;font-weight:800}
 .location svg{width:21px;height:21px;flex:none;color:#376a4a}
+.hero-badges{display:flex;gap:14px;flex-wrap:wrap;align-items:flex-start;margin-top:22px}
+.explorers-logo-badge{background:rgba(255,248,236,.82);border:1px solid rgba(80,53,37,.14);border-radius:20px;padding:12px 14px;box-shadow:0 10px 25px rgba(71,46,24,.12)}
+.explorers-logo-badge img{height:86px;width:auto}
 .hero-photo{position:relative;transform:rotate(2deg);border:13px solid #fffaf0;background:#ddd;box-shadow:15px 19px 0 #946f4c,0 35px 50px rgba(67,39,20,.27);align-self:center}
-.hero-photo img{width:100%;height:440px;object-fit:cover;object-position:center}
+.hero-photo img{width:100%;height:460px;object-fit:cover;object-position:center}
 .hero-photo:before{content:"";position:absolute;top:-23px;left:37%;width:30%;height:34px;transform:rotate(-3deg);background:rgba(240,211,146,.75);box-shadow:0 1px 0 rgba(123,86,44,.12);z-index:2}
-/* Hanging patrol flags: a pointed triangle end (not a swallowtail). */
-.flags-backdrop{position:absolute;left:50%;top:20px;transform:translateX(-50%) rotate(-1deg);width:min(1080px,92vw);display:flex;justify-content:space-evenly;align-items:start;gap:13px;opacity:.68;z-index:0;pointer-events:none}
-.flags-backdrop:before{content:"";position:absolute;left:-7%;right:-7%;height:3px;top:5px;background:rgba(91,65,39,.55);transform:rotate(1.5deg);z-index:-1}
-.patrol-flag{width:clamp(75px,11vw,144px);height:clamp(110px,16vw,198px);background:linear-gradient(180deg,#4e8854,#31593a);clip-path:polygon(0 0,100% 0,100% 77%,50% 100%,0 77%);display:flex;align-items:center;justify-content:center;padding:10px 8px 42px;text-align:center;color:#f5efc5;font:900 clamp(10px,1vw,13px)/1.3 'Courier New',monospace;letter-spacing:.04em;border-top:0}
-.patrol-flag:before,.seal-flag:before{content:"";position:absolute;top:0;left:49.5%;height:15px;width:2px;background:#f3e1ae;opacity:.8}
-.patrol-flag:nth-child(2){transform:translateY(12px) rotate(3deg)}.patrol-flag:nth-child(4){transform:translateY(7px) rotate(-2deg)}.patrol-flag:nth-child(5){transform:translateY(14px) rotate(2deg)}
-.seal-flag{width:clamp(76px,10vw,127px);height:clamp(100px,12vw,156px);background:#e2c44a;display:flex;align-items:center;justify-content:center;box-shadow:0 7px 0 rgba(101,72,28,.25);padding:12px}
-.seal-flag img{height:auto;width:90px;max-height:120px;object-fit:contain;opacity:.91}
-/* Five decorative memory-item silhouettes, like those on the clubhouse wall. */
-.keepsake{position:absolute;z-index:0;pointer-events:none;opacity:.24;border:3px solid #805b3c;background:rgba(255,250,221,.26)}
-.keepsake.round{width:120px;height:120px;left:-53px;top:170px;border-radius:50%}
-.keepsake.shield{width:125px;height:145px;right:4%;bottom:17px;clip-path:polygon(50% 0,94% 13%,94% 61%,50% 100%,6% 61%,6% 13%)}
-.keepsake.oval{width:157px;height:90px;border-radius:50%;left:23%;bottom:-30px;transform:rotate(-18deg)}
-.keepsake.plaque{width:130px;height:82px;right:37%;top:248px;border-radius:18px;transform:rotate(-10deg)}
+.flags-backdrop{position:absolute;left:50%;top:24px;transform:translateX(-50%) rotate(-1deg);width:min(1100px,94vw);display:flex;justify-content:space-evenly;align-items:start;gap:13px;opacity:.86;z-index:0;pointer-events:none}
+.flags-backdrop:before{content:"";position:absolute;left:-7%;right:-7%;height:3px;top:7px;background:rgba(91,65,39,.6);transform:rotate(1.5deg);z-index:-1}
+.flag-art{position:relative;width:clamp(78px,11vw,144px);display:flex;justify-content:center;align-items:flex-start}
+.flag-art svg{display:block;width:100%;height:auto;filter:drop-shadow(0 5px 10px rgba(85,57,33,.16))}
+.flag-art.middle{width:clamp(82px,11vw,132px)}
+.keepsake{position:absolute;z-index:0;pointer-events:none;opacity:.2;border:3px solid #805b3c;background:rgba(255,250,221,.22)}
+.keepsake.round{width:120px;height:120px;left:-53px;top:180px;border-radius:50%}
+.keepsake.shield{width:125px;height:145px;right:4%;bottom:12px;clip-path:polygon(50% 0,94% 13%,94% 61%,50% 100%,6% 61%,6% 13%)}
+.keepsake.oval{width:157px;height:90px;border-radius:50%;left:23%;bottom:-28px;transform:rotate(-18deg)}
+.keepsake.plaque{width:130px;height:82px;right:37%;top:252px;border-radius:18px;transform:rotate(-10deg)}
 .keepsake.pennant{width:89px;height:136px;left:8%;bottom:47px;clip-path:polygon(0 0,100% 0,100% 78%,50% 100%,0 78%);transform:rotate(8deg)}
-/* Photo-led page rather than a story/article layout. */
-.gallery-section{position:relative;isolation:isolate;background:#f8f2e6;padding:99px 0 116px}
+.gallery-section{position:relative;isolation:isolate;background:#f8f2e6;padding:95px 0 110px}
 .gallery-section:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.37;background:
   repeating-linear-gradient(90deg,rgba(117,81,51,.075) 0 1px,transparent 1px 39px),
   radial-gradient(circle at 20% 60%,rgba(174,116,65,.13),transparent 35%),
@@ -75,58 +91,138 @@ h2{color:#142e4d;font-size:clamp(39px,5vw,65px);line-height:1.06;letter-spacing:
 .gallery-tile:nth-child(2){grid-column:span 5;height:460px}
 .gallery-tile:nth-child(3),.gallery-tile:nth-child(4),.gallery-tile:nth-child(5){grid-column:span 4;height:300px}
 .gallery-tile:nth-child(6){grid-column:span 12;height:350px}
-.gallery-tile img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+.gallery-tile img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .45s ease;object-position:center}
 .gallery-tile:hover img{transform:scale(1.055)}
-.gallery-tile:nth-child(2) img{object-position:85% 50%}.gallery-tile:nth-child(3) img{object-position:10% 55%}.gallery-tile:nth-child(4) img{object-position:70% 40%}.gallery-tile:nth-child(5) img{object-position:42% 70%}.gallery-tile:nth-child(6) img{object-position:center 35%}
 .gallery-tile:after{content:"";position:absolute;inset:40% 0 0;background:linear-gradient(transparent,rgba(15,28,27,.36));pointer-events:none}
 .photo-index{position:absolute;bottom:16px;left:18px;z-index:1;color:#fff;font:900 12px 'Courier New',monospace;letter-spacing:.15em}
 .site-footer{background:#0c213c;color:#dcebf0;padding:28px 0;font-size:12px}
 .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}.site-footer a:hover{color:#8fe7d2}
-@media(max-width:920px){.hero-inner{grid-template-columns:1fr;gap:50px;padding-top:165px}.hero-photo{width:min(580px,87%);justify-self:center}.flags-backdrop{opacity:.52}.gallery-tile:nth-child(1),.gallery-tile:nth-child(2){grid-column:span 6;height:340px}.gallery-tile:nth-child(3),.gallery-tile:nth-child(4),.gallery-tile:nth-child(5){grid-column:span 4;height:230px}}
-@media(max-width:620px){.container{width:calc(100% - 34px)}.header-inner{min-height:76px}.brand{font-size:10px}.brand img{width:44px;height:44px}.nav-link{font-size:11px;padding:10px 12px}.nav-link.contact{display:none}.wood-hero,.hero-inner{min-height:0}.hero-inner{padding:158px 0 78px}.flags-backdrop{top:16px;gap:5px;opacity:.54}.patrol-flag{width:17vw;height:110px;font-size:8px;padding:11px 2px 27px}.seal-flag{width:17vw;height:83px;padding:7px}.seal-flag img{width:55px}.hero-photo{width:92%;border-width:8px;box-shadow:8px 11px 0 #946f4c,0 22px 32px rgba(67,39,20,.25)}.hero-photo img{height:280px}h1{font-size:clamp(47px,11vw,64px)}.hero-subtitle{font-size:14px}.location{font-size:13px;padding:10px 15px}.gallery-section{padding:73px 0 80px}.gallery-grid{gap:11px}.gallery-tile{border-width:6px;min-height:0}.gallery-tile:nth-child(n){grid-column:span 6;height:240px}.gallery-tile:nth-child(1),.gallery-tile:nth-child(6){grid-column:span 12;height:300px}.photo-count{font-size:10px}.site-footer{font-size:10px}.footer-inner{align-items:start}}
+@media(max-width:960px){.hero-inner{grid-template-columns:1fr;gap:46px;padding-top:170px}.hero-photo{width:min(580px,87%);justify-self:center}.flags-backdrop{opacity:.74}.explorers-logo-badge img{height:72px}.gallery-tile:nth-child(1),.gallery-tile:nth-child(2){grid-column:span 6;height:340px}.gallery-tile:nth-child(3),.gallery-tile:nth-child(4),.gallery-tile:nth-child(5){grid-column:span 4;height:230px}}
+@media(max-width:620px){.container{width:calc(100% - 34px)}.header-inner{min-height:76px}.brand{font-size:10px}.brand img{width:44px;height:44px}.nav-link,.lang-toggle{font-size:11px;padding:10px 12px}.wood-hero,.hero-inner{min-height:0}.hero-inner{padding:162px 0 76px}.flags-backdrop{top:18px;gap:6px;opacity:.75}.flag-art{width:17vw}.flag-art.middle{width:17vw}.hero-photo{width:92%;border-width:8px;box-shadow:8px 11px 0 #946f4c,0 22px 32px rgba(67,39,20,.25)}.hero-photo img{height:290px}h1{font-size:clamp(44px,10.5vw,62px)}.hero-text{font-size:15px}.location{font-size:13px;padding:10px 15px}.gallery-section{padding:73px 0 80px}.gallery-grid{gap:11px}.gallery-tile{border-width:6px;min-height:0}.gallery-tile:nth-child(n){grid-column:span 6;height:240px}.gallery-tile:nth-child(1),.gallery-tile:nth-child(6){grid-column:span 12;height:300px}.photo-count{font-size:10px}.site-footer{font-size:10px}.footer-inner{align-items:start}.explorers-logo-badge{padding:10px 12px}.explorers-logo-badge img{height:64px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
 </style>
 </head>
 <body>
-<header class="site-header"><div class="container header-inner">
-  <a class="brand" href="../index.html"><img src="../assets/seal.webp" alt=""><span>1ο Σύστημα<br>Προσκόπων Αλοννήσου</span></a>
-  <nav class="top-actions" aria-label="Πλοήγηση"><a class="nav-link" href="../index.html">← Αρχική</a><a class="nav-link contact" href="../contact.html">Επικοινωνία ↗</a></nav>
-</div></header>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../index.html"><img src="../assets/seal.webp" alt=""><span>1ο Σύστημα<br>Προσκόπων Αλοννήσου</span></a>
+    <nav class="top-actions" aria-label="Navigation">
+      <a class="nav-link" href="../index.html" data-el="← Αρχική" data-en="← Home">← Αρχική</a>
+      <button class="lang-toggle" id="langToggle" type="button" aria-pressed="false">EN</button>
+    </nav>
+  </div>
+</header>
 <main>
 <section class="wood-hero" aria-labelledby="hut-title">
   <div class="flags-backdrop" aria-hidden="true">
-    <span class="patrol-flag">LIZZARDS</span>
-    <span class="patrol-flag">WOLVES</span>
-    <span class="seal-flag"><img src="../assets/seal.webp" alt=""></span>
-    <span class="patrol-flag">BUNNIES</span>
-    <span class="patrol-flag">PARROTS</span>
+    <span class="flag-art">
+      <svg viewBox="0 0 120 170" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M60 8 L60 24" stroke="#6f8e29" stroke-width="2"/>
+        <path d="M12 24 H108 V115 L60 156 L12 115 Z" fill="#8fbb42" stroke="#4f6f1d" stroke-width="4"/>
+        <path d="M18 30 H102 V108 L60 143 L18 108 Z" fill="#78a93e" opacity=".34"/>
+        <path d="M30 90 C35 64, 56 46, 82 48 C73 60, 68 72, 74 82 C78 88, 88 88, 91 97 C83 100, 76 98, 71 94 C65 100, 57 104, 45 104 C50 95, 50 88, 45 82 C40 75, 31 74, 30 90 Z" fill="#4f6f1d"/>
+        <circle cx="77" cy="59" r="2.3" fill="#8fbb42"/>
+        <path d="M42 91 C30 87, 26 79, 31 68" stroke="#4f6f1d" stroke-width="4" fill="none" stroke-linecap="round"/>
+      </svg>
+    </span>
+    <span class="flag-art">
+      <svg viewBox="0 0 120 170" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M60 8 L60 24" stroke="#a8afb6" stroke-width="2"/>
+        <path d="M12 24 H108 V115 L60 156 L12 115 Z" fill="#b7bdc4" stroke="#5a6068" stroke-width="4"/>
+        <path d="M18 30 H102 V108 L60 143 L18 108 Z" fill="#f2f5f8" opacity=".23"/>
+        <path d="M28 100 C33 73, 48 58, 67 53 C71 46, 79 42, 90 43 C86 48, 84 51, 85 57 C92 60, 95 66, 95 74 C90 71, 85 70, 80 72 C76 85, 64 95, 52 101 C44 105, 35 105, 28 100 Z" fill="#5a6068"/>
+        <circle cx="76" cy="58" r="2.4" fill="#b7bdc4"/>
+        <path d="M82 72 L91 78 L83 81" fill="#5a6068"/>
+      </svg>
+    </span>
+    <span class="flag-art middle">
+      <svg viewBox="0 0 120 146" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M60 8 L60 24" stroke="#b18d26" stroke-width="2"/>
+        <rect x="10" y="24" width="100" height="98" rx="14" fill="#e3c85b" stroke="#8a6a1d" stroke-width="4"/>
+        <rect x="16" y="30" width="88" height="86" rx="10" fill="#fff5c7" opacity=".22"/>
+        <path d="M37 82 C35 64, 45 55, 58 55 C70 55, 81 66, 83 82 C86 93, 77 101, 63 101 C51 101, 40 96, 37 82 Z" fill="#8a6a1d"/>
+        <circle cx="52" cy="66" r="4" fill="#e3c85b"/>
+        <circle cx="67" cy="66" r="4" fill="#e3c85b"/>
+        <path d="M51 87 C57 90, 63 90, 69 87" stroke="#e3c85b" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M35 89 C27 85, 23 89, 25 95 C28 102, 38 101, 42 95" fill="none" stroke="#8a6a1d" stroke-width="5" stroke-linecap="round"/>
+        <path d="M84 89 C92 85, 96 89, 94 95 C91 102, 81 101, 77 95" fill="none" stroke="#8a6a1d" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+    </span>
+    <span class="flag-art">
+      <svg viewBox="0 0 120 170" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M60 8 L60 24" stroke="#7ca4eb" stroke-width="2"/>
+        <path d="M12 24 H108 V115 L60 156 L12 115 Z" fill="#89aceb" stroke="#305190" stroke-width="4"/>
+        <path d="M18 30 H102 V108 L60 143 L18 108 Z" fill="#dce8ff" opacity=".2"/>
+        <path d="M29 98 C29 80, 39 67, 52 67 C55 61, 61 57, 69 57 C80 57, 89 66, 89 77 C89 88, 82 98, 72 103 C70 109, 66 113, 59 113 C54 113, 49 111, 46 106 C36 105, 29 103, 29 98 Z" fill="#305190"/>
+        <circle cx="72" cy="66" r="2.4" fill="#89aceb"/>
+        <path d="M33 84 C25 78, 22 72, 25 64" stroke="#305190" stroke-width="4" fill="none" stroke-linecap="round"/>
+      </svg>
+    </span>
+    <span class="flag-art">
+      <svg viewBox="0 0 120 170" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M60 8 L60 24" stroke="#f08580" stroke-width="2"/>
+        <path d="M12 24 H108 V115 L60 156 L12 115 Z" fill="#e47772" stroke="#8a3834" stroke-width="4"/>
+        <path d="M18 30 H102 V108 L60 143 L18 108 Z" fill="#ffd6d3" opacity=".18"/>
+        <path d="M36 104 C36 86, 44 68, 58 63 C65 57, 74 55, 85 57 C81 63, 78 67, 78 75 C83 79, 88 86, 88 95 C79 95, 73 92, 67 88 C62 95, 55 100, 47 103 L43 112 L38 109 L40 101 C38 101, 37 102, 36 104 Z" fill="#8a3834"/>
+        <circle cx="72" cy="66" r="2.5" fill="#e47772"/>
+        <path d="M84 66 L96 60 L88 74 Z" fill="#8a3834"/>
+      </svg>
+    </span>
   </div>
-  <span class="keepsake round" aria-hidden="true"></span><span class="keepsake shield" aria-hidden="true"></span><span class="keepsake oval" aria-hidden="true"></span><span class="keepsake plaque" aria-hidden="true"></span><span class="keepsake pennant" aria-hidden="true"></span>
+  <span class="keepsake round" aria-hidden="true"></span>
+  <span class="keepsake shield" aria-hidden="true"></span>
+  <span class="keepsake oval" aria-hidden="true"></span>
+  <span class="keepsake plaque" aria-hidden="true"></span>
+  <span class="keepsake pennant" aria-hidden="true"></span>
   <div class="container hero-inner">
     <div class="hero-copy">
-      <p class="eyebrow">1ο Σύστημα Προσκόπων Αλοννήσου</p>
-      <h1 id="hut-title">Λέσχη <em>Κοινότητας</em> Ανιχνευτών</h1>
-      <p class="hero-subtitle">Κοινότητα Ανιχνευτών · Αρχηγείο</p>
-      <div class="location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.8"/></svg><span>Κάτω από το ACS · Αλόννησος</span></div>
+      <p class="eyebrow" data-el="1ο Σύστημα Προσκόπων Αλοννήσου" data-en="1st Scout Group of Alonissos">1ο Σύστημα Προσκόπων Αλοννήσου</p>
+      <h1 id="hut-title" data-el="Λέσχη <em>Κοινότητας</em> Ανιχνευτών" data-en="<em>Explorer</em> Unit Hut">Λέσχη <em>Κοινότητας</em> Ανιχνευτών</h1>
+      <p class="hero-text" data-el="Η Λέσχη κοινότητας είναι η Ιστορική λέσχη των Προσκόπων Αλοννήσου, όπου πραγματοποιεί η κοινότητα τις συνόδους της." data-en="The Explorer Unit hut is the historic Scout hut of the Scouts of Alonissos, where the Explorer Unit holds its meetings.">Η Λέσχη κοινότητας είναι η Ιστορική λέσχη των Προσκόπων Αλοννήσου, όπου πραγματοποιεί η κοινότητα τις συνόδους της.</p>
+      <div class="location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.8"/></svg><span data-el="Κάτω από το ACS · Αλόννησος" data-en="Under ACS · Alonissos">Κάτω από το ACS · Αλόννησος</span></div>
+      <div class="hero-badges">
+        <div class="explorers-logo-badge"><img src="../assets/explorers-logo.png" alt="Κλάδος Ανιχνευτών"></div>
+      </div>
     </div>
-    <figure class="hero-photo"><img src="../assets/wooden-hut-room.webp" alt="Εσωτερικό της ξύλινης λέσχης της Κοινότητας Ανιχνευτών"></figure>
+    <figure class="hero-photo"><img src="../assets/heritage-wall.webp" alt="Ο ιστορικός τοίχος αναμνήσεων της Λέσχης Κοινότητας Ανιχνευτών"></figure>
   </div>
 </section>
 <section class="gallery-section" id="photos">
   <div class="container">
-    <div class="section-head"><div><p class="section-kicker">Η ΛΕΣΧΗ ΜΑΣ</p><h2>Φωτογραφίες</h2></div><span class="photo-count">01 — 06</span></div>
-    <!-- Temporary repeat of one photo across six slots. Change each src as new photos are available. -->
+    <div class="section-head"><div><p class="section-kicker" data-el="Η ΛΕΣΧΗ ΜΑΣ" data-en="OUR HUT">Η ΛΕΣΧΗ ΜΑΣ</p><h2 data-el="Φωτογραφίες" data-en="Photos">Φωτογραφίες</h2></div><span class="photo-count">01 — 06</span></div>
     <div class="gallery-grid">
-      <figure class="gallery-tile"><img src="../assets/wooden-hut-room.webp" alt="Ξύλινη λέσχη — φωτογραφία 1" loading="lazy"><span class="photo-index">01 / 06</span></figure>
-      <figure class="gallery-tile"><img src="../assets/wooden-hut-room.webp" alt="Ξύλινη λέσχη — φωτογραφία 2" loading="lazy"><span class="photo-index">02 / 06</span></figure>
-      <figure class="gallery-tile"><img src="../assets/wooden-hut-room.webp" alt="Ξύλινη λέσχη — φωτογραφία 3" loading="lazy"><span class="photo-index">03 / 06</span></figure>
-      <figure class="gallery-tile"><img src="../assets/wooden-hut-room.webp" alt="Ξύλινη λέσχη — φωτογραφία 4" loading="lazy"><span class="photo-index">04 / 06</span></figure>
-      <figure class="gallery-tile"><img src="../assets/wooden-hut-room.webp" alt="Ξύλινη λέσχη — φωτογραφία 5" loading="lazy"><span class="photo-index">05 / 06</span></figure>
-      <figure class="gallery-tile"><img src="../assets/wooden-hut-room.webp" alt="Ξύλινη λέσχη — φωτογραφία 6" loading="lazy"><span class="photo-index">06 / 06</span></figure>
+      <figure class="gallery-tile"><img src="../assets/heritage-wall.webp" alt="Λέσχη Κοινότητας — φωτογραφία 1" loading="lazy"><span class="photo-index">01 / 06</span></figure>
+      <figure class="gallery-tile"><img src="../assets/heritage-wall.webp" alt="Λέσχη Κοινότητας — φωτογραφία 2" loading="lazy"><span class="photo-index">02 / 06</span></figure>
+      <figure class="gallery-tile"><img src="../assets/heritage-wall.webp" alt="Λέσχη Κοινότητας — φωτογραφία 3" loading="lazy"><span class="photo-index">03 / 06</span></figure>
+      <figure class="gallery-tile"><img src="../assets/heritage-wall.webp" alt="Λέσχη Κοινότητας — φωτογραφία 4" loading="lazy"><span class="photo-index">04 / 06</span></figure>
+      <figure class="gallery-tile"><img src="../assets/heritage-wall.webp" alt="Λέσχη Κοινότητας — φωτογραφία 5" loading="lazy"><span class="photo-index">05 / 06</span></figure>
+      <figure class="gallery-tile"><img src="../assets/heritage-wall.webp" alt="Λέσχη Κοινότητας — φωτογραφία 6" loading="lazy"><span class="photo-index">06 / 06</span></figure>
     </div>
   </div>
 </section>
 </main>
-<footer class="site-footer"><div class="container footer-inner"><span>© 1ο Σύστημα Προσκόπων Αλοννήσου</span><a href="../index.html">ΠΙΣΩ ΣΤΗΝ ΑΡΧΙΚΗ ↑</a></div></footer>
+<footer class="site-footer"><div class="container footer-inner"><span>© 1ο Σύστημα Προσκόπων Αλοννήσου</span><a href="../index.html" data-el="ΠΙΣΩ ΣΤΗΝ ΑΡΧΙΚΗ ↑" data-en="BACK HOME ↑">ΠΙΣΩ ΣΤΗΝ ΑΡΧΙΚΗ ↑</a></div></footer>
+<script>
+(function(){
+  const toggle = document.getElementById('langToggle');
+  let current = 'el';
+  function applyLang(lang){
+    current = lang;
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-el][data-en]').forEach(el => {
+      const value = lang === 'en' ? el.dataset.en : el.dataset.el;
+      if(el.tagName === 'INPUT' || el.tagName === 'TEXTAREA'){
+        el.value = value;
+      }else{
+        el.innerHTML = value;
+      }
+    });
+    toggle.textContent = lang === 'en' ? 'EL' : 'EN';
+    toggle.classList.toggle('active', lang === 'en');
+    toggle.setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
+  }
+  toggle.addEventListener('click', () => applyLang(current === 'el' ? 'en' : 'el'));
+})();
+</script>
 </body>
 </html>
