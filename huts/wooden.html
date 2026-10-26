@@ -17,14 +17,15 @@
   --wood-dark:#5f3e2a;
   --brown:#4f3425;
   --gold:#dec15a;
-  --green:#4f8747;
-  --green-dark:#31572f;
-  --gray:#9aa0a8;
-  --gray-dark:#565c64;
-  --blue:#5d83cc;
-  --blue-dark:#2e4f8f;
-  --red:#d55a56;
-  --red-dark:#863833;
+  --gold-dark:#8a6a1d;
+  --green:#8fbb42;
+  --green-dark:#4f6f1d;
+  --gray:#b7bdc4;
+  --gray-dark:#5a6068;
+  --blue:#89aceb;
+  --blue-dark:#305190;
+  --red:#e47772;
+  --red-dark:#8a3834;
   --max:1200px;
 }
 *{box-sizing:border-box}
@@ -41,64 +42,60 @@ a{color:inherit;text-decoration:none}img{display:block;max-width:100%}p,h1,h2,fi
 .nav-link:hover,.lang-toggle:hover{background:rgba(255,255,255,.1)}
 .lang-toggle.active{background:#7be2d0;border-color:#7be2d0;color:#042e35}
 main{overflow:hidden}
-.wood-hero{position:relative;isolation:isolate;min-height:690px;background:
-  radial-gradient(ellipse at 13% 10%,rgba(255,255,255,.82) 0%,transparent 48%),
-  linear-gradient(114deg,rgba(249,241,222,.92) 2%,rgba(225,194,153,.76) 75%,rgba(160,110,74,.67)),
-  repeating-linear-gradient(2deg,rgba(114,72,40,.14) 0 2px,transparent 2px 42px),
+.wood-hero{position:relative;isolation:isolate;min-height:660px;background:
+  linear-gradient(114deg,rgba(249,241,222,.88) 2%,rgba(225,194,153,.78) 75%,rgba(160,110,74,.72)),
+  repeating-linear-gradient(2deg,rgba(114,72,40,.10) 0 2px,transparent 2px 42px),
   #e4cba9;
   border-bottom:8px solid #a9754f;
 }
-.wood-hero:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.38;background:
-  repeating-radial-gradient(ellipse 390px 220px at 95% 42%,transparent 0 15px,rgba(92,55,29,.14) 16px 18px,transparent 19px 32px),
-  repeating-radial-gradient(ellipse 380px 200px at 1% 89%,transparent 0 17px,rgba(92,55,29,.1) 18px 19px,transparent 20px 34px)}
-.hero-inner{position:relative;z-index:2;min-height:690px;display:grid;grid-template-columns:1.03fr .97fr;gap:6%;align-items:center;padding:138px 0 100px}
+.wood-hero::before{content:"";position:absolute;inset:0;background:url('../assets/heritage-wall.webp') center/cover no-repeat;opacity:.16;filter:saturate(.85) contrast(.95);z-index:0}
+.wood-hero::after{content:"";position:absolute;inset:0;background:
+  radial-gradient(ellipse at 16% 14%,rgba(255,255,255,.78) 0%,transparent 42%),
+  repeating-radial-gradient(ellipse 420px 220px at 97% 40%,transparent 0 15px,rgba(92,55,29,.10) 16px 18px,transparent 19px 32px),
+  repeating-radial-gradient(ellipse 390px 210px at 0% 88%,transparent 0 17px,rgba(92,55,29,.08) 18px 19px,transparent 20px 34px);
+  z-index:0}
+.hero-inner{position:relative;z-index:2;min-height:660px;display:grid;grid-template-columns:1.08fr .92fr;gap:6%;align-items:center;padding:126px 0 92px}
 .hero-copy{position:relative;z-index:2}
 .eyebrow{color:#467350;text-transform:uppercase;letter-spacing:.19em;font:bold 12px 'Courier New',monospace;margin-bottom:21px}
 h1{font-size:clamp(48px,6.2vw,88px);letter-spacing:-.075em;line-height:1.02;color:#4d3425;font-weight:900;max-width:700px;text-wrap:balance}
 h1 em{font-style:normal;color:#386c49}
 .hero-text{margin-top:22px;max-width:58ch;font-size:18px;line-height:1.72;color:#5a4535;font-weight:700}
-.location{display:inline-flex;align-items:center;gap:13px;border:1px solid rgba(83,56,35,.25);background:rgba(255,251,241,.76);box-shadow:0 7px 25px rgba(78,52,28,.08);color:#4d3b2c;border-radius:99px;padding:12px 21px;margin-top:28px;font-size:15px;font-weight:800}
+.location{display:inline-flex;align-items:center;gap:13px;border:1px solid rgba(83,56,35,.25);background:rgba(255,251,241,.82);box-shadow:0 7px 25px rgba(78,52,28,.08);color:#4d3b2c;border-radius:99px;padding:12px 21px;margin-top:28px;font-size:15px;font-weight:800}
 .location svg{width:21px;height:21px;flex:none;color:#376a4a}
-.hero-badges{display:flex;gap:14px;flex-wrap:wrap;align-items:flex-start;margin-top:22px}
-.explorers-logo-badge{background:rgba(255,248,236,.82);border:1px solid rgba(80,53,37,.14);border-radius:20px;padding:12px 14px;box-shadow:0 10px 25px rgba(71,46,24,.12)}
-.explorers-logo-badge img{height:86px;width:auto}
-.hero-photo{position:relative;transform:rotate(2deg);border:13px solid #fffaf0;background:#ddd;box-shadow:15px 19px 0 #946f4c,0 35px 50px rgba(67,39,20,.27);align-self:center}
-.hero-photo img{width:100%;height:460px;object-fit:cover;object-position:center}
-.hero-photo:before{content:"";position:absolute;top:-23px;left:37%;width:30%;height:34px;transform:rotate(-3deg);background:rgba(240,211,146,.75);box-shadow:0 1px 0 rgba(123,86,44,.12);z-index:2}
-.flags-backdrop{position:absolute;left:50%;top:24px;transform:translateX(-50%) rotate(-1deg);width:min(1100px,94vw);display:flex;justify-content:space-evenly;align-items:start;gap:13px;opacity:.86;z-index:0;pointer-events:none}
-.flags-backdrop:before{content:"";position:absolute;left:-7%;right:-7%;height:3px;top:7px;background:rgba(91,65,39,.6);transform:rotate(1.5deg);z-index:-1}
-.flag-art{position:relative;width:clamp(78px,11vw,144px);display:flex;justify-content:center;align-items:flex-start}
-.flag-art svg{display:block;width:100%;height:auto;filter:drop-shadow(0 5px 10px rgba(85,57,33,.16))}
-.flag-art.middle{width:clamp(82px,11vw,132px)}
-.keepsake{position:absolute;z-index:0;pointer-events:none;opacity:.2;border:3px solid #805b3c;background:rgba(255,250,221,.22)}
+.hero-logo-wrap{display:flex;justify-content:center;align-items:center}
+.explorers-logo-badge{display:inline-flex;justify-content:center;align-items:center;background:rgba(255,248,236,.84);border:1px solid rgba(80,53,37,.14);border-radius:30px;padding:22px 24px;box-shadow:0 16px 40px rgba(71,46,24,.14)}
+.explorers-logo-badge img{height:300px;width:auto;max-width:min(100%,380px)}
+.keepsake{position:absolute;z-index:1;pointer-events:none;opacity:.19;border:3px solid #805b3c;background:rgba(255,250,221,.18)}
 .keepsake.round{width:120px;height:120px;left:-53px;top:180px;border-radius:50%}
 .keepsake.shield{width:125px;height:145px;right:4%;bottom:12px;clip-path:polygon(50% 0,94% 13%,94% 61%,50% 100%,6% 61%,6% 13%)}
 .keepsake.oval{width:157px;height:90px;border-radius:50%;left:23%;bottom:-28px;transform:rotate(-18deg)}
 .keepsake.plaque{width:130px;height:82px;right:37%;top:252px;border-radius:18px;transform:rotate(-10deg)}
 .keepsake.pennant{width:89px;height:136px;left:8%;bottom:47px;clip-path:polygon(0 0,100% 0,100% 78%,50% 100%,0 78%);transform:rotate(8deg)}
-.gallery-section{position:relative;isolation:isolate;background:#f8f2e6;padding:95px 0 110px}
+.gallery-section{position:relative;isolation:isolate;background:#f8f2e6;padding:82px 0 110px}
 .gallery-section:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.37;background:
   repeating-linear-gradient(90deg,rgba(117,81,51,.075) 0 1px,transparent 1px 39px),
   radial-gradient(circle at 20% 60%,rgba(174,116,65,.13),transparent 35%),
   radial-gradient(circle at 90% 5%,rgba(87,116,76,.07),transparent 30%)}
+.flags-row{position:relative;display:flex;justify-content:center;align-items:flex-start;gap:18px;margin:0 auto 38px;padding-top:6px;max-width:980px}
+.flags-row::before{content:"";position:absolute;left:0;right:0;top:8px;height:3px;background:rgba(91,65,39,.45)}
+.flag-art{position:relative;width:clamp(80px,10vw,118px);display:flex;justify-content:center;align-items:flex-start;z-index:1}
+.flag-art svg{display:block;width:100%;height:auto;filter:drop-shadow(0 6px 10px rgba(85,57,33,.14))}
+.flag-art.rect{width:clamp(74px,9vw,100px)}
 .section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:38px}
 .section-kicker{font:900 12px 'Courier New',monospace;letter-spacing:.17em;color:#578269;margin-bottom:10px}
 h2{color:#142e4d;font-size:clamp(39px,5vw,65px);line-height:1.06;letter-spacing:-.065em}
 .photo-count{font:900 12px 'Courier New',monospace;letter-spacing:.11em;color:#76624e;padding-bottom:8px}
 .gallery-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-flow:dense;gap:19px}
 .gallery-tile{position:relative;margin:0;overflow:hidden;background:#b68c66;border:9px solid #fffaf1;box-shadow:0 15px 35px rgba(69,46,23,.16);min-height:270px}
-.gallery-tile:nth-child(1){grid-column:span 7;height:460px}
-.gallery-tile:nth-child(2){grid-column:span 5;height:460px}
-.gallery-tile:nth-child(3),.gallery-tile:nth-child(4),.gallery-tile:nth-child(5){grid-column:span 4;height:300px}
-.gallery-tile:nth-child(6){grid-column:span 12;height:350px}
+.gallery-tile:nth-child(1){grid-column:span 7;height:460px}.gallery-tile:nth-child(2){grid-column:span 5;height:460px}.gallery-tile:nth-child(3),.gallery-tile:nth-child(4),.gallery-tile:nth-child(5){grid-column:span 4;height:300px}.gallery-tile:nth-child(6){grid-column:span 12;height:350px}
 .gallery-tile img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .45s ease;object-position:center}
 .gallery-tile:hover img{transform:scale(1.055)}
 .gallery-tile:after{content:"";position:absolute;inset:40% 0 0;background:linear-gradient(transparent,rgba(15,28,27,.36));pointer-events:none}
 .photo-index{position:absolute;bottom:16px;left:18px;z-index:1;color:#fff;font:900 12px 'Courier New',monospace;letter-spacing:.15em}
 .site-footer{background:#0c213c;color:#dcebf0;padding:28px 0;font-size:12px}
 .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}.site-footer a:hover{color:#8fe7d2}
-@media(max-width:960px){.hero-inner{grid-template-columns:1fr;gap:46px;padding-top:170px}.hero-photo{width:min(580px,87%);justify-self:center}.flags-backdrop{opacity:.74}.explorers-logo-badge img{height:72px}.gallery-tile:nth-child(1),.gallery-tile:nth-child(2){grid-column:span 6;height:340px}.gallery-tile:nth-child(3),.gallery-tile:nth-child(4),.gallery-tile:nth-child(5){grid-column:span 4;height:230px}}
-@media(max-width:620px){.container{width:calc(100% - 34px)}.header-inner{min-height:76px}.brand{font-size:10px}.brand img{width:44px;height:44px}.nav-link,.lang-toggle{font-size:11px;padding:10px 12px}.wood-hero,.hero-inner{min-height:0}.hero-inner{padding:162px 0 76px}.flags-backdrop{top:18px;gap:6px;opacity:.75}.flag-art{width:17vw}.flag-art.middle{width:17vw}.hero-photo{width:92%;border-width:8px;box-shadow:8px 11px 0 #946f4c,0 22px 32px rgba(67,39,20,.25)}.hero-photo img{height:290px}h1{font-size:clamp(44px,10.5vw,62px)}.hero-text{font-size:15px}.location{font-size:13px;padding:10px 15px}.gallery-section{padding:73px 0 80px}.gallery-grid{gap:11px}.gallery-tile{border-width:6px;min-height:0}.gallery-tile:nth-child(n){grid-column:span 6;height:240px}.gallery-tile:nth-child(1),.gallery-tile:nth-child(6){grid-column:span 12;height:300px}.photo-count{font-size:10px}.site-footer{font-size:10px}.footer-inner{align-items:start}.explorers-logo-badge{padding:10px 12px}.explorers-logo-badge img{height:64px}}
+@media(max-width:960px){.hero-inner{grid-template-columns:1fr;gap:38px;padding-top:116px}.hero-logo-wrap{justify-content:flex-start}.explorers-logo-badge img{height:180px}.flags-row{gap:10px}.gallery-tile:nth-child(1),.gallery-tile:nth-child(2){grid-column:span 6;height:340px}.gallery-tile:nth-child(3),.gallery-tile:nth-child(4),.gallery-tile:nth-child(5){grid-column:span 4;height:230px}}
+@media(max-width:620px){.container{width:calc(100% - 34px)}.header-inner{min-height:76px}.brand{font-size:10px}.brand img{width:44px;height:44px}.nav-link,.lang-toggle{font-size:11px;padding:10px 12px}.hero-inner{min-height:0;padding:98px 0 68px}h1{font-size:clamp(42px,10.8vw,58px)}.hero-text{font-size:15px}.location{font-size:13px;padding:10px 15px}.explorers-logo-badge{padding:16px 18px}.explorers-logo-badge img{height:128px}.gallery-section{padding:64px 0 80px}.flags-row{gap:6px;margin-bottom:28px}.flag-art{width:17.2vw}.flag-art.rect{width:16vw}.gallery-grid{gap:11px}.gallery-tile{border-width:6px;min-height:0}.gallery-tile:nth-child(n){grid-column:span 6;height:240px}.gallery-tile:nth-child(1),.gallery-tile:nth-child(6){grid-column:span 12;height:300px}.photo-count{font-size:10px}.site-footer{font-size:10px}.footer-inner{align-items:start}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
 </style>
 </head>
@@ -114,61 +111,6 @@ h2{color:#142e4d;font-size:clamp(39px,5vw,65px);line-height:1.06;letter-spacing:
 </header>
 <main>
 <section class="wood-hero" aria-labelledby="hut-title">
-  <div class="flags-backdrop" aria-hidden="true">
-    <span class="flag-art">
-      <svg viewBox="0 0 120 170" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M60 8 L60 24" stroke="#6f8e29" stroke-width="2"/>
-        <path d="M12 24 H108 V115 L60 156 L12 115 Z" fill="#8fbb42" stroke="#4f6f1d" stroke-width="4"/>
-        <path d="M18 30 H102 V108 L60 143 L18 108 Z" fill="#78a93e" opacity=".34"/>
-        <path d="M30 90 C35 64, 56 46, 82 48 C73 60, 68 72, 74 82 C78 88, 88 88, 91 97 C83 100, 76 98, 71 94 C65 100, 57 104, 45 104 C50 95, 50 88, 45 82 C40 75, 31 74, 30 90 Z" fill="#4f6f1d"/>
-        <circle cx="77" cy="59" r="2.3" fill="#8fbb42"/>
-        <path d="M42 91 C30 87, 26 79, 31 68" stroke="#4f6f1d" stroke-width="4" fill="none" stroke-linecap="round"/>
-      </svg>
-    </span>
-    <span class="flag-art">
-      <svg viewBox="0 0 120 170" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M60 8 L60 24" stroke="#a8afb6" stroke-width="2"/>
-        <path d="M12 24 H108 V115 L60 156 L12 115 Z" fill="#b7bdc4" stroke="#5a6068" stroke-width="4"/>
-        <path d="M18 30 H102 V108 L60 143 L18 108 Z" fill="#f2f5f8" opacity=".23"/>
-        <path d="M28 100 C33 73, 48 58, 67 53 C71 46, 79 42, 90 43 C86 48, 84 51, 85 57 C92 60, 95 66, 95 74 C90 71, 85 70, 80 72 C76 85, 64 95, 52 101 C44 105, 35 105, 28 100 Z" fill="#5a6068"/>
-        <circle cx="76" cy="58" r="2.4" fill="#b7bdc4"/>
-        <path d="M82 72 L91 78 L83 81" fill="#5a6068"/>
-      </svg>
-    </span>
-    <span class="flag-art middle">
-      <svg viewBox="0 0 120 146" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M60 8 L60 24" stroke="#b18d26" stroke-width="2"/>
-        <rect x="10" y="24" width="100" height="98" rx="14" fill="#e3c85b" stroke="#8a6a1d" stroke-width="4"/>
-        <rect x="16" y="30" width="88" height="86" rx="10" fill="#fff5c7" opacity=".22"/>
-        <path d="M37 82 C35 64, 45 55, 58 55 C70 55, 81 66, 83 82 C86 93, 77 101, 63 101 C51 101, 40 96, 37 82 Z" fill="#8a6a1d"/>
-        <circle cx="52" cy="66" r="4" fill="#e3c85b"/>
-        <circle cx="67" cy="66" r="4" fill="#e3c85b"/>
-        <path d="M51 87 C57 90, 63 90, 69 87" stroke="#e3c85b" stroke-width="4" fill="none" stroke-linecap="round"/>
-        <path d="M35 89 C27 85, 23 89, 25 95 C28 102, 38 101, 42 95" fill="none" stroke="#8a6a1d" stroke-width="5" stroke-linecap="round"/>
-        <path d="M84 89 C92 85, 96 89, 94 95 C91 102, 81 101, 77 95" fill="none" stroke="#8a6a1d" stroke-width="5" stroke-linecap="round"/>
-      </svg>
-    </span>
-    <span class="flag-art">
-      <svg viewBox="0 0 120 170" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M60 8 L60 24" stroke="#7ca4eb" stroke-width="2"/>
-        <path d="M12 24 H108 V115 L60 156 L12 115 Z" fill="#89aceb" stroke="#305190" stroke-width="4"/>
-        <path d="M18 30 H102 V108 L60 143 L18 108 Z" fill="#dce8ff" opacity=".2"/>
-        <path d="M29 98 C29 80, 39 67, 52 67 C55 61, 61 57, 69 57 C80 57, 89 66, 89 77 C89 88, 82 98, 72 103 C70 109, 66 113, 59 113 C54 113, 49 111, 46 106 C36 105, 29 103, 29 98 Z" fill="#305190"/>
-        <circle cx="72" cy="66" r="2.4" fill="#89aceb"/>
-        <path d="M33 84 C25 78, 22 72, 25 64" stroke="#305190" stroke-width="4" fill="none" stroke-linecap="round"/>
-      </svg>
-    </span>
-    <span class="flag-art">
-      <svg viewBox="0 0 120 170" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M60 8 L60 24" stroke="#f08580" stroke-width="2"/>
-        <path d="M12 24 H108 V115 L60 156 L12 115 Z" fill="#e47772" stroke="#8a3834" stroke-width="4"/>
-        <path d="M18 30 H102 V108 L60 143 L18 108 Z" fill="#ffd6d3" opacity=".18"/>
-        <path d="M36 104 C36 86, 44 68, 58 63 C65 57, 74 55, 85 57 C81 63, 78 67, 78 75 C83 79, 88 86, 88 95 C79 95, 73 92, 67 88 C62 95, 55 100, 47 103 L43 112 L38 109 L40 101 C38 101, 37 102, 36 104 Z" fill="#8a3834"/>
-        <circle cx="72" cy="66" r="2.5" fill="#e47772"/>
-        <path d="M84 66 L96 60 L88 74 Z" fill="#8a3834"/>
-      </svg>
-    </span>
-  </div>
   <span class="keepsake round" aria-hidden="true"></span>
   <span class="keepsake shield" aria-hidden="true"></span>
   <span class="keepsake oval" aria-hidden="true"></span>
@@ -180,15 +122,31 @@ h2{color:#142e4d;font-size:clamp(39px,5vw,65px);line-height:1.06;letter-spacing:
       <h1 id="hut-title" data-el="Λέσχη <em>Κοινότητας</em> Ανιχνευτών" data-en="<em>Explorer</em> Unit Hut">Λέσχη <em>Κοινότητας</em> Ανιχνευτών</h1>
       <p class="hero-text" data-el="Η Λέσχη κοινότητας είναι η Ιστορική λέσχη των Προσκόπων Αλοννήσου, όπου πραγματοποιεί η κοινότητα τις συνόδους της." data-en="The Explorer Unit hut is the historic Scout hut of the Scouts of Alonissos, where the Explorer Unit holds its meetings.">Η Λέσχη κοινότητας είναι η Ιστορική λέσχη των Προσκόπων Αλοννήσου, όπου πραγματοποιεί η κοινότητα τις συνόδους της.</p>
       <div class="location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.8"/></svg><span data-el="Κάτω από το ACS · Αλόννησος" data-en="Under ACS · Alonissos">Κάτω από το ACS · Αλόννησος</span></div>
-      <div class="hero-badges">
-        <div class="explorers-logo-badge"><img src="../assets/explorers-logo.png" alt="Κλάδος Ανιχνευτών"></div>
-      </div>
     </div>
-    <figure class="hero-photo"><img src="../assets/heritage-wall.webp" alt="Ο ιστορικός τοίχος αναμνήσεων της Λέσχης Κοινότητας Ανιχνευτών"></figure>
+    <div class="hero-logo-wrap">
+      <div class="explorers-logo-badge"><img src="../assets/explorers-logo.png" alt="Κλάδος Ανιχνευτών"></div>
+    </div>
   </div>
 </section>
 <section class="gallery-section" id="photos">
   <div class="container">
+    <div class="flags-row" aria-hidden="true">
+      <span class="flag-art">
+        <svg viewBox="0 0 120 170" xmlns="http://www.w3.org/2000/svg"><path d="M60 8 L60 24" stroke="#7a8f57" stroke-width="2"/><path d="M12 24 H108 V115 L60 156 L12 115 Z" fill="#8fbb42" stroke="#4f6f1d" stroke-width="4"/><path d="M18 30 H102 V108 L60 143 L18 108 Z" fill="#eaffc3" opacity=".16"/></svg>
+      </span>
+      <span class="flag-art">
+        <svg viewBox="0 0 120 170" xmlns="http://www.w3.org/2000/svg"><path d="M60 8 L60 24" stroke="#b7bdc4" stroke-width="2"/><path d="M12 24 H108 V115 L60 156 L12 115 Z" fill="#b7bdc4" stroke="#5a6068" stroke-width="4"/><path d="M18 30 H102 V108 L60 143 L18 108 Z" fill="#f6f9ff" opacity=".16"/></svg>
+      </span>
+      <span class="flag-art rect">
+        <svg viewBox="0 0 120 146" xmlns="http://www.w3.org/2000/svg"><path d="M60 8 L60 24" stroke="#b18d26" stroke-width="2"/><rect x="10" y="24" width="100" height="98" rx="14" fill="#e3c85b" stroke="#8a6a1d" stroke-width="4"/><rect x="16" y="30" width="88" height="86" rx="10" fill="#fff5c7" opacity=".16"/></svg>
+      </span>
+      <span class="flag-art">
+        <svg viewBox="0 0 120 170" xmlns="http://www.w3.org/2000/svg"><path d="M60 8 L60 24" stroke="#7ca4eb" stroke-width="2"/><path d="M12 24 H108 V115 L60 156 L12 115 Z" fill="#89aceb" stroke="#305190" stroke-width="4"/><path d="M18 30 H102 V108 L60 143 L18 108 Z" fill="#dce8ff" opacity=".16"/></svg>
+      </span>
+      <span class="flag-art">
+        <svg viewBox="0 0 120 170" xmlns="http://www.w3.org/2000/svg"><path d="M60 8 L60 24" stroke="#f08580" stroke-width="2"/><path d="M12 24 H108 V115 L60 156 L12 115 Z" fill="#e47772" stroke="#8a3834" stroke-width="4"/><path d="M18 30 H102 V108 L60 143 L18 108 Z" fill="#ffd6d3" opacity=".16"/></svg>
+      </span>
+    </div>
     <div class="section-head"><div><p class="section-kicker" data-el="Η ΛΕΣΧΗ ΜΑΣ" data-en="OUR HUT">Η ΛΕΣΧΗ ΜΑΣ</p><h2 data-el="Φωτογραφίες" data-en="Photos">Φωτογραφίες</h2></div><span class="photo-count">01 — 06</span></div>
     <div class="gallery-grid">
       <figure class="gallery-tile"><img src="../assets/heritage-wall.webp" alt="Λέσχη Κοινότητας — φωτογραφία 1" loading="lazy"><span class="photo-index">01 / 06</span></figure>
@@ -211,11 +169,7 @@ h2{color:#142e4d;font-size:clamp(39px,5vw,65px);line-height:1.06;letter-spacing:
     document.documentElement.lang = lang;
     document.querySelectorAll('[data-el][data-en]').forEach(el => {
       const value = lang === 'en' ? el.dataset.en : el.dataset.el;
-      if(el.tagName === 'INPUT' || el.tagName === 'TEXTAREA'){
-        el.value = value;
-      }else{
-        el.innerHTML = value;
-      }
+      el.innerHTML = value;
     });
     toggle.textContent = lang === 'en' ? 'EL' : 'EN';
     toggle.classList.toggle('active', lang === 'en');
