@@ -1,204 +1,49 @@
 <!doctype html>
 <html lang="el">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ζωγραφιστό Σπιτάκι · Λέσχη Αγέλης και Προσκόπων</title>
-  <style>
-    :root{
-      --navy:#153b72;
-      --sky:#dfeef2;
-      --sky-2:#edf6f7;
-      --mint:#b8e5d8;
-      --teal:#43b6bb;
-      --yellow:#ffd75a;
-      --red:#ef6c63;
-      --wood:#b5835c;
-      --ink:#203446;
-      --paper:#fffdf8;
-      --shadow:0 20px 42px rgba(18,46,79,.12);
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      min-height:100vh;
-      color:var(--ink);
-      font:16px/1.7 "Trebuchet MS", Arial, sans-serif;
-      background:
-        radial-gradient(circle at 10% 12%, rgba(67,182,187,.16), transparent 22%),
-        radial-gradient(circle at 88% 18%, rgba(255,215,90,.18), transparent 20%),
-        linear-gradient(180deg,#f7fbfb 0%, #e6f0f2 45%, #edf6f7 100%);
-    }
-    .wrap{max-width:1180px;margin:0 auto;padding:26px 20px 90px}
-    .topbar{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:24px}
-    .brand{display:flex;align-items:center;gap:14px}
-    .brand img{width:58px;height:58px;object-fit:contain}
-    .brand strong{display:block;font-size:14px;letter-spacing:.08em;color:var(--navy)}
-    .brand span{display:block;font-size:13px;opacity:.76}
-    .back{
-      text-decoration:none;color:var(--navy);font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;
-      border:2px solid rgba(21,59,114,.2);padding:11px 18px;border-radius:999px;background:rgba(255,255,255,.8);
-    }
-    .hero{
-      background:rgba(255,255,255,.82);border:1px solid rgba(21,59,114,.08);border-radius:34px;padding:34px;box-shadow:var(--shadow)
-    }
-    .eyebrow{margin:0 0 10px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#4d7c8d;font-weight:800}
-    h1{font-size:clamp(2.2rem,4.8vw,4.8rem);line-height:.98;margin:0;color:var(--navy);letter-spacing:-.05em}
-    h1 span{display:block;color:#4b88c6}
-    .sublead{margin:14px 0 0;max-width:62ch;color:#495f72;font-size:1.05rem}
-
-    .construction-banner{
-      margin-top:22px;padding:14px 18px;border-radius:18px;background:linear-gradient(90deg,#fff7cd,#ffe89a);border:2px dashed rgba(147,104,12,.3);
-      color:#6c5410;font-weight:900;letter-spacing:.08em;text-transform:uppercase;text-align:center
-    }
-
-    .meta-grid,.photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}
-    .card{background:rgba(255,255,255,.88);border-radius:24px;padding:22px;border:1px solid rgba(21,59,114,.1);box-shadow:0 12px 24px rgba(16,52,95,.08)}
-    .card h2{margin:0 0 10px;font-size:1.18rem;color:var(--navy)}
-    .card p,.card li{color:#53687a}
-    .card ul{margin:0;padding-left:20px}
-
-    .illustration-wrap{margin-top:24px}
-    .illustration-card{padding:18px 18px 10px}
-    svg.builder-scene{width:100%;height:auto;display:block;background:linear-gradient(180deg,#fdfefe,#ecf7f8);border-radius:24px;border:1px solid rgba(21,59,114,.08)}
-
-    .photo-card{margin:0;background:#fff;border-radius:24px;padding:12px;border:1px solid rgba(21,59,114,.1);box-shadow:0 12px 24px rgba(16,52,95,.08)}
-    .photo-card img{display:block;width:100%;height:350px;object-fit:cover;border-radius:16px}
-    .photo-card figcaption{padding:12px 4px 2px;color:#596e7f}
-    .photo-card strong{display:block;color:var(--navy);font-size:1rem;margin-bottom:4px}
-
-    .footer-note{margin-top:22px;text-align:center;color:#566a7a}
-    footer{margin-top:30px;text-align:center;color:#6d8191;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
-
-    @media (max-width: 860px){
-      .meta-grid,.photo-grid{grid-template-columns:1fr}
-      .hero{padding:24px}
-      .wrap{padding:18px 14px 70px}
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0c2446">
+<meta name="description" content="Η νέα λέσχη της Αγέλης Λυκοπούλων και της Ομάδας Προσκόπων στο Δημοτικό Σχολείο Αλοννήσου. Υπό κατασκευή.">
+<link rel="icon" href="../assets/seal.webp" type="image/webp">
+<title>Λέσχη Αγέλης και Προσκόπων · Υπό κατασκευή</title>
+<style>
+:root{--navy:#0c2446;--ink:#122e51;--teal:#58cfc4;--yellow:#fada4e}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--navy);font-family:'Trebuchet MS','DejaVu Sans',Arial,sans-serif;color:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}h1,p{margin:0}.container{width:calc(100% - 72px);max-width:1200px;margin:auto}:focus-visible{outline:3px solid var(--teal);outline-offset:4px}
+.site-header{background:#0c2446;color:#fff;position:relative;z-index:10;border-bottom:1px solid rgba(255,255,255,.15)}.header-inner{min-height:86px;display:flex;align-items:center;gap:26px;justify-content:space-between}.brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:.055em;font-size:12px;line-height:1.35}.brand img{width:55px;height:55px;object-fit:contain}.top-actions{display:flex;align-items:center;gap:10px}.nav-link{font-size:12px;font-weight:800;padding:12px 18px;border:1px solid rgba(255,255,255,.32);border-radius:100px}.nav-link:hover{background:rgba(255,255,255,.1)}.nav-link.contact{color:#042e35;background:#7be2d0;border-color:#7be2d0}.nav-link.contact:hover{background:#a5f0e4}
+.under-construction{min-height:calc(100svh - 86px - 66px);position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(circle at 16% 14%,#25547d 0%,transparent 40%),linear-gradient(130deg,#12345d,#0c2446 67%,#155575);display:flex;align-items:center;padding:120px 0 155px}
+.under-construction:before{content:"";position:absolute;inset:0;background:repeating-radial-gradient(ellipse 450px 280px at 92% 15%,transparent 0 28px,rgba(151,222,218,.13) 29px 30px,transparent 31px 52px);opacity:.6;z-index:-1}
+.room-backdrop{position:absolute;inset:0 0 0 52%;background:url('../assets/clubroom-new-mural.webp') center 47%/cover no-repeat;opacity:.18;filter:saturate(.65);mask-image:linear-gradient(90deg,transparent,#000 40%);pointer-events:none}
+.message{position:relative;z-index:2;max-width:920px}
+.eyebrow{font:900 12px 'Courier New',monospace;letter-spacing:.16em;color:#9be8da;margin-bottom:22px;text-transform:uppercase}
+h1{font-size:clamp(54px,7vw,106px);line-height:1.01;letter-spacing:-.073em;font-weight:900;max-width:920px}h1 em{font-style:normal;color:#f7d955}
+.description{font-size:clamp(19px,2.2vw,25px);line-height:1.65;max-width:700px;margin-top:26px;color:#e5eff2;font-weight:600}
+.location{display:inline-flex;gap:12px;align-items:center;margin-top:32px;padding:13px 22px;background:rgba(255,255,255,.1);border:1px solid rgba(230,244,244,.3);border-radius:999px;font-size:15px;font-weight:800;color:#fff}.location svg{height:20px;width:20px;flex:none;color:#8de2d4}
+/* One continuous caution tape, stretched fully across the viewport on a diagonal. */
+.caution-tape{position:absolute;z-index:3;left:50%;top:4%;width:125vw;min-width:1400px;transform:translateX(-50%) rotate(-4deg);background:var(--yellow);color:#122b39;box-shadow:0 17px 29px rgba(0,0,0,.27),0 -2px 0 rgba(0,0,0,.13);border-block:9px solid #142b3a;overflow:hidden;pointer-events:none}
+.caution-tape:before,.caution-tape:after{content:"";position:absolute;left:0;right:0;height:7px;background:repeating-linear-gradient(115deg,#172c3b 0 15px,transparent 15px 33px);opacity:.95}.caution-tape:before{top:0}.caution-tape:after{bottom:0}
+.tape-text{display:flex;gap:50px;align-items:center;white-space:nowrap;justify-content:center;min-height:70px;padding:10px 25px;font:900 clamp(22px,3vw,42px) 'Courier New',monospace;letter-spacing:.025em}
+.tape-text span{display:inline-block}.tape-text b{font-size:42px;line-height:1}
+.site-footer{background:#0b203c;color:#cfe7ee;padding:24px 0;font-size:12px}.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px}.site-footer a:hover{color:#8de2d4}
+@media(max-width:760px){.container{width:calc(100% - 34px)}.header-inner{min-height:76px}.brand{font-size:10px}.brand img{width:44px;height:44px}.nav-link{font-size:11px;padding:10px 12px}.nav-link.contact{display:none}.under-construction{min-height:calc(100svh - 76px - 64px);padding:190px 0 75px;align-items:center}.caution-tape{top:13%;width:180vw;min-width:750px;transform:translateX(-50%) rotate(-12deg)}.tape-text{font-size:23px;min-height:56px;gap:32px}.tape-text b{font-size:27px}h1{font-size:clamp(43px,11vw,69px)}.description{font-size:17px}.location{font-size:13px;padding:11px 15px}.site-footer{font-size:10px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important}}
+</style>
 </head>
 <body>
-  <main class="wrap">
-    <div class="topbar">
-      <div class="brand">
-        <img src="../assets/seal.webp" alt="Έμβλημα 1ου Συστήματος Προσκόπων Αλοννήσου">
-        <div>
-          <strong>1ο Σύστημα Προσκόπων Αλοννήσου</strong>
-          <span>Λέσχη Αγέλης και Προσκόπων</span>
-        </div>
-      </div>
-      <a class="back" href="../index.html">← Πίσω στην αρχική</a>
-    </div>
-
-    <section class="hero">
-      <p class="eyebrow">Painted Hut · Cubs & Scout Troop</p>
-      <h1>Το νέο σπιτάκι <span>χτίζεται ακόμη.</span></h1>
-      <p class="sublead">Αυτός είναι ο χώρος της <strong>Αγέλης</strong> και της <strong>Ομάδας Προσκόπων</strong>, στο <strong>Δημοτικό Σχολείο Αλοννήσου</strong>. Είναι ακόμη υπό διαμόρφωση — αλλά ακριβώς γι’ αυτό έχει μια ωραία αίσθηση αρχής, παιχνιδιού και δημιουργίας.</p>
-      <div class="construction-banner">Υπό Διαμόρφωση · Under Construction</div>
-
-      <div class="meta-grid">
-        <article class="card">
-          <h2>Σε ποιον ανήκει ο χώρος</h2>
-          <ul>
-            <li>Λέσχη Αγέλης και Προσκόπων</li>
-            <li>Χώρος για μικρότερους βαθμούς, παιχνίδι, συναντήσεις και δράσεις</li>
-            <li>Τοποθεσία: Δημοτικό Σχολείο Αλοννήσου</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h2>Ύφος της σελίδας</h2>
-          <p>Θέλουμε να είναι ξεκάθαρα μια σελίδα <strong>υπό κατασκευή</strong>, αλλά με χιούμορ: λίγο αστεία, λίγο παιγνιώδης, με προσκοπάκια που φτιάχνουν τον χώρο σαν μικρή κατασκήνωση έργων.</p>
-        </article>
-      </div>
-
-      <div class="illustration-wrap">
-        <article class="card illustration-card">
-          <h2>Οι μικροί “μάστορες”</h2>
-          <svg class="builder-scene" viewBox="0 0 1100 520" role="img" aria-label="Γελοιογραφική σκηνή με προσκοπάκια που φτιάχνουν τον χώρο">
-            <defs>
-              <linearGradient id="woodPole" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#c89468"/>
-                <stop offset="100%" stop-color="#9f6a45"/>
-              </linearGradient>
-            </defs>
-            <rect x="0" y="0" width="1100" height="520" fill="transparent"/>
-            <rect x="70" y="430" width="960" height="24" rx="12" fill="#cfa97d" opacity=".55"/>
-
-            <rect x="500" y="80" width="30" height="290" rx="14" fill="url(#woodPole)" stroke="#865331" stroke-width="6"/>
-            <line x1="515" y1="110" x2="260" y2="168" stroke="#b48a60" stroke-width="8"/>
-            <line x1="515" y1="110" x2="810" y2="174" stroke="#b48a60" stroke-width="8"/>
-            <line x1="515" y1="90" x2="515" y2="42" stroke="#5c3e28" stroke-width="6"/>
-            <circle cx="515" cy="36" r="12" fill="#e95b53"/>
-
-            <rect x="350" y="120" width="330" height="90" rx="18" fill="#ffe171" stroke="#cfab27" stroke-width="6"/>
-            <text x="515" y="156" text-anchor="middle" font-family="Trebuchet MS, Arial, sans-serif" font-size="28" font-weight="900" fill="#765d10">ΥΠΟ ΔΙΑΜΟΡΦΩΣΗ</text>
-            <text x="515" y="188" text-anchor="middle" font-family="Trebuchet MS, Arial, sans-serif" font-size="18" font-weight="700" fill="#876c15">COMING SOON</text>
-
-            <!-- sleeping scout -->
-            <rect x="110" y="350" width="150" height="52" rx="12" fill="#6ab5cb" stroke="#265e74" stroke-width="5"/>
-            <circle cx="165" cy="312" r="24" fill="#ffd4b5" stroke="#1c3858" stroke-width="4"/>
-            <path d="M145 296 q20 -26 40 0" fill="#54a74b" stroke="#3b7a37" stroke-width="4"/>
-            <path d="M136 334 q28 8 58 0" stroke="#1c3858" stroke-width="8" fill="none" stroke-linecap="round"/>
-            <path d="M175 335 q42 5 56 27" stroke="#ef6c63" stroke-width="8" fill="none" stroke-linecap="round"/>
-            <path d="M173 334 q-39 14 -48 36" stroke="#ef6c63" stroke-width="8" fill="none" stroke-linecap="round"/>
-            <path d="M224 365 q16 22 13 38" stroke="#1c3858" stroke-width="7" fill="none" stroke-linecap="round"/>
-            <path d="M124 370 q-8 18 2 35" stroke="#1c3858" stroke-width="7" fill="none" stroke-linecap="round"/>
-            <text x="240" y="290" font-family="Trebuchet MS, Arial, sans-serif" font-size="42" font-weight="900" fill="#5ea5d6">Zz</text>
-
-            <!-- climbing scout -->
-            <circle cx="660" cy="210" r="22" fill="#ffd4b5" stroke="#1c3858" stroke-width="4"/>
-            <path d="M640 194 q20 -24 39 0" fill="#ffd75a" stroke="#d1a827" stroke-width="4"/>
-            <path d="M660 233 q-8 28 2 58" stroke="#4a88c6" stroke-width="10" fill="none" stroke-linecap="round"/>
-            <path d="M661 248 q40 -8 57 -40" stroke="#1c3858" stroke-width="8" fill="none" stroke-linecap="round"/>
-            <path d="M661 255 q-30 0 -55 16" stroke="#1c3858" stroke-width="8" fill="none" stroke-linecap="round"/>
-            <path d="M664 290 q8 40 -18 73" stroke="#1c3858" stroke-width="8" fill="none" stroke-linecap="round"/>
-            <path d="M662 292 q18 42 54 67" stroke="#1c3858" stroke-width="8" fill="none" stroke-linecap="round"/>
-            <circle cx="724" cy="196" r="6" fill="#1c3858"/>
-            <text x="702" y="179" font-family="Trebuchet MS, Arial, sans-serif" font-size="16" font-weight="700" fill="#1c3858">ανέβα λίγο ακόμη!</text>
-
-            <!-- knot-tying scout -->
-            <circle cx="875" cy="315" r="22" fill="#ffd4b5" stroke="#1c3858" stroke-width="4"/>
-            <path d="M854 300 q22 -24 42 0" fill="#54a74b" stroke="#3b7a37" stroke-width="4"/>
-            <path d="M875 338 q0 28 0 54" stroke="#ef6c63" stroke-width="10" fill="none" stroke-linecap="round"/>
-            <path d="M874 350 q-42 -5 -70 -32" stroke="#1c3858" stroke-width="8" fill="none" stroke-linecap="round"/>
-            <path d="M876 352 q34 -2 60 -18" stroke="#1c3858" stroke-width="8" fill="none" stroke-linecap="round"/>
-            <path d="M875 394 q-20 26 -14 48" stroke="#1c3858" stroke-width="8" fill="none" stroke-linecap="round"/>
-            <path d="M877 394 q18 30 42 46" stroke="#1c3858" stroke-width="8" fill="none" stroke-linecap="round"/>
-            <path d="M777 305 C825 295, 842 338, 885 329 C928 319, 929 287, 983 302" stroke="#b88c61" stroke-width="10" fill="none" stroke-linecap="round"/>
-            <path d="M862 321 c18 -18 34 18 14 22 c-9 2 -10 -8 -2 -13 c7 -4 11 4 7 8" stroke="#8a5e39" stroke-width="5" fill="none" stroke-linecap="round"/>
-            <text x="794" y="282" font-family="Trebuchet MS, Arial, sans-serif" font-size="16" font-weight="700" fill="#1c3858">δένω τον κόμπο!</text>
-
-            <!-- tools -->
-            <rect x="938" y="396" width="82" height="34" rx="10" fill="#ef6c63" stroke="#a9433e" stroke-width="5"/>
-            <rect x="954" y="370" width="18" height="28" rx="4" fill="#b5835c"/>
-            <rect x="192" y="328" width="30" height="20" rx="5" fill="#ffd75a" stroke="#ba9621" stroke-width="4"/>
-            <rect x="268" y="340" width="90" height="18" rx="8" fill="#6ab5cb" stroke="#2c6b83" stroke-width="5" transform="rotate(-14 268 340)"/>
-            <circle cx="302" cy="310" r="11" fill="#43b6bb"/>
-          </svg>
-        </article>
-      </div>
-
-      <div class="photo-grid">
-        <figure class="photo-card">
-          <img src="../assets/clubroom-new-mural.webp" alt="Το νέο σπιτάκι με τις ζωγραφιές στους τοίχους" loading="lazy">
-          <figcaption>
-            <strong>Ο τοίχος με τα ζώα</strong>
-            Οι ζωγραφιές ήδη δίνουν χαρακτήρα και δείχνουν προς τα πού πάει ο χώρος.
-          </figcaption>
-        </figure>
-        <figure class="photo-card">
-          <img src="../assets/clubroom-new-sail.webp" alt="Το νέο σπιτάκι με το καραβάκι στον τοίχο" loading="lazy">
-          <figcaption>
-            <strong>Το καραβάκι και οι πρώτες γωνιές</strong>
-            Το νέο δωμάτιο αρχίζει να γεμίζει με χρώμα, φαντασία και μικρές προσκοπικές λεπτομέρειες.
-          </figcaption>
-        </figure>
-      </div>
-
-      <p class="footer-note">Αργότερα αυτή η σελίδα μπορεί να αποκτήσει progress φωτογραφίες, πριν/μετά στιγμιότυπα και μικρές παρουσιάσεις για την Αγέλη και την Ομάδα Προσκόπων.</p>
-    </section>
-
-    <footer>Έσο Έτοιμος · 1ο Σύστημα Προσκόπων Αλοννήσου</footer>
-  </main>
+<header class="site-header"><div class="container header-inner">
+  <a class="brand" href="../index.html"><img src="../assets/seal.webp" alt=""><span>1ο Σύστημα<br>Προσκόπων Αλοννήσου</span></a>
+  <nav class="top-actions" aria-label="Πλοήγηση"><a class="nav-link" href="../index.html">← Αρχική</a><a class="nav-link contact" href="../contact.html">Επικοινωνία ↗</a></nav>
+</div></header>
+<main class="under-construction">
+  <div class="room-backdrop" aria-hidden="true"></div>
+  <div class="caution-tape" aria-hidden="true"><div class="tape-text"><span>ΥΠΟ ΚΑΤΑΣΚΕΥΗ</span><b>✳</b><span>UNDER CONSTRUCTION</span><b>✳</b><span>ΥΠΟ ΚΑΤΑΣΚΕΥΗ</span><b>✳</b><span>UNDER CONSTRUCTION</span></div></div>
+  <div class="container"><div class="message">
+    <p class="eyebrow">ΝΕΑ ΛΕΣΧΗ · ΑΛΟΝΝΗΣΟΣ</p>
+    <h1>Κάτι καινούριο <em>ετοιμάζεται!</em></h1>
+    <p class="description">Αυτός ο χώρος θα γίνει σύντομα το σπίτι της <strong>Αγέλης Λυκοπούλων</strong> και της <strong>Ομάδας Προσκόπων</strong>.</p>
+    <div class="location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.8"/></svg><span>Δημοτικό Σχολείο Αλοννήσου</span></div>
+  </div></div>
+</main>
+<footer class="site-footer"><div class="container footer-inner"><span>© 1ο Σύστημα Προσκόπων Αλοννήσου</span><a href="../index.html">ΠΙΣΩ ΣΤΗΝ ΑΡΧΙΚΗ ↑</a></div></footer>
 </body>
 </html>
