@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c2446">
+  <meta name="description" content="Η πρόταση των Προσκόπων Αλοννήσου για ένα ευρωπαϊκό δίκτυο Προσκόπων σε Θαλάσσιες Προστατευόμενες Περιοχές.">
+  <title>Ευρωπαϊκό Δίκτυο Προσκόπων · Πρόσκοποι Αλοννήσου</title>
+  <link rel="icon" href="assets/seal.webp" type="image/webp">
+  <style>
+    :root {
+      --navy:#0c2446;
+      --navy-mid:#173e67;
+      --mint:#88ebd3;
+      --paper:#fbf7ed;
+      --text:#edf5f7;
+      --muted:#bbd2dc;
+      --font:"Trebuchet MS","DejaVu Sans","Segoe UI",Arial,sans-serif;
+      --mono:"Courier New","DejaVu Sans Mono",monospace;
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--text); background:var(--navy); font-family:var(--font); -webkit-font-smoothing:antialiased; }
+    a { color:inherit; text-decoration:none; }
+    button { font:inherit; }
+    :focus-visible { outline:3px solid var(--mint); outline-offset:4px; }
+    .container { width:min(1150px,calc(100% - 64px)); margin-inline:auto; }
+    .header { position:relative; z-index:2; background:#0b223f; border-bottom:1px solid rgba(255,255,255,.15); }
+    .header-inner { min-height:82px; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+    .brand { display:flex; align-items:center; gap:13px; font-size:13px; font-weight:900; letter-spacing:.045em; line-height:1.4; }
+    .brand img { width:53px; height:53px; object-fit:contain; }
+    .brand span { max-width:230px; }
+    .header-actions { display:flex; align-items:center; gap:13px; }
+    .lang-button { border:1px solid #87adc3; background:transparent; border-radius:999px; color:white; font-size:12px; font-weight:900; padding:10px 14px; cursor:pointer; }
+    .lang-button:hover { background:rgba(255,255,255,.09); }
+    .back-link { font-size:13px; font-weight:800; color:var(--mint); }
+    .back-link:hover { text-decoration:underline; }
+    .main { position:relative; overflow:hidden; isolation:isolate; min-height:calc(100vh - 82px); background:linear-gradient(125deg,#173e67 0%,#0c2446 80%); }
+    .main:before { content:""; position:absolute; inset:-25% -18% -25% 30%; background:repeating-radial-gradient(ellipse at 64% 48%,transparent 0 38px,rgba(136,235,211,.09) 39px 41px,transparent 42px 83px); z-index:-1; pointer-events:none; }
+    .hero { padding:clamp(74px,9vw,120px) 0 65px; max-width:970px; }
+    .eyebrow { margin:0 0 22px; display:flex; gap:10px; align-items:center; color:var(--mint); font:900 11px/1.6 var(--mono); letter-spacing:.13em; }
+    .eyebrow:before { content:""; width:9px; height:9px; flex:none; border-radius:50%; background:var(--mint); box-shadow:0 0 0 5px rgba(136,235,211,.14); }
+    h1 { max-width:980px; font-size:clamp(40px,6vw,74px); line-height:1.12; letter-spacing:-.055em; margin:0; font-weight:900; }
+    h1 em { color:var(--mint); font-style:normal; }
+    .lead { max-width:770px; color:#dcebf0; margin:26px 0 0; font-size:clamp(16px,1.55vw,19px); line-height:1.85; }
+    .notice { display:grid; grid-template-columns:1fr auto; align-items:center; gap:32px; margin-top:40px; padding:27px 30px; background:rgba(255,255,255,.075); border:1px solid rgba(190,238,228,.24); border-radius:20px; max-width:1000px; }
+    .notice h2 { color:var(--mint); font-size:clamp(17px,2vw,22px); letter-spacing:-.025em; margin:0 0 9px; }
+    .notice p { margin:0; color:var(--muted); font-size:14px; line-height:1.8; max-width:620px; }
+    .button { display:inline-flex; align-items:center; justify-content:center; text-align:center; border-radius:999px; min-height:49px; padding:12px 21px; background:var(--mint); color:#102e4c; font-size:13px; font-weight:900; transition:transform .2s, background .2s; white-space:nowrap; }
+    .button:hover { transform:translateY(-2px); background:#b3fce8; }
+    .foot { border-top:1px solid rgba(255,255,255,.12); padding:25px 0 42px; color:#abc5d2; font:700 11px/1.6 var(--mono); }
+    @media(max-width:720px) {
+      .container { width:calc(100% - 36px); }
+      .header-inner { min-height:73px; }
+      .brand { gap:8px; font-size:10px; }
+      .brand img { width:40px; height:40px; }
+      .back-link { font-size:11px; }
+      .header-actions { gap:9px; }
+      .lang-button { padding:8px 11px; }
+      .hero { padding:65px 0 50px; }
+      h1 { font-size:clamp(36px,9vw,54px); }
+      .notice { grid-template-columns:1fr; gap:20px; padding:23px; }
+      .notice .button { white-space:normal; width:100%; }
+    }
+    @media(max-width:390px) { .brand span { max-width:123px; } }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .button { transition:none; } }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner container">
+      <a class="brand" href="index.html#top">
+        <img src="assets/seal.webp" alt="" width="53" height="53">
+        <span data-el="1ο Σύστημα Προσκόπων Αλοννήσου" data-en="1st Scout Group of Alonissos">1ο Σύστημα Προσκόπων Αλοννήσου</span>
+      </a>
+      <div class="header-actions">
+        <a class="back-link" href="index.html#european-network" data-el="← Αρχική σελίδα" data-en="← Back to homepage">← Αρχική σελίδα</a>
+        <button class="lang-button" id="language-toggle" type="button" aria-label="Switch to English">EN</button>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="container">
+      <section class="hero" aria-labelledby="page-title">
+        <p class="eyebrow" data-el="ΠΡΟΤΑΣΗ ΕΥΡΩΠΑΪΚΗΣ ΣΥΝΕΡΓΑΣΙΑΣ" data-en="PROPOSED EUROPEAN COLLABORATION">ΠΡΟΤΑΣΗ ΕΥΡΩΠΑΪΚΗΣ ΣΥΝΕΡΓΑΣΙΑΣ</p>
+        <h1 id="page-title" data-el="Ευρωπαϊκό Δίκτυο Προσκόπων σε &lt;em&gt;Θαλάσσιες Προστατευόμενες Περιοχές.&lt;/em&gt;" data-en="A European Scout Network in &lt;em&gt;Marine Protected Areas.&lt;/em&gt;">Ευρωπαϊκό Δίκτυο Προσκόπων σε <em>Θαλάσσιες Προστατευόμενες Περιοχές.</em></h1>
+        <p class="lead" data-el="Από την Αλόννησο προτείνουμε ένα δίκτυο που θα φέρει κοντά Προσκοπικά Συστήματα από ευρωπαϊκά νησιά και παράκτιες περιοχές συνδεδεμένες με Θαλάσσιες Προστατευόμενες Περιοχές. Σκοπός είναι η ανταλλαγή εμπειριών, η γνωριμία των νέων και η ανάπτυξη κοινών περιβαλλοντικών δράσεων." data-en="From Alonissos, we are proposing a network to connect Scout groups in European islands and coastal communities associated with Marine Protected Areas. The idea is to share experiences, connect young people and develop joint environmental activities.">Από την Αλόννησο προτείνουμε ένα δίκτυο που θα φέρει κοντά Προσκοπικά Συστήματα από ευρωπαϊκά νησιά και παράκτιες περιοχές συνδεδεμένες με Θαλάσσιες Προστατευόμενες Περιοχές. Σκοπός είναι η ανταλλαγή εμπειριών, η γνωριμία των νέων και η ανάπτυξη κοινών περιβαλλοντικών δράσεων.</p>
+        <div class="notice">
+          <div>
+            <h2 data-el="Η σελίδα του προγράμματος ετοιμάζεται" data-en="This project hub is being prepared">Η σελίδα του προγράμματος ετοιμάζεται</h2>
+            <p data-el="Αυτή θα είναι η κεντρική σελίδα ενημέρωσης για τα Προσκοπικά Συστήματα που ενδιαφέρονται για την πρωτοβουλία. Θα προστεθούν οι αναλυτικές πληροφορίες και το απαραίτητο υλικό μόλις οριστικοποιηθούν. Προς το παρόν, η πρωτοβουλία βρίσκεται στο στάδιο της πρότασης." data-en="This will be the central information page for Scout groups interested in the initiative. Full details and resources will be added once they are finalized. For now, this is a proposed network, not an established programme.">Αυτή θα είναι η κεντρική σελίδα ενημέρωσης για τα Προσκοπικά Συστήματα που ενδιαφέρονται για την πρωτοβουλία. Θα προστεθούν οι αναλυτικές πληροφορίες και το απαραίτητο υλικό μόλις οριστικοποιηθούν. Προς το παρόν, η πρωτοβουλία βρίσκεται στο στάδιο της πρότασης.</p>
+          </div>
+          <a class="button" href="contact.html" data-el="Επικοινώνησε μαζί μας ↗" data-en="Get in touch ↗">Επικοινώνησε μαζί μας ↗</a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="foot"><div class="container" data-el="1ο Σύστημα Προσκόπων Αλοννήσου · Μια ιδέα που ξεκινά από το νησί μας" data-en="1st Scout Group of Alonissos · An initiative starting from our island">1ο Σύστημα Προσκόπων Αλοννήσου · Μια ιδέα που ξεκινά από το νησί μας</div></footer>
+  <script>
+  (() => {
+    const btn = document.getElementById('language-toggle');
+    const nodes = Array.from(document.querySelectorAll('[data-el][data-en]'));
+    let language = 'el';
+    try { if (localStorage.getItem('alonissos-site-language') === 'en') language = 'en'; } catch (_) {}
+    const setLanguage = lang => {
+      language = lang === 'en' ? 'en' : 'el';
+      document.documentElement.lang = language;
+      nodes.forEach(node => node.innerHTML = node.dataset[language]);
+      btn.textContent = language === 'el' ? 'EN' : 'EL';
+      btn.setAttribute('aria-label',language === 'el' ? 'Switch to English' : 'Αλλαγή στα Ελληνικά');
+      document.title = language === 'el' ? 'Ευρωπαϊκό Δίκτυο Προσκόπων · Πρόσκοποι Αλοννήσου' : 'European Marine Scout Network · Alonissos Scouts';
+      try { localStorage.setItem('alonissos-site-language',language); } catch (_) {}
+    };
+    setLanguage(language);
+    btn.addEventListener('click',() => setLanguage(language === 'el' ? 'en' : 'el'));
+  })();
+  </script>
+</body>
+</html>
