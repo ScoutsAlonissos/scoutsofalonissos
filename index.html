@@ -436,7 +436,7 @@
      height: auto;
      position: relative;
      transform: rotate(6deg);
-     filter: drop-shadow(11px 21px 10px rgba(4,13,25,.35));
+     filter: drop-shadow(2px 0 0 rgba(255,255,255,.96)) drop-shadow(-2px 0 0 rgba(255,255,255,.96)) drop-shadow(0 2px 0 rgba(255,255,255,.96)) drop-shadow(0 -2px 0 rgba(255,255,255,.96)) drop-shadow(2px 2px 0 rgba(255,255,255,.92)) drop-shadow(-2px 2px 0 rgba(255,255,255,.92)) drop-shadow(2px -2px 0 rgba(255,255,255,.92)) drop-shadow(-2px -2px 0 rgba(255,255,255,.92)) drop-shadow(11px 21px 10px rgba(4,13,25,.35));
    }
    .hero-side-label {
      position: absolute;
@@ -758,12 +758,26 @@
      color: #d5e5ec;
      max-width: 520px;
    }
-   .film-content .button {
+   .film-actions {
+     display: flex;
+     align-items: center;
+     gap: 12px;
+     flex-wrap: wrap;
      margin-top: 32px;
+   }
+   .film-content .button {
+     margin-top: 0;
    }
    .film-content .play-inline {
      width: 14px;
      height: 14px;
+   }
+   .film-journey-note {
+     margin-top: 14px;
+     font-size: 12px;
+     line-height: 1.8;
+     color: #97bfd0;
+     max-width: 560px;
    }
    .film-divider {
      height: 1px;
@@ -792,7 +806,7 @@
    }
    .timeline-track {
      display: grid;
-     grid-template-columns: repeat(5,minmax(0,1fr));
+     grid-template-columns: repeat(7,minmax(0,1fr));
      gap: 27px;
      position: relative;
    }
@@ -1135,7 +1149,7 @@
        gap: 5%;
      }
      .timeline-track {
-       grid-template-columns: repeat(3,1fr);
+       grid-template-columns: repeat(4,1fr);
        row-gap: 40px;
      }
      .timeline-track:before {
@@ -2095,16 +2109,6 @@
       <span aria-hidden="true" class="hero-side-label">
        SCOUTS OF ALONISSOS / 01
       </span>
-      <div class="hero-sticker">
-       <span>
-        ✳
-       </span>
-       <strong data-i18n="heroStamp">
-        ΕΣΟ
-        <br/>
-        ΕΤΟΙΜΟΣ
-       </strong>
-      </div>
      </div>
     </div>
     <div aria-hidden="true" class="hero-bottomline">
@@ -2381,19 +2385,33 @@
       <p data-i18n="filmsBody">
        Μαθαίνουμε να βλέπουμε τον τόπο μας με άλλα μάτια: μέσα από τους ανθρώπους του, τη φύση και τις ιστορίες του. Η πρώτη μας ταινία αφηγείται τον πλούτο του Εθνικού Θαλάσσιου Πάρκου Αλοννήσου και Βορείων Σποράδων.
       </p>
-      <a class="button button-mint" href="https://youtu.be/nqwA_6MNozM" rel="noopener noreferrer" target="_blank">
-       <svg aria-hidden="true" class="play-inline">
-        <use href="#i-play">
-        </use>
-       </svg>
-       <span data-i18n="watchFilm">
-        Δες το ντοκιμαντέρ μας
-       </span>
-       <svg aria-hidden="true">
-        <use href="#i-outer-arrow">
-        </use>
-       </svg>
-      </a>
+      <div class="film-actions">
+       <a class="button button-mint" href="https://youtu.be/nqwA_6MNozM" rel="noopener noreferrer" target="_blank">
+        <svg aria-hidden="true" class="play-inline">
+         <use href="#i-play">
+         </use>
+        </svg>
+        <span data-i18n="watchFilm">
+         Δες το ντοκιμαντέρ μας
+        </span>
+        <svg aria-hidden="true">
+         <use href="#i-outer-arrow">
+         </use>
+        </svg>
+       </a>
+       <a class="button button-outline" href="documentary-journey.html">
+        <span data-i18n="journeyButton">
+         Περισσότερα &amp; η διαδρομή του ντοκιμαντέρ
+        </span>
+        <svg aria-hidden="true">
+         <use href="#i-outer-arrow">
+         </use>
+        </svg>
+       </a>
+      </div>
+      <p class="film-journey-note" data-i18n="journeyNote">
+       Σύντομα θα υπάρχει ξεχωριστή σελίδα με περισσότερες πληροφορίες για την έρευνα, τα γυρίσματα, τις συνεργασίες και όλη τη διαδρομή του ντοκιμαντέρ.
+      </p>
       <div class="film-divider">
       </div>
       <p class="film-secondary-label" data-i18n="newStoryLabel">
@@ -2432,49 +2450,75 @@
         2009
        </strong>
        <h3 data-i18n="time1Title">
-        Η αρχή
+        Η αρχή στο νησί
        </h3>
        <p data-i18n="time1Body">
-        Ξεκινά η ιστορία του 1ου Συστήματος Προσκόπων Αλοννήσου.
+        Τον Δεκέμβριο ιδρύεται το 1ο Σύστημα Προσκόπων Αλοννήσου και ξεκινά μια νέα προσκοπική παρέα στον τόπο μας.
        </p>
       </article>
       <article class="timeline-item reveal">
        <span class="timeline-dot">
        </span>
        <strong>
-        2022
+        2010
        </strong>
        <h3 data-i18n="time2Title">
-        Αγρίνιο · ΠΑΠΕ
+        Κυρά Παναγιά
        </h3>
        <p data-i18n="time2Body">
-        Παρουσιάζουμε την έρευνά μας για το Υποβρύχιο Μουσείο Αλοννήσου.
+        Από τις πρώτες μας μεγάλες εξορμήσεις: διαδρομή στη μονή, χαρτογράφηση μονοπατιού και εξερεύνηση ως τον Άγιο Πέτρο.
        </p>
       </article>
       <article class="timeline-item reveal">
        <span class="timeline-dot">
        </span>
        <strong>
-        2023—24
+        2013
        </strong>
        <h3 data-i18n="time3Title">
-        Ταινίες &amp; δημιουργία
+        Φιλοξενούμε σχολή
        </h3>
        <p data-i18n="time3Body">
-        Συμμετέχουμε σε πολιτιστικές συναντήσεις, κινηματογραφικές προβολές και δράσεις.
+        Η Αλόννησος φιλοξενεί την 25η Σχολή Βασικών Γνώσεων Αεροπροσκοπισμού και ζωντανεύει με εργαστήρια και συνεργασίες.
        </p>
       </article>
       <article class="timeline-item reveal">
        <span class="timeline-dot">
        </span>
        <strong>
-        2025
+        2017
        </strong>
        <h3 data-i18n="time4Title">
-        Η περιπέτεια του Βόλου
+        Πρωτοπορία &amp; προσφορά
        </h3>
        <p data-i18n="time4Body">
-        Η διήμερη εκδρομή μας γίνεται πενθήμερη, όταν ο καιρός καθυστερεί την επιστροφή.
+        Στην 51η Σχολή Πρωτοπορίας χτίζονται χρήσιμες κατασκευές και γίνονται εργασίες στον Άγιο Παντελεήμονα.
+       </p>
+      </article>
+      <article class="timeline-item reveal">
+       <span class="timeline-dot">
+       </span>
+       <strong>
+        2021—22
+       </strong>
+       <h3 data-i18n="time5Title">
+        Από την έρευνα στο ντοκιμαντέρ
+       </h3>
+       <p data-i18n="time5Body">
+        Ξεκινούν τα γυρίσματα με το Ίδρυμα Thalassa και το 2022 παρουσιάζουμε και την έρευνά μας για το Υποβρύχιο Μουσείο στην ΠΑΠΕ Αγρινίου.
+       </p>
+      </article>
+      <article class="timeline-item reveal">
+       <span class="timeline-dot">
+       </span>
+       <strong>
+        2024—25
+       </strong>
+       <h3 data-i18n="time6Title">
+        Η ταινία ταξιδεύει
+       </h3>
+       <p data-i18n="time6Body">
+        Το ντοκιμαντέρ ανοίγει νέες πόρτες, ενώ το ταξίδι στον Βόλο μένει αξέχαστο όταν μια διήμερη γίνεται πενθήμερη περιπέτεια.
        </p>
       </article>
       <article class="timeline-item reveal">
@@ -2483,11 +2527,11 @@
        <strong>
         2026
        </strong>
-       <h3 data-i18n="time5Title">
-        Ιστορίες της θάλασσας
+       <h3 data-i18n="time7Title">
+        Νέα ιστορία από τη θάλασσα
        </h3>
-       <p data-i18n="time5Body">
-        Στην ΠΑΠΕ Τρικάλων παρουσιάζουμε έρευνα για την παράκτια αλιεία.
+       <p data-i18n="time7Body">
+        Στην ΠΑΠΕ Τρικάλων παρουσιάζουμε την έρευνα για την παράκτια αλιεία και περνάμε στη μεταπαραγωγή της δεύτερης ταινίας μας.
        </p>
       </article>
      </div>
@@ -2822,20 +2866,26 @@
       filmsTitle: 'Our island has <em>a voice.</em> We hold the camera.',
       filmsBody: 'We discover our home through the people who live here, its nature and its stories. Our first documentary explores the natural wealth of Alonissos and Northern Sporades National Marine Park.',
       watchFilm: 'Watch our documentary',
+      journeyButton: 'More info & the documentary journey',
+      journeyNote: 'A dedicated page with more information about the research, filming, collaborations and the full journey of the documentary will be added soon.',
       newStoryLabel: 'THE NEXT CHAPTER',
       newStoryBody: 'A new generation of Venture Scouts is researching coastal fishing together with Thalassa Foundation and the Alonissos Fishers Association. Their new film is in production.',
       timeKicker: 'A LITTLE LOGBOOK',
       timeTitle: 'A few stops <em>along the way.</em>',
-      time1Title: 'The beginning',
-      time1Body: 'The 1st Scout Group of Alonissos is founded.',
-      time2Title: 'Agrinio · PAPE',
-      time2Body: 'We present research about the Underwater Museum of Alonissos.',
-      time3Title: 'Films & creativity',
-      time3Body: 'Cultural gatherings, film screenings and creative projects become part of our journey.',
-      time4Title: 'The Volos adventure',
-      time4Body: 'A two-day trip turns into five days when weather delays the journey home.',
-      time5Title: 'Stories from the sea',
-      time5Body: 'At PAPE in Trikala, we present our research on coastal fishing.',
+      time1Title: 'A beginning on the island',
+      time1Body: 'In December, the 1st Scout Group of Alonissos is founded and a new Scouting story begins on the island.',
+      time2Title: 'Kyra Panagia',
+      time2Body: 'One of our first big expeditions: a monastery visit, trail mapping and an exploration down to Agios Petros bay.',
+      time3Title: 'Hosting a national school',
+      time3Body: 'Alonissos hosts the 25th Basic Air Scouting Knowledge School and fills with workshops, visitors and local collaborations.',
+      time4Title: 'Pioneering & service',
+      time4Body: 'During the 51st Pioneering School, useful constructions are built and repair work is carried out at Agios Panteleimon.',
+      time5Title: 'From research to documentary',
+      time5Body: 'Filming begins with Thalassa Foundation, and in 2022 we also present our research on the Underwater Museum at PAPE in Agrinio.',
+      time6Title: 'The film starts travelling',
+      time6Body: 'The documentary opens new doors, while the Volos trip becomes unforgettable when a two-day outing turns into a five-day adventure.',
+      time7Title: 'A new story from the sea',
+      time7Body: 'At PAPE in Trikala we present our coastal-fishing research and move the second documentary into post-production.',
       clubKicker: 'INSIDE OUR CLUBHOUSE',
       clubTitle: 'Our walls have <em>stories of their own.</em>',
       clubIntro: 'Wood, mementos, murals, colors and ideas. Our place changes as we do — and some corners are still being made.',
