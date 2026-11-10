@@ -4,73 +4,148 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0c2446">
-  <meta name="description" content="Η πρόταση των Προσκόπων Αλοννήσου για ένα ευρωπαϊκό δίκτυο Προσκόπων σε Θαλάσσιες Προστατευόμενες Περιοχές.">
+  <meta name="description" content="Το Ευρωπαϊκό Δίκτυο Προσκόπων σε Θαλάσσιες Προστατευόμενες Περιοχές: ο χάρτης, οι προσκοπικοί κόμβοι και η ιδέα της συνεργασίας.">
   <title>Ευρωπαϊκό Δίκτυο Προσκόπων · Πρόσκοποι Αλοννήσου</title>
   <link rel="icon" href="assets/seal.webp" type="image/webp">
   <style>
     :root {
+      --deep:#0b223f;
       --navy:#0c2446;
-      --navy-mid:#173e67;
+      --mid:#173e67;
       --mint:#88ebd3;
-      --paper:#fbf7ed;
-      --text:#edf5f7;
-      --muted:#bbd2dc;
+      --cream:#fbf7ed;
+      --ink:#102d4d;
+      --muted:#bcd4dd;
       --font:"Trebuchet MS","DejaVu Sans","Segoe UI",Arial,sans-serif;
       --mono:"Courier New","DejaVu Sans Mono",monospace;
     }
     * { box-sizing:border-box; }
     html { scroll-behavior:smooth; }
-    body { margin:0; color:var(--text); background:var(--navy); font-family:var(--font); -webkit-font-smoothing:antialiased; }
+    body { margin:0; color:#edf5f7; background:var(--navy); font-family:var(--font); -webkit-font-smoothing:antialiased; }
     a { color:inherit; text-decoration:none; }
     button { font:inherit; }
     :focus-visible { outline:3px solid var(--mint); outline-offset:4px; }
-    .container { width:min(1150px,calc(100% - 64px)); margin-inline:auto; }
-    .header { position:relative; z-index:2; background:#0b223f; border-bottom:1px solid rgba(255,255,255,.15); }
-    .header-inner { min-height:82px; display:flex; justify-content:space-between; align-items:center; gap:16px; }
-    .brand { display:flex; align-items:center; gap:13px; font-size:13px; font-weight:900; letter-spacing:.045em; line-height:1.4; }
-    .brand img { width:53px; height:53px; object-fit:contain; }
-    .brand span { max-width:230px; }
-    .header-actions { display:flex; align-items:center; gap:13px; }
+    .container { width:min(1150px,calc(100% - 60px)); margin-inline:auto; }
+    .wide-container { width:min(1300px,calc(100% - 52px)); margin-inline:auto; }
+    .header { background:#0b223f; border-bottom:1px solid rgba(255,255,255,.14); position:relative; z-index:3; }
+    .header-inner { min-height:80px; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+    .brand { display:flex; align-items:center; gap:12px; font-size:13px; font-weight:900; letter-spacing:.02em; line-height:1.4; }
+    .brand img { width:52px; height:52px; object-fit:contain; }
+    .brand span { max-width:225px; }
+    .header-actions { display:flex; align-items:center; gap:16px; }
     .lang-button { border:1px solid #87adc3; background:transparent; border-radius:999px; color:white; font-size:12px; font-weight:900; padding:10px 14px; cursor:pointer; }
     .lang-button:hover { background:rgba(255,255,255,.09); }
     .back-link { font-size:13px; font-weight:800; color:var(--mint); }
     .back-link:hover { text-decoration:underline; }
-    .main { position:relative; overflow:hidden; isolation:isolate; min-height:calc(100vh - 82px); background:linear-gradient(125deg,#173e67 0%,#0c2446 80%); }
-    .main:before { content:""; position:absolute; inset:-25% -18% -25% 30%; background:repeating-radial-gradient(ellipse at 64% 48%,transparent 0 38px,rgba(136,235,211,.09) 39px 41px,transparent 42px 83px); z-index:-1; pointer-events:none; }
-    .hero { padding:clamp(74px,9vw,120px) 0 65px; max-width:970px; }
-    .eyebrow { margin:0 0 22px; display:flex; gap:10px; align-items:center; color:var(--mint); font:900 11px/1.6 var(--mono); letter-spacing:.13em; }
-    .eyebrow:before { content:""; width:9px; height:9px; flex:none; border-radius:50%; background:var(--mint); box-shadow:0 0 0 5px rgba(136,235,211,.14); }
-    h1 { max-width:980px; font-size:clamp(40px,6vw,74px); line-height:1.12; letter-spacing:-.055em; margin:0; font-weight:900; }
+    .dark-top { background:radial-gradient(ellipse at 85% 15%,#1b5270 0%,transparent 45%),linear-gradient(125deg,#153959 0%,#0c2446 80%); padding-bottom:76px; }
+    .hero { padding:71px 0 40px; }
+    .eyebrow { margin:0 0 17px; display:flex; gap:11px; align-items:center; color:var(--mint); font:900 11px/1.6 var(--mono); letter-spacing:.12em; }
+    .eyebrow:before { content:""; width:8px; height:8px; flex:none; border-radius:50%; background:var(--mint); box-shadow:0 0 0 5px rgba(136,235,211,.14); }
+    h1 { max-width:900px; font-size:clamp(38px,5.5vw,65px); line-height:1.1; letter-spacing:-.055em; margin:0; font-weight:900; }
     h1 em { color:var(--mint); font-style:normal; }
-    .lead { max-width:770px; color:#dcebf0; margin:26px 0 0; font-size:clamp(16px,1.55vw,19px); line-height:1.85; }
-    .notice { display:grid; grid-template-columns:1fr auto; align-items:center; gap:32px; margin-top:40px; padding:27px 30px; background:rgba(255,255,255,.075); border:1px solid rgba(190,238,228,.24); border-radius:20px; max-width:1000px; }
-    .notice h2 { color:var(--mint); font-size:clamp(17px,2vw,22px); letter-spacing:-.025em; margin:0 0 9px; }
-    .notice p { margin:0; color:var(--muted); font-size:14px; line-height:1.8; max-width:620px; }
-    .button { display:inline-flex; align-items:center; justify-content:center; text-align:center; border-radius:999px; min-height:49px; padding:12px 21px; background:var(--mint); color:#102e4c; font-size:13px; font-weight:900; transition:transform .2s, background .2s; white-space:nowrap; }
+    .hero-lead { font-size:16px; line-height:1.8; color:#c7dce5; max-width:790px; margin:22px 0 0; }
+    .map-outer { position:relative; border:1px solid rgba(190,242,232,.32); border-radius:25px; background:#0d3454; box-shadow:0 35px 80px rgba(0,12,30,.28); overflow:hidden; }
+    .map-toolbar { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; padding:17px 24px; background:#092641; border-bottom:1px solid rgba(192,243,232,.17); }
+    .map-toolbar-label { display:flex; align-items:center; gap:13px; font:900 11px/1.5 var(--mono); letter-spacing:.13em; color:#e0f6f4; }
+    .map-toolbar-label span { color:var(--mint); }
+    .map-legend { display:flex; align-items:center; gap:8px; font-size:12px; color:#e0f2f1; font-weight:800; }
+    .map-legend-dot { width:11px; height:11px; border-radius:50%; background:var(--mint); box-shadow:0 0 0 4px rgba(136,235,211,.13); }
+    .map-scroll { overflow-x:auto; overflow-y:hidden; scroll-behavior:smooth; scrollbar-color:#5aa6ae #092b46; }
+    .map-stage { position:relative; aspect-ratio:1200/840; min-width:780px; background:#0d4361; isolation:isolate; }
+    .europe-svg { display:block; width:100%; height:100%; }
+    .map-country { fill:#39718a; stroke:#86bdcb; stroke-opacity:.55; stroke-width:1.75; vector-effect:non-scaling-stroke; stroke-linejoin:round; fill-rule:evenodd; }
+    .map-country-active { fill:#82d8c3; stroke:#d7fff1; stroke-opacity:1; stroke-width:2.7; }
+    .sea-text { font:800 14px var(--mono); letter-spacing:.22em; fill:#a4d2da; opacity:.36; }
+    .map-pin-layer { position:absolute; inset:0; pointer-events:none; }
+    .map-pin { position:absolute; z-index:4; width:66px; height:79px; transform:translate(-50%,-94%); background:none; padding:0; border:0; cursor:pointer; pointer-events:auto; filter:drop-shadow(0 10px 13px rgba(0,21,35,.4)); }
+    .map-pin svg { width:100%; height:100%; overflow:visible; transition:transform .2s ease; }
+    .map-pin:hover svg, .map-pin[aria-expanded="true"] svg { transform:translateY(-5px) scale(1.07); }
+    .map-pin:focus-visible { border-radius:15px; outline-offset:6px; }
+    .map-pin-ring { position:absolute; width:102px; height:102px; border:2px solid rgba(148,250,222,.78); border-radius:50%; left:50%; top:calc(100% - 4px); transform:translate(-50%,-50%); opacity:.6; pointer-events:none; animation:pulse 2.7s ease-out infinite; }
+    .map-pin-label { position:absolute; z-index:3; transform:translate(22px,-84px); padding:10px 14px; border:1px solid rgba(209,255,245,.62); background:rgba(7,40,63,.93); border-radius:999px; color:#fff; font:900 12px/1.3 var(--mono); letter-spacing:.06em; white-space:nowrap; box-shadow:0 5px 18px rgba(1,13,30,.2); pointer-events:none; }
+    .map-pin-label:before { content:""; display:inline-block; width:7px; height:7px; margin-right:8px; border-radius:50%; background:var(--mint); }
+    .map-popup { position:absolute; z-index:8; width:358px; left:clamp(12px,calc(var(--pin-x,60.2%) - 385px),calc(100% - 374px)); top:clamp(12px,calc(var(--pin-y,84.44%) - 397px),calc(100% - 430px)); border-radius:20px; border:1px solid #b4eadf; background:#fffdf7; box-shadow:0 20px 65px rgba(0,15,29,.4); color:var(--ink); padding:26px; pointer-events:auto; }
+    .map-popup[hidden] { display:none; }
+    .popup-top { display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-bottom:12px; }
+    .popup-eyebrow { margin:0; font:900 10px/1.7 var(--mono); letter-spacing:.08em; color:#197c7d; }
+    .popup-close { border:1px solid #cbdcda; background:#edf7f4; border-radius:50%; width:33px; height:33px; line-height:1; flex:none; color:var(--ink); cursor:pointer; font-weight:900; font-size:20px; }
+    .popup-close:hover { background:#d0f4e7; }
+    .popup-title { font-size:21px; line-height:1.25; letter-spacing:-.045em; margin:0 0 11px; color:#102d4d; }
+    .popup-description { margin:0 0 18px; line-height:1.7; font-size:12px; color:#47677a; }
+    .popup-group { background:#e8f8f2; border-left:3px solid #2eafa2; padding:12px 13px; }
+    .popup-group-label { display:block; font:900 10px/1.5 var(--mono); color:#40717e; letter-spacing:.04em; margin-bottom:5px; }
+    .popup-group-name { display:block; font-weight:900; color:var(--ink); line-height:1.4; font-size:14px; }
+    .popup-foot { margin:14px 0 0; color:#497481; font-size:11px; font-weight:700; line-height:1.5; }
+    .map-caption { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; background:#0a2945; border-top:1px solid rgba(210,252,244,.18); color:#b1d2dc; padding:15px 24px; font-size:12px; line-height:1.6; }
+    .map-caption strong { color:var(--mint); }
+    .below { padding:92px 0 100px; background:var(--cream); color:var(--ink); }
+    .section-eyebrow { margin:0 0 15px; color:#1e928f; font:900 11px/1.5 var(--mono); letter-spacing:.12em; }
+    .section-heading { margin:0; font-size:clamp(32px,4.5vw,52px); line-height:1.12; letter-spacing:-.052em; max-width:850px; }
+    .section-heading em { font-style:normal; color:#3182aa; }
+    .intro-text { color:#53697d; max-width:880px; font-size:16px; line-height:1.9; margin:23px 0 0; }
+    .info-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; margin-top:37px; }
+    .info-card { padding:28px 25px 29px; background:#fff; border:1px solid #dfebe8; border-radius:17px; box-shadow:0 10px 30px rgba(8,42,55,.04); }
+    .info-num { font:900 11px var(--mono); color:#138c8e; letter-spacing:.12em; }
+    .info-card h3 { font-size:20px; color:#163a5e; margin:18px 0 12px; line-height:1.3; letter-spacing:-.02em; }
+    .info-card p { font-size:14px; color:#5b7080; line-height:1.85; margin:0; }
+    .steps { margin-top:52px; padding:35px 38px; background:#e7f3ef; border-radius:20px; border:1px solid #cfe7df; }
+    .steps h3 { font-size:26px; margin:0 0 21px; letter-spacing:-.035em; }
+    .step-list { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; }
+    .step { display:flex; gap:14px; align-items:flex-start; }
+    .step strong { display:inline-grid; place-items:center; width:34px; height:34px; flex:none; border-radius:50%; background:#c5eddf; color:#115e6b; font:900 12px var(--mono); }
+    .step p { margin:2px 0 0; color:#375e6b; font-size:14px; line-height:1.75; }
+    .notice { display:grid; grid-template-columns:1fr auto; align-items:center; gap:27px; margin-top:44px; padding:31px 33px; background:#113557; border-radius:19px; color:#eef8f6; }
+    .notice h3 { font-size:23px; margin:0 0 9px; }
+    .notice p { margin:0; color:#b9d3de; line-height:1.8; font-size:14px; max-width:730px; }
+    .button { display:inline-flex; align-items:center; justify-content:center; text-align:center; min-height:48px; border-radius:999px; background:var(--mint); color:#102e4c; padding:13px 22px; font-size:13px; font-weight:900; white-space:nowrap; transition:transform .2s,background .2s; }
     .button:hover { transform:translateY(-2px); background:#b3fce8; }
-    .foot { border-top:1px solid rgba(255,255,255,.12); padding:25px 0 42px; color:#abc5d2; font:700 11px/1.6 var(--mono); }
+    .foot { border-top:1px solid rgba(255,255,255,.13); padding:27px 0 38px; color:#abc5d2; font:700 11px/1.7 var(--mono); }
+    @keyframes pulse { 0% { transform:translate(-50%,-50%) scale(.65); opacity:.65; } 80%,100% { transform:translate(-50%,-50%) scale(1.65); opacity:0; } }
+    @media(max-width:900px) {
+      .info-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .steps { padding:28px; }
+      .step-list { gap:15px; }
+    }
     @media(max-width:720px) {
-      .container { width:calc(100% - 36px); }
+      .container { width:calc(100% - 34px); }
+      .wide-container { width:calc(100% - 22px); }
       .header-inner { min-height:73px; }
-      .brand { gap:8px; font-size:10px; }
+      .brand { gap:7px; font-size:10px; }
       .brand img { width:40px; height:40px; }
-      .back-link { font-size:11px; }
+      .brand span { max-width:140px; }
       .header-actions { gap:9px; }
+      .back-link { font-size:11px; }
       .lang-button { padding:8px 11px; }
-      .hero { padding:65px 0 50px; }
-      h1 { font-size:clamp(36px,9vw,54px); }
-      .notice { grid-template-columns:1fr; gap:20px; padding:23px; }
+      .dark-top { padding-bottom:42px; }
+      .hero { padding:49px 0 32px; }
+      h1 { font-size:clamp(34px,8.8vw,51px); }
+      .hero-lead { font-size:14px; line-height:1.8; }
+      .map-outer { border-radius:16px; }
+      .map-toolbar { padding:15px 16px; }
+      .map-toolbar-label { font-size:10px; }
+      .map-legend { font-size:11px; }
+      .map-stage { min-width:800px; }
+      .map-popup { width:315px; padding:19px 20px; left:clamp(12px,calc(var(--pin-x,60.2%) - 215px),calc(100% - 331px)); top:clamp(12px,calc(var(--pin-y,84.44%) - 395px),calc(100% - 450px)); }
+      .popup-title { font-size:19px; }
+      .map-caption { padding:15px 16px; font-size:11px; }
+      .below { padding:63px 0 65px; }
+      .intro-text { font-size:14px; }
+      .info-grid { grid-template-columns:1fr; gap:12px; margin-top:27px; }
+      .info-card { padding:23px; }
+      .steps { margin-top:30px; padding:24px 21px; }
+      .step-list { grid-template-columns:1fr; gap:15px; }
+      .notice { grid-template-columns:1fr; padding:26px 24px; gap:21px; }
       .notice .button { white-space:normal; width:100%; }
     }
-    @media(max-width:390px) { .brand span { max-width:123px; } }
-    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .button { transition:none; } }
+    @media(max-width:390px) { .brand span { max-width:115px; } .map-toolbar { gap:8px; } }
+    @media(prefers-reduced-motion:reduce) { html,.map-scroll { scroll-behavior:auto; } .button,.map-pin svg { transition:none; } .map-pin-ring { animation:none; } }
   </style>
 </head>
 <body>
   <header class="header">
     <div class="header-inner container">
       <a class="brand" href="index.html#top">
-        <img src="assets/seal.webp" alt="" width="53" height="53">
+        <img src="assets/seal.webp" width="52" height="52" alt="">
         <span data-el="1ο Σύστημα Προσκόπων Αλοννήσου" data-en="1st Scout Group of Alonissos">1ο Σύστημα Προσκόπων Αλοννήσου</span>
       </a>
       <div class="header-actions">
@@ -79,40 +154,321 @@
       </div>
     </div>
   </header>
-  <main class="main">
-    <div class="container">
-      <section class="hero" aria-labelledby="page-title">
+  <main>
+    <div class="dark-top">
+      <section class="hero container" aria-labelledby="page-title">
         <p class="eyebrow" data-el="ΠΡΟΤΑΣΗ ΕΥΡΩΠΑΪΚΗΣ ΣΥΝΕΡΓΑΣΙΑΣ" data-en="PROPOSED EUROPEAN COLLABORATION">ΠΡΟΤΑΣΗ ΕΥΡΩΠΑΪΚΗΣ ΣΥΝΕΡΓΑΣΙΑΣ</p>
-        <h1 id="page-title" data-el="Ευρωπαϊκό Δίκτυο Προσκόπων σε &lt;em&gt;Θαλάσσιες Προστατευόμενες Περιοχές.&lt;/em&gt;" data-en="A European Scout Network in &lt;em&gt;Marine Protected Areas.&lt;/em&gt;">Ευρωπαϊκό Δίκτυο Προσκόπων σε <em>Θαλάσσιες Προστατευόμενες Περιοχές.</em></h1>
-        <p class="lead" data-el="Από την Αλόννησο προτείνουμε ένα δίκτυο που θα φέρει κοντά Προσκοπικά Συστήματα από ευρωπαϊκά νησιά και παράκτιες περιοχές συνδεδεμένες με Θαλάσσιες Προστατευόμενες Περιοχές. Σκοπός είναι η ανταλλαγή εμπειριών, η γνωριμία των νέων και η ανάπτυξη κοινών περιβαλλοντικών δράσεων." data-en="From Alonissos, we are proposing a network to connect Scout groups in European islands and coastal communities associated with Marine Protected Areas. The idea is to share experiences, connect young people and develop joint environmental activities.">Από την Αλόννησο προτείνουμε ένα δίκτυο που θα φέρει κοντά Προσκοπικά Συστήματα από ευρωπαϊκά νησιά και παράκτιες περιοχές συνδεδεμένες με Θαλάσσιες Προστατευόμενες Περιοχές. Σκοπός είναι η ανταλλαγή εμπειριών, η γνωριμία των νέων και η ανάπτυξη κοινών περιβαλλοντικών δράσεων.</p>
-        <div class="notice">
-          <div>
-            <h2 data-el="Η σελίδα του προγράμματος ετοιμάζεται" data-en="This project hub is being prepared">Η σελίδα του προγράμματος ετοιμάζεται</h2>
-            <p data-el="Αυτή θα είναι η κεντρική σελίδα ενημέρωσης για τα Προσκοπικά Συστήματα που ενδιαφέρονται για την πρωτοβουλία. Θα προστεθούν οι αναλυτικές πληροφορίες και το απαραίτητο υλικό μόλις οριστικοποιηθούν. Προς το παρόν, η πρωτοβουλία βρίσκεται στο στάδιο της πρότασης." data-en="This will be the central information page for Scout groups interested in the initiative. Full details and resources will be added once they are finalized. For now, this is a proposed network, not an established programme.">Αυτή θα είναι η κεντρική σελίδα ενημέρωσης για τα Προσκοπικά Συστήματα που ενδιαφέρονται για την πρωτοβουλία. Θα προστεθούν οι αναλυτικές πληροφορίες και το απαραίτητο υλικό μόλις οριστικοποιηθούν. Προς το παρόν, η πρωτοβουλία βρίσκεται στο στάδιο της πρότασης.</p>
+        <h1 id="page-title" data-el="Μια Ευρώπη. &lt;em&gt;Πολλές θάλασσες, κοινή δράση.&lt;/em&gt;" data-en="One Europe. &lt;em&gt;Many seas, shared action.&lt;/em&gt;">Μια Ευρώπη. <em>Πολλές θάλασσες, κοινή δράση.</em></h1>
+        <p class="hero-lead" data-el="Χαρτογραφούμε τα Θαλάσσια Πάρκα και τις Προσκοπικές ομάδες που μπορούν να συνδεθούν μέσα από μια νέα ευρωπαϊκή συνεργασία. Η αρχή γίνεται από την Αλόννησο." data-en="Mapping Marine Protected Areas and the Scout groups that could connect through a new European collaboration. Our starting point is Alonissos.">Χαρτογραφούμε τα Θαλάσσια Πάρκα και τις Προσκοπικές ομάδες που μπορούν να συνδεθούν μέσα από μια νέα ευρωπαϊκή συνεργασία. Η αρχή γίνεται από την Αλόννησο.</p>
+      </section>
+      <section class="wide-container" aria-labelledby="map-heading">
+        <div class="map-outer">
+          <div class="map-toolbar">
+            <div class="map-toolbar-label" id="map-heading"><span>✳</span> <span data-el="Ο ΧΑΡΤΗΣ ΤΟΥ ΔΙΚΤΥΟΥ / ΕΥΡΩΠΗ" data-en="NETWORK MAP / EUROPE">Ο ΧΑΡΤΗΣ ΤΟΥ ΔΙΚΤΥΟΥ / ΕΥΡΩΠΗ</span></div>
+            <div class="map-legend"><span class="map-legend-dot" aria-hidden="true"></span><span data-el="Ελλάδα · σημείο εκκίνησης" data-en="Greece · starting point">Ελλάδα · σημείο εκκίνησης</span></div>
           </div>
-          <a class="button" href="contact.html" data-el="Επικοινώνησε μαζί μας ↗" data-en="Get in touch ↗">Επικοινώνησε μαζί μας ↗</a>
+          <div class="map-scroll" id="europe-map-scroll" tabindex="0" aria-label="Διαδραστικός χάρτης Ευρώπης με οριζόντια κύλιση σε μικρές οθόνες">
+            <div class="map-stage" id="map-stage">
+              <svg class="europe-svg" viewBox="0 0 1200 840" role="img" aria-labelledby="europe-map-title europe-map-desc" xmlns="http://www.w3.org/2000/svg">
+  <title id="europe-map-title">Map of European countries, with the initiative's starting point in Alonissos, Greece</title>
+  <desc id="europe-map-desc">Greece is highlighted. The clickable marker for the Alonissos Northern Sporades National Marine Park displays its details and the local Scout Group.</desc>
+  <defs>
+    <linearGradient id="sea" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#092c4b"/>
+      <stop offset=".56" stop-color="#105376"/>
+      <stop offset="1" stop-color="#0a334f"/>
+    </linearGradient>
+    <pattern id="latitude-grid" width="105" height="105" patternUnits="userSpaceOnUse">
+      <path d="M 105 0 L 0 0 0 105" fill="none" stroke="#bceae4" stroke-opacity=".075" stroke-width="1"/>
+    </pattern>
+    <filter id="land-shadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="1" dy="3" stdDeviation="2" flood-color="#001323" flood-opacity=".26"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="840" fill="url(#sea)"/>
+  <rect width="1200" height="840" fill="url(#latitude-grid)"/>
+  <g class="country-shapes" filter="url(#land-shadow)">
+  <path class="map-country" data-country="KAZ" aria-label="Kazakhstan" d="M1200,398.5 L1179.7,398.7 L1154.7,430.8 L1194,499.7 L1187.6,504.9 L1170.3,495.9 L1158.5,496 L1145.2,508.9 L1142.4,518.7 L1139.3,514.4 L1138.6,504.6 L1132.7,499.3 L1113.8,501.5 L1099.4,487.4 L1089.7,486.4 L1086.2,480.4 L1099.9,475.3 L1093.4,460.9 L1102.8,451.7 L1115.5,448.1 L1107.9,428.2 L1099.4,417.8 L1087.4,425.9 L1074.4,427.2 L1064,443.6 L1053.9,453.8 L1045.9,454 L1042.5,443.3 L1028.3,434.4 L1019.1,439.5 L1002.4,431.3 L1003,413 L997.6,410.8 L997.4,384.6 L1015.2,389.7 L1009.8,374.8 L1023.1,341.1 L1040.5,330.6 L1090.3,327.8 L1097.1,312.3 L1113.9,300 L1133.8,299.5 L1133.2,291.8 L1148.4,281.4 L1145,271 L1119.7,271.6 L1123.2,255.6 L1117.9,252.2 L1124,240.2 L1108,233.8 L1108,224.3 L1120.8,209.8 L1200,317.3 L1200,398.5 Z"/>
+  <path class="map-country" data-country="UZB" aria-label="Uzbekistan" d="M1179.7,398.7 L1200,398.5 L1200,495.7 L1194,499.7 L1154.7,430.8 L1179.7,398.7 Z"/>
+  <path class="map-country" data-country="RUS" aria-label="Russia" d="M1042,477.9 L1037.5,504.5 L1057.9,517.3 L1062.3,531.2 L1087.6,546.9 L1082.6,559 L1082.2,565.1 L1075.3,566.8 L1060.5,559.4 L1045.3,560 L1037.7,553.8 L1022.7,555.4 L1015.2,562.2 L1011.3,559.5 L988.2,557.7 L952.5,563.4 L951.5,566.4 L927.6,555.6 L908.9,553.2 L893,545 L902.4,538.5 L908.9,517.7 L898.7,512.1 L916.4,497.1 L914.5,492.8 L903.4,500.2 L900.9,491 L906.1,483 L918.6,477 L918.4,469.5 L911.7,459.4 L913.3,446.9 L911.1,441 L889.9,441 L882.4,443.8 L871.5,436.8 L862.5,443.1 L844,440.8 L843.2,436.7 L836.1,429.1 L825.6,430.9 L822.9,424.8 L824.9,419.8 L813.7,410.3 L801.2,415.6 L797.1,415.5 L795.1,421 L790.2,421.3 L779.4,402.5 L781.4,400 L791.5,398.4 L795.2,392.6 L790.3,388 L781.2,386.3 L781,382.4 L775.2,379.8 L764.5,367.9 L765.8,361.7 L762.4,352.2 L749.8,349.7 L744.2,353.5 L741.5,348.7 L728.2,345.8 L719.3,324.2 L712.9,320.3 L716.5,312.8 L709.6,293.9 L715,280.4 L712.7,277.1 L722.3,263.2 L709.4,255.4 L731.4,210.5 L732.3,199.1 L715,188.1 L715.5,173.8 L703.8,160.2 L705.5,141.2 L690.2,119.8 L694,102.7 L678.8,91.4 L676.7,76.8 L682.3,73.6 L692.8,62.5 L698.3,53.6 L713.8,62.7 L735.3,61.4 L771.9,73.9 L781.7,80.9 L787.9,93.8 L783.6,107.5 L772.5,117.7 L730.9,113.9 L725.7,118.1 L743.8,129.2 L754.5,159 L776.7,164.7 L774.3,154.6 L766.1,147.7 L768.8,138.3 L794.1,143.4 L799.3,135.9 L787.8,123.5 L798.2,96.8 L805.9,94.9 L816.4,98.4 L814.4,83.1 L802.4,74.5 L800.4,61.4 L789.2,51.9 L812.1,48.7 L821.9,57.2 L814,64.1 L819.6,74.6 L828.9,78.2 L838.1,68.3 L833,55.4 L855,8.9 L860.4,6.6 L861.7,21.5 L871,18 L871.2,8.9 L882.6,0 L938.5,0 L1120.8,209.8 L1108,224.3 L1108,233.8 L1124,240.2 L1117.9,252.2 L1123.2,255.6 L1119.7,271.6 L1145,271 L1148.4,281.4 L1133.2,291.8 L1133.8,299.5 L1113.9,300 L1097.1,312.3 L1090.3,327.8 L1040.5,330.6 L1023.1,341.1 L1009.8,374.8 L1015.2,389.7 L997.4,384.6 L997.6,410.8 L1003,413 L1002.4,431.3 L1019.1,439.5 L1028.3,434.4 L1042.5,443.3 L1045.9,454 L1053.9,453.8 L1053.4,468.4 L1042,477.9 Z M630.5,395.3 L632.7,385.8 L648.9,377.6 L667.7,382.9 L668.6,394.1 L645.9,396.6 L630.5,395.3 Z M845.3,536.8 L861.3,538.1 L867.1,543.5 L875.4,546.5 L889.6,541 L888.9,549.1 L874.1,557.3 L857.3,574.5 L848.1,572.4 L849,561.9 L831.7,559.8 L833.4,555.2 L845.5,544.8 L842.8,542.9 L845.3,536.8 Z"/>
+  <path class="map-country" data-country="norway" aria-label="Norway" d="M676.7,76.8 L676.5,61.7 L665.5,55.3 L655.6,64.3 L654.7,80.1 L648.9,90.4 L639.8,86.5 L629.9,88.7 L620.2,78.5 L616.2,84.4 L611.5,85.6 L611.4,99.6 L596.4,97 L594.8,108.8 L587,109 L573.7,147.6 L559.6,177.2 L562.8,184.5 L559.4,192.8 L550.1,192.2 L543.1,211.8 L542.4,239.9 L548.5,250.9 L544.1,275.7 L529,301.8 L522.5,288.4 L498.7,311.1 L483.3,314.6 L469.3,301.9 L468.6,278.8 L472.6,229.8 L483.6,217.6 L511.2,202.7 L531.5,182.4 L549.6,153.8 L570.9,113.5 L603.9,70.3 L619.3,59.9 L631.3,59.7 L639.6,41.1 L652.4,40 L663.9,33.7 L689.2,43.9 L681.6,51.5 L692.8,62.5 L682.3,73.6 L676.7,76.8 Z"/>
+  <path class="map-country" data-country="france" aria-label="France" d="M476.6,507.5 L468.1,521.3 L464.8,536.2 L460.5,539.4 L454.2,536.7 L454.1,542.1 L442.2,552.8 L440.9,562.3 L448.2,559.8 L452.3,569.6 L451,575.5 L454.6,583.9 L448.7,589.8 L450.9,606.5 L458.9,610 L456.3,619 L441.1,629.4 L411.4,619.9 L388.1,623.3 L384.4,635.6 L366,635.3 L350.3,622.6 L343.9,626.1 L317.6,610.6 L313.3,601.2 L323.7,590.5 L335.2,549.7 L325.3,524.5 L317.5,511.5 L298.4,498 L301,482.6 L319.6,482.8 L341.2,493.7 L342.3,469.1 L352.9,481 L387.5,471.1 L394.7,454.7 L406.9,452.6 L407.6,460.3 L413.7,461.6 L426.4,482.4 L433.6,481.8 L444.3,493 L451.1,495.2 L457,501.5 L476.6,507.5 Z M486.7,654.4 L480.4,670.3 L473.4,665.4 L470.9,650.9 L474.7,643.3 L485.3,636.1 L486.7,654.4 Z"/>
+  <path class="map-country" data-country="ISR" aria-label="Israel" d="M935.4,812.4 L934.8,827 L939.7,828.1 L935.8,832.1 L936.2,837.7 L944,832.7 L946,840.1 L926.6,840.1 L928.8,835.4 L927.3,834.5 L929.9,823.8 L931.4,801.5 L937.7,799.7 L938.4,795.7 L943,794.1 L945.2,802.4 L942.4,813.5 L935.4,812.4 Z"/>
+  <path class="map-country" data-country="LBN" aria-label="Lebanon" d="M937.7,799.7 L931.8,801.2 L934.2,782.9 L939.4,765.3 L947.3,764.2 L952,771.4 L944.6,781.7 L943,794.1 L938.4,795.7 L937.7,799.7 Z"/>
+  <path class="map-country" data-country="PSE" aria-label="Palestine" d="M935.8,832.1 L939.7,828.1 L934.8,827 L935.4,812.4 L942.4,813.5 L945.2,826 L944,832.7 L936.2,837.7 L935.8,832.1 Z"/>
+  <path class="map-country" data-country="TUN" aria-label="Tunisia" d="M440,836.4 L439.7,820.5 L451.6,809.9 L457,793 L455.8,772.8 L460.1,762.4 L479.3,755.4 L491,758.7 L489.9,769.3 L504.9,762.4 L505.9,766.5 L496.8,776.3 L496.2,786 L502,791.5 L498.8,809.5 L486.6,819.4 L489.4,831 L498.6,831.8 L501.9,840.1 L443.7,840.1 L440,836.4 Z"/>
+  <path class="map-country" data-country="DZA" aria-label="Algeria" d="M233.4,837.6 L244,838.3 L253.6,832.6 L277.5,834.3 L282.2,827 L278.3,821.6 L276.3,798.5 L277.7,785.8 L273.8,771.1 L292.3,763.4 L311.4,763.6 L323.6,757.2 L340.9,753.9 L398.5,757.3 L406.7,761.6 L423.6,755.3 L441.8,757 L448.3,762.6 L460.1,762.4 L455.8,772.8 L457,793 L451.6,809.9 L439.7,820.5 L440,836.4 L443.7,840.1 L232.7,840.1 L233.4,837.6 Z"/>
+  <path class="map-country" data-country="JOR" aria-label="Jordan" d="M965.3,808.8 L993.6,776.8 L1007.1,799.3 L1004.7,803.4 L972.2,824.3 L994.2,840.1 L946,840.1 L942.4,813.5 L944,806.2 L965.3,808.8 Z"/>
+  <path class="map-country" data-country="KWT" aria-label="Kuwait" d="M1178.3,796.7 L1182.7,801.7 L1153.6,812.4 L1159.5,787.9 L1171.5,784.4 L1178.2,791.5 L1178.3,796.7 Z"/>
+  <path class="map-country" data-country="IRQ" aria-label="Iraq" d="M1024.8,743.2 L1023.6,716.5 L1017.5,702.3 L1024.7,694.1 L1028.8,678.5 L1034.6,672.8 L1053.8,668.1 L1061.1,671 L1067.4,664.5 L1086.2,683.9 L1098.8,685.4 L1104.3,696.5 L1098.7,706.8 L1100.5,724 L1118.6,738 L1142.7,740 L1156.8,751.1 L1159.3,766.7 L1164.7,764.2 L1168.7,774.7 L1181.9,780.7 L1159.5,787.9 L1153.6,812.4 L1120.8,824.4 L1059.3,802.9 L1029.5,797.8 L1007.1,799.3 L993.6,776.8 L1024.8,743.2 Z"/>
+  <path class="map-country" data-country="TKM" aria-label="Turkmenistan" d="M1158.5,496 L1170.3,495.9 L1187.6,504.9 L1200,495.7 L1200,587.8 L1196.4,583.2 L1188.6,561.9 L1174.3,561.8 L1171.5,546.6 L1161.6,550.8 L1156.7,532.9 L1172.1,530 L1181,516.7 L1165.2,511.3 L1155.7,502.6 L1147.2,513.8 L1152.9,528.7 L1142.4,518.7 L1145.2,508.9 L1158.5,496 Z"/>
+  <path class="map-country" data-country="IRN" aria-label="Iran" d="M1164.7,764.2 L1159.3,766.7 L1156.8,751.1 L1142.7,740 L1118.6,738 L1100.5,724 L1098.7,706.8 L1104.3,696.5 L1098.8,685.4 L1086.2,683.9 L1053.1,652 L1053.9,644.6 L1040.9,623.6 L1049.1,613.6 L1054.3,620.1 L1065.4,626 L1076.8,624.1 L1082.1,621.1 L1093.8,598.4 L1098.8,594.3 L1105.5,598 L1104.5,610.2 L1118.1,616 L1121.4,613.2 L1132.3,625.3 L1148.3,622.2 L1163,626.6 L1185.8,618.6 L1200,606.2 L1200,769.9 L1198.4,771.5 L1185.3,770.1 L1181.9,780.7 L1168.7,774.7 L1164.7,764.2 Z"/>
+  <path class="map-country" data-country="SYR" aria-label="Syria" d="M945.2,802.4 L943,794.1 L944.6,781.7 L952,771.4 L947.3,764.2 L939.4,765.3 L934,750.1 L936.1,740.5 L942.7,729 L940.7,717.3 L947.1,719.7 L963.6,708.5 L973.3,709.5 L986.7,705.1 L1003,691.1 L1011.7,688.3 L1028.8,678.5 L1024.7,694.1 L1017.5,702.3 L1023.6,716.5 L1024.8,743.2 L965.3,808.8 L943.6,806.2 L945.2,802.4 Z"/>
+  <path class="map-country" data-country="ARM" aria-label="Armenia" d="M1066.2,615.4 L1065.1,612.3 L1058.5,615.2 L1052,611.7 L1049.1,613.6 L1041,610.3 L1028.1,609.9 L1026,599.6 L1020.9,593.5 L1040.2,581.9 L1045.2,585.8 L1052.2,586.8 L1051.1,593.1 L1061.7,596.5 L1059.9,604.6 L1076.3,607.5 L1082.1,621.1 L1076.8,624.1 L1066.2,615.4 Z"/>
+  <path class="map-country" data-country="SWE" aria-label="Sweden" d="M544.1,275.7 L548.5,250.9 L542.4,239.9 L543.1,211.8 L550.1,192.2 L559.4,192.8 L562.8,184.5 L559.6,177.2 L573.7,147.6 L587,109 L594.8,108.8 L596.4,97 L611.4,99.6 L611.5,85.6 L616.2,84.4 L641.6,106.6 L646.3,138.8 L650.3,146.6 L636.1,154.3 L629,169.8 L631.7,182.6 L618.3,200.7 L600.7,219.9 L594.5,250 L602.5,264.7 L613.1,276 L604.4,300.3 L593.1,305.7 L589.6,341.4 L583.3,361.4 L568.8,359.4 L561.9,376.2 L547.9,376.9 L544.7,356.7 L535.9,332.2 L529,301.8 L544.1,275.7 Z"/>
+  <path class="map-country" data-country="BLR" aria-label="Belarus" d="M744.2,353.5 L749.8,349.7 L762.4,352.2 L765.8,361.7 L764.5,367.9 L775.2,379.8 L781,382.4 L781.2,386.3 L790.3,388 L795.2,392.6 L791.5,398.4 L781.4,400 L779.4,402.5 L790.2,421.3 L779.5,425.1 L776.6,430.5 L778,441.2 L772.5,440.3 L760.9,443.7 L756.6,439.4 L752.4,444 L747,441.9 L736.7,443.3 L721.3,440.7 L708,441 L698,442.8 L691.5,449.5 L685.4,451.1 L684,441.7 L678.9,432.4 L686.1,427.1 L685.1,418.7 L680.6,411.1 L679,401.8 L691,400.5 L703.3,390.7 L704.3,378.4 L713.1,370.1 L710.5,360.9 L728.2,345.8 L741.5,348.7 L744.2,353.5 Z"/>
+  <path class="map-country" data-country="UKR" aria-label="Ukraine" d="M797.1,415.5 L801.2,415.6 L813.7,410.3 L824.9,419.8 L822.9,424.8 L825.6,430.9 L836.1,429.1 L843.2,436.7 L844,440.8 L862.5,443.1 L871.5,436.8 L882.4,443.8 L889.9,441 L911.1,441 L913.3,446.9 L911.7,459.4 L918.4,469.5 L918.6,477 L906.1,483 L900.9,491 L903.4,500.2 L892.9,505.3 L885.6,514.8 L872.9,519.8 L862.9,530.9 L866.5,541.7 L864.2,541.7 L861.3,538.1 L845.3,536.8 L842.8,542.9 L840.3,541.2 L816.8,541.3 L814.2,533.8 L801.5,539.3 L798.5,551.9 L790.3,569.6 L782.9,567.3 L776.7,572 L769.4,569.4 L772.7,566.4 L776.8,551.3 L775.1,547.8 L777.8,545.6 L779.7,548.2 L788.3,547.1 L791.8,544.8 L788.7,543.2 L789.1,539.9 L783.1,535.6 L779.4,527.3 L773.6,524.9 L773.3,517.6 L766,513.2 L760.1,513.4 L748.7,508.7 L739.8,512.3 L736.9,516 L731,516.9 L728.2,522.4 L718.1,525.9 L713.7,529.8 L706.5,525.5 L688.4,525.2 L682.7,530.4 L681.2,524.8 L672.8,519.9 L678,505.2 L681.2,506.1 L676.6,497 L687.1,478 L693.5,474.8 L694.2,468.7 L685.4,451.1 L691.5,449.5 L698,442.8 L708,441 L721.3,440.7 L736.7,443.3 L747,441.9 L752.4,444 L756.6,439.4 L760.9,443.7 L772.5,440.3 L778,441.2 L776.6,430.5 L779.5,425.1 L795.1,421 L797.1,415.5 Z"/>
+  <path class="map-country" data-country="POL" aria-label="Poland" d="M685.1,418.7 L686.1,427.1 L678.9,432.4 L684,441.7 L685.4,451.1 L694.2,468.7 L693.5,474.8 L687.1,478 L676.6,497 L681.2,506.1 L664.1,498.3 L654.4,502.1 L647.7,500.5 L639.9,505.6 L632.4,498.5 L626.9,501.7 L619.2,490.3 L609,489.5 L607.5,482.9 L598.1,480.8 L596.2,486.3 L588.8,482.1 L589.5,476.2 L579.4,474.5 L573,467.7 L567.6,454.1 L568.7,446.8 L565.5,435.4 L560.9,427.8 L564.5,422.1 L561.7,411.3 L570.3,405.1 L605,387.5 L617.4,390.6 L618.6,395.7 L645.9,396.6 L668.6,394.1 L675.2,395.7 L685.1,418.7 Z"/>
+  <path class="map-country" data-country="AUT" aria-label="Austria" d="M592,539.5 L594.9,544.1 L587.6,561.4 L574.8,562.1 L567.4,566.9 L534.5,559.1 L531.5,551.6 L517,554.6 L515.1,558.6 L499.1,554 L492.8,549.7 L495.1,540.9 L499.5,540 L506.4,546.4 L508.8,540.9 L521.4,542.5 L531.8,539.1 L538.7,540 L543,544.5 L544.5,540.9 L542.8,527.1 L548,524.5 L553.1,514.8 L563.5,521.8 L571.4,513.2 L576.3,511.6 L587.3,517.9 L593.8,516.7 L600.4,520.6 L600.1,539.3 L592,539.5 Z"/>
+  <path class="map-country" data-country="HUN" aria-label="Hungary" d="M682.7,530.4 L674.5,535.7 L661.3,565.7 L649.8,570.6 L640.6,570.3 L624.2,579.9 L611.8,576.4 L595.7,565.1 L592.8,558 L590.3,557.8 L594.9,544.1 L592,539.5 L600.1,539.3 L600.9,530.6 L613.7,538 L625.6,534.8 L626.5,530.5 L646.9,524 L649.9,518.8 L654.4,517.2 L670,522.3 L672.8,519.9 L681.2,524.8 L682.7,530.4 Z"/>
+  <path class="map-country" data-country="MDA" aria-label="Moldova" d="M748.7,508.7 L760.1,513.4 L766,513.2 L773.3,517.6 L773.6,524.9 L779.4,527.3 L783.1,535.6 L789.1,539.9 L788.7,543.2 L791.8,544.8 L788.3,547.1 L779.7,548.2 L777.8,545.6 L775.1,547.8 L776.8,551.3 L772.7,566.4 L769.4,569.4 L765.2,560.3 L763.1,541.9 L741.5,517.3 L736.9,516 L739.8,512.3 L748.7,508.7 Z"/>
+  <path class="map-country" data-country="ROU" aria-label="Romania" d="M782.9,567.3 L790.3,569.6 L791.6,574.9 L785.3,580.8 L780.4,579.7 L780.7,605.7 L771.4,605.1 L759.2,599.4 L742.1,607.1 L735.3,613.5 L712.7,615.4 L700.6,613.5 L694.8,615.7 L686.5,604.1 L689.6,600.1 L685.7,597.9 L681.4,603.1 L672,597.8 L670.1,589.2 L660.6,584.9 L658.4,578.3 L649.8,570.6 L661.3,565.7 L674.5,535.7 L688.4,525.2 L706.5,525.5 L713.7,529.8 L718.1,525.9 L728.2,522.4 L731,516.9 L736.9,516 L741.5,517.3 L763.1,541.9 L765.2,560.3 L769.4,569.4 L776.7,572 L782.9,567.3 Z"/>
+  <path class="map-country" data-country="LTU" aria-label="Lithuania" d="M704.3,378.4 L703.3,390.7 L691,400.5 L679,401.8 L675.2,395.7 L668.6,394.1 L667.7,382.9 L648.9,377.6 L644.8,360 L657.7,352.3 L677.6,351.4 L688.8,347.8 L691.1,352 L697.5,352.4 L710.5,360.9 L713.1,370.1 L704.3,378.4 Z"/>
+  <path class="map-country" data-country="LVA" aria-label="Latvia" d="M719.3,324.2 L728.2,345.8 L710.5,360.9 L697.5,352.4 L691.1,352 L688.8,347.8 L677.6,351.4 L657.7,352.3 L644.8,360 L643.8,344 L648.3,330.2 L658.3,322 L669.1,336.7 L678.3,335.2 L678.3,318.7 L687.4,313.7 L703.6,321.8 L712.9,320.3 L719.3,324.2 Z"/>
+  <path class="map-country" data-country="EST" aria-label="Estonia" d="M715,280.4 L709.6,293.9 L716.5,312.8 L712.9,320.3 L703.6,321.8 L687.4,313.7 L678.3,318.7 L677.9,306.1 L674.2,309.3 L666.2,302.7 L663.8,290.7 L676.6,283.1 L689.6,278.1 L701.8,279.6 L712.7,277.1 L715,280.4 Z"/>
+  <path class="map-country" data-country="DEU" aria-label="Germany" d="M560.9,427.8 L565.5,435.4 L568.7,446.8 L567.6,454.1 L573,467.7 L567,469.9 L563.5,467.4 L560.1,471.4 L535.2,484.8 L538.5,500.2 L553.1,514.8 L548,524.5 L542.8,527.1 L544.5,540.9 L543,544.5 L538.7,540 L531.8,539.1 L521.4,542.5 L508.8,540.9 L506.4,546.4 L499.5,540 L495.1,540.9 L480.3,533.2 L477,537.5 L464.8,536.2 L468.1,521.3 L476.6,507.5 L457,501.5 L451.1,495.2 L453,486.1 L450.8,481 L454.1,466.9 L454.6,444.5 L462.4,445.5 L466.6,437.9 L472,418.9 L470.4,411.5 L473.4,407.3 L484,407.2 L485.8,412.1 L495.3,402.4 L493.2,394.2 L493.7,382.2 L502.7,385.8 L510.8,383.1 L510.4,391.3 L522.5,397.1 L522,404.6 L534.9,401.2 L542.1,395.7 L555.9,404.4 L561.7,411.3 L564.5,422.1 L560.9,427.8 Z"/>
+  <path class="map-country" data-country="BGR" aria-label="Bulgaria" d="M700.6,613.5 L712.7,615.4 L735.3,613.5 L742.1,607.1 L759.2,599.4 L771.4,605.1 L780.7,605.7 L774.2,615.8 L771,631.7 L778,642.8 L764.1,642.3 L749.1,651.3 L750.3,661.8 L736.1,665.8 L724.1,660 L712,667.3 L700.1,668 L697.7,654.2 L689.1,648.2 L691.4,645 L689.5,642.7 L691.5,635.7 L696.8,628.5 L688.4,620.2 L686.3,612.6 L689.6,607.4 L694.8,615.7 L700.6,613.5 Z"/>
+  <path class="map-country" data-country="TUR" aria-label="Turkey" d="M1053.8,668.1 L1034.6,672.8 L1028.8,678.5 L1011.7,688.3 L1003,691.1 L986.7,705.1 L973.3,709.5 L963.6,708.5 L947.1,719.7 L940.7,717.3 L942.7,729 L936.1,740.5 L927.7,732.9 L932.1,723.5 L922.4,728 L907.5,727.1 L898.7,741.9 L873.7,750.4 L857.9,742.4 L839.6,745.6 L837.3,755 L826,759.8 L807.8,751.8 L789.4,755.4 L776.4,736.3 L762.6,726.6 L768.4,709.1 L756.7,700.7 L771.8,677.9 L796.3,672.8 L800.2,655.7 L830.7,652.3 L846.6,634.6 L863.3,624.4 L888.4,617.2 L918.9,624 L943.1,625.1 L959.8,616 L973.4,613.3 L987.7,596.3 L1003.1,589.4 L1020.9,593.5 L1026,599.6 L1028.1,609.9 L1041,610.3 L1049.1,613.6 L1040.9,623.6 L1053.9,644.6 L1053.1,652 L1067.4,664.5 L1061.1,671 L1053.8,668.1 Z M778,642.8 L781.1,650.5 L796,654.8 L794,660.4 L775.3,664.9 L757.7,685.8 L751.3,676.9 L751,672.5 L754.5,669.6 L757.5,655.7 L749.1,651.3 L764.1,642.3 L778,642.8 Z"/>
+  <path class="map-country" data-country="ALB" aria-label="Albania" d="M665.1,690.3 L664.6,697.2 L657.6,708 L654.7,706.7 L654.1,702.1 L644.7,695.5 L642.7,685.6 L645.2,664.4 L642.3,661.3 L640.9,654.6 L647.1,643.8 L648.3,647.7 L652.4,645.6 L656.2,651 L660.1,652.9 L661.7,660.5 L660.1,667.8 L663,676.7 L670.1,681.3 L670.1,686.8 L665.1,690.3 Z"/>
+  <path class="map-country" data-country="HRV" aria-label="Croatia" d="M611.8,576.4 L624.2,579.9 L629.6,576.5 L638.7,590.3 L633.3,598.6 L626.3,594.2 L615.9,595 L602.9,591.9 L595.9,592.5 L592.7,597 L587.2,592.2 L584.1,601 L595.1,617.3 L608.4,629.6 L614.5,638.2 L628.7,645.6 L627.1,649.3 L612.1,642.1 L602.8,634.7 L588.5,628.7 L575.5,613.2 L578.5,611.7 L571.6,602.8 L571.3,595.6 L561.7,592.2 L556.9,601.3 L552.6,594.1 L553.6,586.5 L564,587.3 L566.8,583.8 L571.8,587.2 L577.7,587.6 L577.6,581.7 L582.8,579.5 L584.1,570.9 L595.7,565.1 L611.8,576.4 Z"/>
+  <path class="map-country" data-country="CHE" aria-label="Switzerland" d="M492.8,549.7 L499.1,554 L506.5,555.1 L504.8,563.7 L498.1,566.8 L487.4,563.4 L483.6,571.6 L476.5,571.7 L474.3,568.1 L465.4,574.5 L458.1,574.8 L452.3,569.6 L448.2,559.8 L440.9,562.3 L442.2,552.8 L454.1,542.1 L454.2,536.7 L460.5,539.4 L464.8,536.2 L477,537.5 L480.3,533.2 L495.1,540.9 L492.8,549.7 Z"/>
+  <path class="map-country" data-country="LUX" aria-label="Luxembourg" d="M451.1,495.2 L444.3,493 L447.2,481.3 L450.8,481 L453,486.1 L451.1,495.2 Z"/>
+  <path class="map-country" data-country="BEL" aria-label="Belgium" d="M447.2,481.3 L444.3,493 L433.6,481.8 L426.4,482.4 L413.7,461.6 L407.6,460.3 L406.9,452.6 L418.1,450.2 L427.5,453.3 L440.3,450.7 L447.4,461.1 L454.1,466.9 L450.8,481 L447.2,481.3 Z"/>
+  <path class="map-country" data-country="NLD" aria-label="Netherlands" d="M466.6,437.9 L462.4,445.5 L454.6,444.5 L454.1,466.9 L447.4,461.1 L440.3,450.7 L427.5,453.3 L418.1,450.2 L425.8,445.5 L441.6,416.2 L460,409.6 L470.4,411.5 L472,418.9 L466.6,437.9 Z"/>
+  <path class="map-country" data-country="PRT" aria-label="Portugal" d="M211.8,598.3 L212.6,609.5 L221.5,612.3 L224.9,610.5 L233.5,613.9 L235,625.4 L226.4,628.9 L221.8,644.8 L218.5,647 L215.3,656.5 L208,656.1 L211,670.3 L203,682.4 L206.9,690.2 L195.1,700.9 L194.7,708.1 L186.7,711.4 L178.9,705.8 L169.9,705.3 L176.9,690.2 L179,677.2 L172.4,673 L170.9,664 L176.2,651.1 L184.6,645.8 L195,626.8 L197.8,602.7 L211.8,598.3 Z"/>
+  <path class="map-country" data-country="ESP" aria-label="Spain" d="M195.1,700.9 L206.9,690.2 L203,682.4 L211,670.3 L208,656.1 L215.3,656.5 L218.5,647 L221.8,644.8 L226.4,628.9 L235,625.4 L233.5,613.9 L224.9,610.5 L221.5,612.3 L212.6,609.5 L211.8,598.3 L197.8,602.7 L203,588.4 L199.7,577.6 L224.9,569.7 L241.7,579 L261.6,584.7 L276.5,592.5 L313.3,601.2 L317.6,610.6 L343.9,626.1 L350.3,622.6 L366,635.3 L384.4,635.6 L383.5,647.9 L366.4,659.4 L345.4,660.1 L342.8,666.8 L330.9,676.5 L321.6,692.1 L325.8,705.3 L314.6,712.6 L308.6,725.4 L295.3,726.8 L280.3,740.1 L243.3,731 L231.2,735.5 L223,741.5 L215.3,737.6 L210.8,728.9 L209.1,715.8 L194.7,708.1 L195.1,700.9 Z"/>
+  <path class="map-country" data-country="IRL" aria-label="Ireland" d="M293.6,400.9 L267.8,405.8 L251.4,396.6 L268.7,379 L269.7,356.2 L303,339.4 L301.8,351.1 L295.8,361.2 L303.2,363.2 L310.9,370.2 L308.5,385.5 L293.6,400.9 Z"/>
+  <path class="map-country" data-country="ITA" aria-label="Italy" d="M517,554.6 L531.5,551.6 L534.5,559.1 L555.3,565.1 L553.5,575.5 L556.9,584.6 L545.1,581.3 L532.8,588.4 L533.3,599 L531.2,604.9 L535.9,615.9 L550,626.9 L557.6,644.5 L575.1,661.6 L587.5,661.4 L591.4,666 L587,670.3 L613.5,683.7 L627.8,694.2 L629.7,698.1 L626.9,705.7 L617.5,696.3 L603.2,693.2 L596.6,707 L608.7,714.5 L607,725.6 L600.1,727 L591.4,745.2 L584.4,746.9 L587.7,729.2 L591.3,724.6 L579.6,701.9 L572.8,699.3 L568,690.2 L557.6,686.2 L550.7,677.6 L538.9,676 L512.7,651.7 L502.7,638.9 L499.1,617.7 L479.7,606.8 L472.5,609.1 L462.8,618.1 L456.3,619 L458.9,610 L450.9,606.5 L448.7,589.8 L454.6,583.9 L451,575.5 L452.3,569.6 L458.1,574.8 L465.4,574.5 L474.3,568.1 L476.5,571.7 L483.6,571.6 L487.4,563.4 L498.1,566.8 L504.8,563.7 L506.5,555.1 L515.1,558.6 L517,554.6 Z M575.5,756.7 L578.1,763.2 L574.5,774.1 L561.4,766.1 L529.2,752.5 L531.8,741.7 L551.5,744.1 L581.6,740.2 L575.5,756.7 Z M488.5,689.5 L484.4,717.2 L477,715.3 L469.7,721.8 L463.9,715.7 L465.2,690.2 L462.5,677.9 L471.3,679.7 L479.8,673.8 L488.5,689.5 Z"/>
+  <path class="map-country" data-country="DNK" aria-label="Denmark" d="M493.7,382.2 L489.9,370 L491.7,348.3 L494.2,342.8 L498.1,336.8 L508.4,336.3 L512.9,330.8 L522.5,325.4 L521.4,336.3 L517.5,343 L518.5,349 L524.7,352.6 L521.3,360.4 L517.9,357.9 L508.2,372.6 L510.8,383.1 L502.7,385.8 L493.7,382.2 Z M537.1,388.5 L524.9,375.9 L523.7,367 L541.5,360.8 L545,371.5 L537.1,388.5 Z"/>
+  <path class="map-country" data-country="GBR" aria-label="United Kingdom" d="M295.8,361.2 L301.8,351.1 L303,339.4 L312.9,341.6 L321.5,358.1 L310.9,370.2 L303.2,363.2 L295.8,361.2 Z M350.7,378.8 L345.9,363.6 L332.6,356 L331.4,349.7 L338.2,341.7 L336.1,335 L327,342.9 L332.3,322.9 L329.9,310.8 L340.5,290.9 L353.9,276.8 L361.9,280.8 L375.3,282.6 L357.5,301.7 L369.5,301.9 L381.5,305.1 L374.3,321.2 L359.3,337.1 L370.9,341.5 L375.9,370.8 L383.4,376 L387.7,410.3 L402.1,417.3 L398.1,430.4 L390.4,435.3 L393.5,447.1 L379.6,455.7 L362.1,451.8 L338.4,452.4 L333.4,446.8 L322.3,454.2 L310.8,448.6 L299.4,453.9 L293.7,447.8 L318.6,431.6 L331.2,430.2 L312.2,421.3 L310.9,412.1 L325.8,409.4 L322.1,396.4 L328.2,383.6 L345.8,390.3 L350.7,378.8 Z"/>
+  <path class="map-country" data-country="ISL" aria-label="Iceland" d="M323.1,117.9 L305.3,127.7 L265.6,128.7 L237.8,101.1 L250.6,97.7 L239.9,78.5 L255.5,83.3 L258.6,77.8 L246,63.8 L258.9,55.4 L271.5,59.5 L275,78.7 L292.4,75 L298.8,85.4 L316.6,81.6 L328.5,89 L320.5,100.6 L323.1,117.9 Z"/>
+  <path class="map-country" data-country="AZE" aria-label="Azerbaijan" d="M1075.3,566.8 L1082.2,565.1 L1082.6,559 L1087.6,546.9 L1113,563.8 L1120.1,561.3 L1126.9,564.2 L1115.8,571.9 L1120.3,596.4 L1116.9,603.7 L1121.4,613.2 L1118.1,616 L1104.5,610.2 L1105.5,598 L1098.8,594.3 L1093.8,598.4 L1082.1,621.1 L1076.3,607.5 L1059.9,604.6 L1061.7,596.5 L1051.1,593.1 L1052.2,586.8 L1045.2,585.8 L1040.2,581.9 L1042.5,577.1 L1055.6,578.1 L1063.9,575.7 L1065,572.5 L1053.5,565 L1056.2,560.6 L1060.5,559.4 L1075.3,566.8 Z M1054.3,620.1 L1049.1,613.6 L1052,611.7 L1058.5,615.2 L1065.1,612.3 L1066.2,615.4 L1076.8,624.1 L1065.4,626 L1054.3,620.1 Z"/>
+  <path class="map-country" data-country="GEO" aria-label="Georgia" d="M952.5,563.4 L988.2,557.7 L1011.3,559.5 L1015.2,562.2 L1022.7,555.4 L1037.7,553.8 L1045.3,560 L1056.2,560.6 L1053.5,565 L1065,572.5 L1063.9,575.7 L1055.6,578.1 L1042.5,577.1 L1040.2,581.9 L1020.9,593.5 L1003.1,589.4 L987.7,596.3 L987,586.9 L978.6,574.5 L967.7,570.2 L958.8,570.8 L951.5,566.4 L952.5,563.4 Z"/>
+  <path class="map-country" data-country="SVN" aria-label="Slovenia" d="M574.8,562.1 L587.6,561.4 L590.3,557.8 L592.8,558 L595.7,565.1 L584.1,570.9 L582.8,579.5 L577.6,581.7 L577.7,587.6 L571.8,587.2 L566.8,583.8 L564,587.3 L553.6,586.5 L556.9,584.6 L553.5,575.5 L555.3,565.1 L567.4,566.9 L574.8,562.1 Z"/>
+  <path class="map-country" data-country="FIN" aria-label="Finland" d="M694,102.7 L690.2,119.8 L705.5,141.2 L703.8,160.2 L715.5,173.8 L715,188.1 L732.3,199.1 L731.4,210.5 L709.4,255.4 L690.9,260.4 L673.7,270.8 L657,277.4 L649.6,266.5 L638.8,260.5 L639,239.5 L632.4,220.9 L635.8,208.2 L643,194.1 L666.3,163.5 L663.9,154.8 L650.3,146.6 L646.3,138.8 L641.6,106.6 L616.2,84.4 L620.2,78.5 L629.9,88.7 L639.8,86.5 L648.9,90.4 L654.7,80.1 L655.6,64.3 L665.5,55.3 L676.5,61.7 L678.8,91.4 L694,102.7 Z"/>
+  <path class="map-country" data-country="SVK" aria-label="Slovakia" d="M672.8,519.9 L670,522.3 L654.4,517.2 L649.9,518.8 L646.9,524 L626.5,530.5 L625.6,534.8 L613.7,538 L600.9,530.6 L599.3,523.3 L602.3,515.9 L608.5,516 L613.2,513.7 L616.1,510.6 L616.8,505.7 L620,504.6 L622,500.7 L626.9,501.7 L632.4,498.5 L639.9,505.6 L647.7,500.5 L654.4,502.1 L664.1,498.3 L678,505.2 L672.8,519.9 Z"/>
+  <path class="map-country" data-country="CZE" aria-label="Czechia" d="M589.5,476.2 L588.8,482.1 L596.2,486.3 L598.1,480.8 L607.5,482.9 L609,489.5 L619.2,490.3 L626.1,500.5 L622,500.7 L620,504.6 L616.8,505.7 L616.1,510.6 L613.2,513.7 L608.5,516 L602.3,515.9 L600.4,520.6 L593.8,516.7 L587.3,517.9 L576.3,511.6 L571.4,513.2 L563.5,521.8 L553.1,514.8 L538.5,500.2 L535.2,484.8 L560.1,471.4 L563.5,467.4 L567,469.9 L573,467.7 L579.4,474.5 L589.5,476.2 Z"/>
+  <path class="map-country" data-country="SAU" aria-label="Saudi Arabia" d="M994.9,839.4 L972.2,824.3 L1004.7,803.4 L1007.1,799.3 L1029.5,797.8 L1059.3,802.9 L1120.8,824.4 L1169.6,807.6 L1076.7,840.1 L994.9,839.4 Z"/>
+  <path class="map-country" data-country="n.-cyprus" aria-label="N. Cyprus" d="M884.2,763.5 L896.4,760.8 L910.4,750.8 L901,762.4 L903.1,766 L894.8,769.3 L892.6,766.3 L885,769.8 L881.5,769.5 L884.2,763.5 Z"/>
+  <path class="map-country" data-country="CYP" aria-label="Cyprus" d="M885,769.8 L892.6,766.3 L894.8,769.3 L901.1,765.7 L903.9,767.5 L888.2,780.2 L879.2,779.5 L873.6,772.1 L885,769.8 Z"/>
+  <path class="map-country" data-country="MAR" aria-label="Morocco" d="M276.3,798.5 L278.3,821.6 L282.2,827 L277.5,834.3 L253.6,832.6 L244,838.3 L233.4,837.6 L232.7,840.1 L120.1,840.1 L122.3,815.7 L138.8,790.5 L153.6,780.4 L188,771.8 L212.9,742.8 L225.2,746.3 L233.3,757.7 L249.7,760.4 L273.8,771.1 L277.7,785.8 L276.3,798.5 Z"/>
+  <path class="map-country" data-country="BIH" aria-label="Bosnia and Herz." d="M608.4,629.6 L595.1,617.3 L584.1,601 L587.2,592.2 L592.7,597 L595.9,592.5 L602.9,591.9 L615.9,595 L626.3,594.2 L633.3,598.6 L638.8,598.2 L635.5,607.7 L643.3,615.4 L641.6,625.5 L635.2,628.7 L630.4,633.9 L628.7,645.6 L614.5,638.2 L608.4,629.6 Z"/>
+  <path class="map-country" data-country="MKD" aria-label="Macedonia" d="M700.1,668 L697.2,669 L694.9,672.9 L686.2,673.4 L680.4,678.5 L670.1,681.3 L663,676.7 L660.1,667.8 L664.1,656.1 L689.1,648.2 L697.7,654.2 L700.1,668 Z"/>
+  <path class="map-country" data-country="SRB" aria-label="Serbia" d="M640.6,570.3 L649.8,570.6 L658.4,578.3 L660.6,584.9 L670.1,589.2 L672,597.8 L681.4,603.1 L685.7,597.9 L689.6,600.1 L686.5,604.1 L689.6,607.4 L686.3,612.6 L688.4,620.2 L696.8,628.5 L691.5,635.7 L689.5,642.7 L691.4,645 L689.1,648.2 L676.6,651 L679,641.5 L676.8,641.8 L663.1,630.3 L660.4,631.7 L658.7,638.9 L655.1,640.6 L656.2,638.7 L644.8,632.8 L638,626.6 L641.6,625.5 L643.3,615.4 L635.5,607.7 L638.8,598.2 L633.3,598.6 L638.7,590.3 L629.6,576.5 L640.6,570.3 Z"/>
+  <path class="map-country" data-country="MNE" aria-label="Montenegro" d="M647.1,643.8 L640.9,654.6 L642.3,661.3 L638.9,659.8 L634.1,653.2 L627.1,649.3 L630.4,633.9 L638,626.6 L644.8,632.8 L656.2,638.7 L652.4,645.6 L648.3,647.7 L647.1,643.8 Z"/>
+  <path class="map-country" data-country="kosovo" aria-label="Kosovo" d="M656.2,651 L652.4,645.6 L655.1,640.6 L658.7,638.9 L660.4,631.7 L663.1,630.3 L676.8,641.8 L679,641.5 L676.6,651 L664.1,656.1 L663.7,660.5 L661.7,660.5 L660.1,652.9 L656.2,651 Z"/>
+  <path class="map-country map-country-active" data-country="GRC" aria-label="Greece" d="M743.8,799 L743.6,795.5 L721.9,794 L724.2,784.7 L734.5,790.6 L747.8,787.8 L760.9,787.5 L761,791.2 L770.1,787.3 L768.7,793.8 L743.8,799 Z M724.1,660 L736.1,665.8 L750.3,661.8 L749.1,651.3 L757.5,655.7 L754.5,669.6 L751,672.5 L732.6,672.4 L713.8,680.3 L726.3,690.8 L718.4,695.2 L709.3,696.2 L699.7,686.3 L697.1,691.3 L701.9,703.4 L711,712.4 L705.3,717.7 L724.3,731.5 L725.9,743.3 L709.7,739.5 L715.7,749.6 L705.2,753 L713.4,770.8 L702,772.2 L687.2,764.4 L679.5,748.1 L675.6,734.4 L659.1,713.9 L657.6,708 L664.6,697.2 L665.1,690.3 L670.1,686.8 L670.1,681.3 L680.4,678.5 L686.2,673.4 L694.9,672.9 L697.2,669 L700.1,668 L712,667.3 L724.1,660 Z"/>
+  </g>
+  <g aria-hidden="true" class="sea-labels">
+    <text x="94" y="430" class="sea-text" data-el="ΑΤΛΑΝΤΙΚΟΣ" data-en="ATLANTIC">ΑΤΛΑΝΤΙΚΟΣ</text>
+    <text x="325" y="759" class="sea-text" data-el="ΜΕΣΟΓΕΙΟΣ ΘΑΛΑΣΣΑ" data-en="MEDITERRANEAN SEA">ΜΕΣΟΓΕΙΟΣ ΘΑΛΑΣΣΑ</text>
+  </g>
+  <g aria-hidden="true" class="map-compass" transform="translate(1040 130)">
+    <circle r="45" fill="none" stroke="#b5eae4" stroke-opacity=".3"/>
+    <circle r="28" fill="none" stroke="#b5eae4" stroke-opacity=".2"/>
+    <path d="M0-32V32M-32 0H32" stroke="#bbece2" stroke-opacity=".6" stroke-width="1"/>
+    <path d="M0-26l-6 21L0-9l6 4z" fill="#93f0d8"/>
+    <text x="0" y="-56" text-anchor="middle" fill="#d0f4eb" font-size="13" font-weight="800">N</text>
+  </g>
+</svg>
+              <div class="map-pin-layer" id="map-pin-layer"></div>
+              <aside class="map-popup" id="map-popup" hidden aria-live="polite" aria-label="Πληροφορίες θαλάσσιου πάρκου">
+                <div class="popup-top">
+                  <p class="popup-eyebrow" id="popup-region">01 / ΕΛΛΑΔΑ · ΑΛΟΝΝΗΣΟΣ</p>
+                  <button class="popup-close" id="popup-close" type="button" aria-label="Κλείσιμο πληροφοριών">×</button>
+                </div>
+                <h3 class="popup-title" id="popup-title"></h3>
+                <p class="popup-description" id="popup-description"></p>
+                <div class="popup-group">
+                  <span class="popup-group-label" data-el="ΥΠΕΥΘΥΝΟ ΠΡΟΣΚΟΠΙΚΟ ΣΥΣΤΗΜΑ ΤΟΥ ΚΟΜΒΟΥ" data-en="SCOUT GROUP RESPONSIBLE FOR THIS NETWORK HUB">ΥΠΕΥΘΥΝΟ ΠΡΟΣΚΟΠΙΚΟ ΣΥΣΤΗΜΑ ΤΟΥ ΚΟΜΒΟΥ</span>
+                  <span class="popup-group-name" id="popup-group-name"></span>
+                </div>
+                <p class="popup-foot" data-el="Σημείο εκκίνησης της πρωτοβουλίας — όχι φορέας διαχείρισης του πάρκου." data-en="Starting point of the initiative — not the park's management authority.">Σημείο εκκίνησης της πρωτοβουλίας — όχι φορέας διαχείρισης του πάρκου.</p>
+              </aside>
+            </div>
+          </div>
+          <div class="map-caption">
+            <span data-el="<strong>Πάτησε το pin</strong> για να δεις το πάρκο και το Προσκοπικό Σύστημα που συνδέεται με αυτό." data-en="<strong>Select the pin</strong> to see the marine park and its linked Scout group."><strong>Πάτησε το pin</strong> για να δεις το πάρκο και το Προσκοπικό Σύστημα που συνδέεται με αυτό.</span>
+            <span data-el="↔ Σε κινητό, σύρε τον χάρτη οριζόντια." data-en="↔ On mobile, swipe to explore the map.">↔ Σε κινητό, σύρε τον χάρτη οριζόντια.</span>
+          </div>
         </div>
       </section>
     </div>
+    <section class="below" aria-labelledby="about-network-heading">
+      <div class="container">
+        <p class="section-eyebrow" data-el="Η ΙΔΕΑ ΠΙΣΩ ΑΠΟ ΤΟ ΔΙΚΤΥΟ" data-en="THE IDEA BEHIND THE NETWORK">Η ΙΔΕΑ ΠΙΣΩ ΑΠΟ ΤΟ ΔΙΚΤΥΟ</p>
+        <h2 class="section-heading" id="about-network-heading" data-el="Από τα νησιά μας, <em>μια κοινή ευρωπαϊκή φωνή.</em>" data-en="From our islands, <em>one shared European voice.</em>">Από τα νησιά μας, <em>μια κοινή ευρωπαϊκή φωνή.</em></h2>
+        <p class="intro-text" data-el="Το 1ο Σύστημα Προσκόπων Αλοννήσου προτείνει τη δημιουργία ενός ευρωπαϊκού δικτύου Προσκοπικών Συστημάτων που δραστηριοποιούνται σε νησιά και παράκτιες περιοχές με Θαλάσσιες Προστατευόμενες Περιοχές. Θέλουμε οι νέοι να γνωριστούν, να μοιραστούν εμπειρίες και να αναλάβουν κοινές πρωτοβουλίες για τη θάλασσα και τις τοπικές κοινωνίες τους." data-en="The 1st Scout Group of Alonissos proposes a European network of Scout groups based on islands and coastal areas associated with Marine Protected Areas. We want young people to connect, exchange experiences and create shared initiatives for the sea and their local communities.">Το 1ο Σύστημα Προσκόπων Αλοννήσου προτείνει τη δημιουργία ενός ευρωπαϊκού δικτύου Προσκοπικών Συστημάτων που δραστηριοποιούνται σε νησιά και παράκτιες περιοχές με Θαλάσσιες Προστατευόμενες Περιοχές. Θέλουμε οι νέοι να γνωριστούν, να μοιραστούν εμπειρίες και να αναλάβουν κοινές πρωτοβουλίες για τη θάλασσα και τις τοπικές κοινωνίες τους.</p>
+        <div class="info-grid">
+          <article class="info-card">
+            <span class="info-num">01 /</span>
+            <h3 data-el="Ανταλλαγή εμπειριών" data-en="Sharing experiences">Ανταλλαγή εμπειριών</h3>
+            <p data-el="Μαθαίνουμε πώς διαφορετικές κοινότητες ζουν δίπλα σε προστατευόμενες θάλασσες και ανταλλάσσουμε ιδέες, προκλήσεις και καλές πρακτικές." data-en="Learning how different communities live alongside protected seas, while sharing ideas, challenges and good practices.">Μαθαίνουμε πώς διαφορετικές κοινότητες ζουν δίπλα σε προστατευόμενες θάλασσες και ανταλλάσσουμε ιδέες, προκλήσεις και καλές πρακτικές.</p>
+          </article>
+          <article class="info-card">
+            <span class="info-num">02 /</span>
+            <h3 data-el="Κοινές περιβαλλοντικές δράσεις" data-en="Joint environmental action">Κοινές περιβαλλοντικές δράσεις</h3>
+            <p data-el="Κάθε ομάδα μπορεί να οργανώσει μια δράση στη δική της προστατευόμενη περιοχή, με κοινό θεματικό άξονα και σεβασμό στις τοπικές ανάγκες." data-en="Each group could organise an activity in its own protected area, sharing a common theme while responding to local needs.">Κάθε ομάδα μπορεί να οργανώσει μια δράση στη δική της προστατευόμενη περιοχή, με κοινό θεματικό άξονα και σεβασμό στις τοπικές ανάγκες.</p>
+          </article>
+          <article class="info-card">
+            <span class="info-num">03 /</span>
+            <h3 data-el="Γνωριμία και συνεργασία" data-en="Connection and collaboration">Γνωριμία και συνεργασία</h3>
+            <p data-el="Ενώνουμε νέους Προσκόπους με συνομηλίκους από άλλες χώρες και αναζητούμε συνεργασίες με επιστήμονες, φορείς και περιβαλλοντικές οργανώσεις." data-en="Connecting young Scouts across borders and exploring partnerships with scientists, marine-park stakeholders and environmental organisations.">Ενώνουμε νέους Προσκόπους με συνομηλίκους από άλλες χώρες και αναζητούμε συνεργασίες με επιστήμονες, φορείς και περιβαλλοντικές οργανώσεις.</p>
+          </article>
+        </div>
+        <div class="steps">
+          <h3 data-el="Πώς φανταζόμαστε το πρώτο βήμα" data-en="How we imagine the first step">Πώς φανταζόμαστε το πρώτο βήμα</h3>
+          <div class="step-list">
+            <div class="step"><strong>01</strong><p data-el="Δημιουργούμε έναν μικρό πυρήνα Προσκοπικών ομάδων από διαφορετικές χώρες." data-en="Bring together a small core of Scout groups from different countries.">Δημιουργούμε έναν μικρό πυρήνα Προσκοπικών ομάδων από διαφορετικές χώρες.</p></div>
+            <div class="step"><strong>02</strong><p data-el="Σχεδιάζουμε μια πρώτη κοινή δράση, προσαρμοσμένη σε κάθε θαλάσσιο πάρκο." data-en="Plan an initial shared activity adapted to each marine park.">Σχεδιάζουμε μια πρώτη κοινή δράση, προσαρμοσμένη σε κάθε θαλάσσιο πάρκο.</p></div>
+            <div class="step"><strong>03</strong><p data-el="Μοιραζόμαστε τα αποτελέσματα και χτίζουμε πάνω σε όσα μάθαμε." data-en="Share the results and build on what we learn together.">Μοιραζόμαστε τα αποτελέσματα και χτίζουμε πάνω σε όσα μάθαμε.</p></div>
+          </div>
+        </div>
+        <div class="notice">
+          <div>
+            <h3 data-el="Περισσότερες πληροφορίες σύντομα" data-en="More information coming soon">Περισσότερες πληροφορίες σύντομα</h3>
+            <p data-el="Η πρωτοβουλία βρίσκεται στο στάδιο της πρότασης. Καθώς διαμορφώνεται, εδώ θα προστεθούν οι πληροφορίες για συμμετέχουσες ομάδες, δράσεις, χρήσιμο υλικό και επόμενα βήματα. Νέα pins θα εμφανίζονται στον χάρτη όταν προστεθούν νέοι κόμβοι." data-en="The initiative is still at the proposal stage. As it develops, this page will include details of participating groups, activities, resources and next steps. New pins will appear on the map as network hubs are added.">Η πρωτοβουλία βρίσκεται στο στάδιο της πρότασης. Καθώς διαμορφώνεται, εδώ θα προστεθούν οι πληροφορίες για συμμετέχουσες ομάδες, δράσεις, χρήσιμο υλικό και επόμενα βήματα. Νέα pins θα εμφανίζονται στον χάρτη όταν προστεθούν νέοι κόμβοι.</p>
+          </div>
+          <a class="button" href="contact.html" data-el="Επικοινώνησε μαζί μας ↗" data-en="Get in touch ↗">Επικοινώνησε μαζί μας ↗</a>
+        </div>
+      </div>
+    </section>
   </main>
   <footer class="foot"><div class="container" data-el="1ο Σύστημα Προσκόπων Αλοννήσου · Μια ιδέα που ξεκινά από το νησί μας" data-en="1st Scout Group of Alonissos · An initiative starting from our island">1ο Σύστημα Προσκόπων Αλοννήσου · Μια ιδέα που ξεκινά από το νησί μας</div></footer>
   <script>
   (() => {
-    const btn = document.getElementById('language-toggle');
-    const nodes = Array.from(document.querySelectorAll('[data-el][data-en]'));
-    let language = 'el';
-    try { if (localStorage.getItem('alonissos-site-language') === 'en') language = 'en'; } catch (_) {}
-    const setLanguage = lang => {
-      language = lang === 'en' ? 'en' : 'el';
-      document.documentElement.lang = language;
-      nodes.forEach(node => node.innerHTML = node.dataset[language]);
-      btn.textContent = language === 'el' ? 'EN' : 'EL';
-      btn.setAttribute('aria-label',language === 'el' ? 'Switch to English' : 'Αλλαγή στα Ελληνικά');
-      document.title = language === 'el' ? 'Ευρωπαϊκό Δίκτυο Προσκόπων · Πρόσκοποι Αλοννήσου' : 'European Marine Scout Network · Alonissos Scouts';
-      try { localStorage.setItem('alonissos-site-language',language); } catch (_) {}
-    };
-    setLanguage(language);
-    btn.addEventListener('click',() => setLanguage(language === 'el' ? 'en' : 'el'));
+    'use strict';
+    // Add a new marine-park hub to this list when its Scout group joins.
+    // Coordinates are longitude and latitude; the map projection is handled below.
+    const hubs = [
+      {
+        id: 'alonissos', country: 'GRC', longitude: 24.049422, latitude: 39.275791,
+        region: { el: '01 / ΕΛΛΑΔΑ · ΑΛΟΝΝΗΣΟΣ', en: '01 / GREECE · ALONISSOS' },
+        pin: { el: 'ΑΛΟΝΝΗΣΟΣ', en: 'ALONISSOS' },
+        title: {
+          el: 'Εθνικό Θαλάσσιο Πάρκο Αλοννήσου – Βορείων Σποράδων',
+          en: 'Alonissos Northern Sporades National Marine Park'
+        },
+        description: {
+          el: 'Μια Θαλάσσια Προστατευόμενη Περιοχή στις Βόρειες Σποράδες του Αιγαίου, όπου η προστασία της θαλάσσιας ζωής συνδέεται με τον τόπο και τους ανθρώπους του.',
+          en: 'A Marine Protected Area in the Northern Sporades of the Aegean Sea, where the protection of marine life is closely connected to the islands and their communities.'
+        },
+        group: { el: '1ο Σύστημα Προσκόπων Αλοννήσου', en: '1st Scout Group of Alonissos' }
+      }
+    ];
+
+    const rad = Math.PI / 180;
+    // Lambert azimuthal equal-area projection, centred on Europe, in SVG coordinates.
+    // Matches the projection used for the embedded Natural Earth country outlines.
+    function locationToMap(longitude, latitude) {
+      const lat0 = 52 * rad, lon0 = 15 * rad;
+      const phi = latitude * rad, lam = longitude * rad - lon0;
+      const k = Math.sqrt(2 / (1 + Math.sin(lat0)*Math.sin(phi) + Math.cos(lat0)*Math.cos(phi)*Math.cos(lam)));
+      const r = 6371000;
+      const x = r*k*Math.cos(phi)*Math.sin(lam);
+      const y = r*k*(Math.cos(lat0)*Math.sin(phi)-Math.sin(lat0)*Math.cos(phi)*Math.cos(lam));
+      return { x: (x + 3000000)/6285000*100, y: (2350000-y)/4400000*100 };
+    }
+
+    const langButton = document.getElementById('language-toggle');
+    const translations = Array.from(document.querySelectorAll('[data-el][data-en]'));
+    const pinsLayer = document.getElementById('map-pin-layer');
+    const mapScroller = document.getElementById('europe-map-scroll');
+    const pop = document.getElementById('map-popup');
+    const popClose = document.getElementById('popup-close');
+    const pins = new Map();
+    let currentLanguage = 'el';
+    let activeHub = null;
+    try { if (localStorage.getItem('alonissos-site-language') === 'en') currentLanguage = 'en'; } catch (_) {}
+
+    function closePopup(restoreFocus=false) {
+      pop.hidden = true;
+      if (activeHub) {
+        const activePin = pins.get(activeHub.id);
+        if (activePin) {
+          activePin.setAttribute('aria-expanded','false');
+          if (restoreFocus) activePin.focus();
+        }
+      }
+      activeHub = null;
+    }
+
+    function showPopup(hub) {
+      if (activeHub && activeHub.id === hub.id && !pop.hidden) { closePopup(); return; }
+      if (activeHub) pins.get(activeHub.id)?.setAttribute('aria-expanded','false');
+      activeHub = hub;
+      document.getElementById('popup-region').textContent = hub.region[currentLanguage];
+      document.getElementById('popup-title').textContent = hub.title[currentLanguage];
+      document.getElementById('popup-description').textContent = hub.description[currentLanguage];
+      document.getElementById('popup-group-name').textContent = hub.group[currentLanguage];
+      const point = locationToMap(hub.longitude,hub.latitude);
+      pop.style.setProperty('--pin-x',point.x+'%');
+      pop.style.setProperty('--pin-y',point.y+'%');
+      pins.get(hub.id)?.setAttribute('aria-expanded','true');
+      pop.hidden = false;
+    }
+
+    function setLanguage(language) {
+      currentLanguage = language === 'en' ? 'en' : 'el';
+      document.documentElement.lang = currentLanguage;
+      translations.forEach(node => { node.innerHTML = node.dataset[currentLanguage]; });
+      langButton.textContent = currentLanguage === 'el' ? 'EN' : 'EL';
+      langButton.setAttribute('aria-label',currentLanguage === 'el' ? 'Switch to English' : 'Αλλαγή στα Ελληνικά');
+      mapScroller.setAttribute('aria-label',currentLanguage === 'el'
+        ? 'Διαδραστικός χάρτης Ευρώπης με οριζόντια κύλιση σε μικρές οθόνες'
+        : 'Interactive map of Europe; scroll horizontally on small screens');
+      pop.setAttribute('aria-label',currentLanguage === 'el' ? 'Πληροφορίες θαλάσσιου πάρκου' : 'Marine park information');
+      popClose.setAttribute('aria-label',currentLanguage === 'el' ? 'Κλείσιμο πληροφοριών' : 'Close information');
+      document.getElementById('europe-map-title').textContent = currentLanguage === 'el' ? 'Χάρτης Ευρώπης με το σημείο εκκίνησης στην Αλόννησο' : 'Map of Europe with the starting point in Alonissos';
+      document.getElementById('europe-map-desc').textContent = currentLanguage === 'el'
+        ? 'Η Ελλάδα είναι τονισμένη. Το pin στο Θαλάσσιο Πάρκο Αλοννήσου ανοίγει πληροφορίες για το πάρκο και το προσκοπικό σύστημα.'
+        : 'Greece is highlighted. Select the pin at the Alonissos Marine Park for park and Scout group details.';
+      document.title = currentLanguage === 'el' ? 'Ευρωπαϊκό Δίκτυο Προσκόπων · Πρόσκοποι Αλοννήσου' : 'European Marine Scout Network · Alonissos Scouts';
+      hubs.forEach(hub => {
+        const button=pins.get(hub.id);
+        if (button) button.setAttribute('aria-label',currentLanguage === 'el' ? `Πληροφορίες: ${hub.title.el}` : `Information: ${hub.title.en}`);
+        const name=document.getElementById('pin-label-'+hub.id);
+        if (name) name.textContent=hub.pin[currentLanguage];
+      });
+      if (activeHub) showActiveTranslation(activeHub);
+      try { localStorage.setItem('alonissos-site-language',currentLanguage); } catch (_) {}
+    }
+
+    function showActiveTranslation(hub) {
+      document.getElementById('popup-region').textContent=hub.region[currentLanguage];
+      document.getElementById('popup-title').textContent=hub.title[currentLanguage];
+      document.getElementById('popup-description').textContent=hub.description[currentLanguage];
+      document.getElementById('popup-group-name').textContent=hub.group[currentLanguage];
+    }
+
+    hubs.forEach((hub) => {
+      const xy=locationToMap(hub.longitude,hub.latitude);
+      const ring=document.createElement('div');
+      ring.className='map-pin-ring';
+      ring.style.left=xy.x+'%'; ring.style.top=xy.y+'%';
+      ring.setAttribute('aria-hidden','true');
+      pinsLayer.appendChild(ring);
+      const label=document.createElement('span');
+      label.className='map-pin-label'; label.id='pin-label-'+hub.id;
+      label.style.left=xy.x+'%'; label.style.top=xy.y+'%';
+      label.setAttribute('aria-hidden','true');
+      pinsLayer.appendChild(label);
+      const pin=document.createElement('button');
+      pin.className='map-pin'; pin.type='button';
+      pin.style.left=xy.x+'%'; pin.style.top=xy.y+'%';
+      pin.setAttribute('aria-expanded','false');
+      pin.setAttribute('aria-controls','map-popup');
+      pin.innerHTML='<svg viewBox="0 0 68 80" aria-hidden="true" focusable="false"><path d="M34 2c-18 0-31 13.4-31 30.5C3 51.6 34 77 34 77s31-25.4 31-44.5C65 15.4 52 2 34 2Z" fill="#92f1d9" stroke="#f8fff9" stroke-width="3"/><circle cx="34" cy="32" r="15" fill="#0f4c66"/><path d="M34 21v22M23 32h22" stroke="#a3ffe5" stroke-width="3" stroke-linecap="round"/></svg>';
+      pin.addEventListener('click', () => showPopup(hub));
+      pinsLayer.appendChild(pin);
+      pins.set(hub.id,pin);
+      const country=document.querySelector(`[data-country="${hub.country}"]`);
+      country?.classList.add('map-country-active');
+    });
+    setLanguage(currentLanguage);
+    langButton.addEventListener('click',() => setLanguage(currentLanguage === 'el' ? 'en' : 'el'));
+    popClose.addEventListener('click',() => closePopup(true));
+    document.addEventListener('keydown',event => { if (event.key === 'Escape' && !pop.hidden) closePopup(true); });
+    document.addEventListener('pointerdown',event => {
+      if (!pop.hidden && !pop.contains(event.target) && !event.target.closest('.map-pin') && !langButton.contains(event.target)) closePopup();
+    });
+    // On narrow screens open the horizontally scrollable map with the active point in view.
+    function centerStartingPoint() {
+      if (window.innerWidth > 720 || !hubs.length) return;
+      const {x} = locationToMap(hubs[0].longitude,hubs[0].latitude);
+      mapScroller.scrollLeft = Math.max(0, mapScroller.scrollWidth*x/100 - mapScroller.clientWidth*.65);
+    }
+    window.addEventListener('load',centerStartingPoint,{once:true});
   })();
   </script>
 </body>
