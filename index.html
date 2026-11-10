@@ -104,7 +104,7 @@
      display: flex;
      align-items: center;
      justify-content: space-between;
-     gap: 25px;
+     gap: 16px;
      min-height: 88px;
    }
    .brand {
@@ -138,7 +138,7 @@
    .desktop-nav {
      display: flex;
      align-items: center;
-     gap: 26px;
+     gap: 17px;
      margin-left: auto;
    }
    .desktop-nav a {
@@ -796,6 +796,151 @@
      line-height: 1.9;
      color: #c6dce7;
    }
+
+   /* European marine scouting network: project gateway */
+   .network-section {
+     position: relative;
+     isolation: isolate;
+     overflow: hidden;
+     background: #e8f1e9;
+     padding: 102px 0;
+   }
+   .network-section:before {
+     content: "";
+     position: absolute;
+     top: -200px;
+     left: -180px;
+     width: 580px;
+     height: 580px;
+     border: 1px solid rgba(23,99,132,.1);
+     border-radius: 50%;
+     box-shadow: 0 0 0 35px rgba(23,99,132,.03),0 0 0 76px rgba(23,99,132,.025);
+     pointer-events: none;
+     z-index: -1;
+   }
+   .network-layout {
+     display: grid;
+     grid-template-columns: minmax(0,1.12fr) minmax(0,.88fr);
+     gap: clamp(34px,6vw,94px);
+     align-items: center;
+   }
+   .network-section .section-kicker {
+     color: #296a77;
+   }
+   .network-title {
+     max-width: 680px;
+   }
+   .network-title em {
+     color: #218f91;
+   }
+   .network-intro {
+     max-width: 640px;
+     font-size: 16px;
+     line-height: 1.85;
+     margin: 24px 0 0;
+     color: #40546a;
+   }
+   .network-actions {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 14px;
+     align-items: center;
+     margin-top: 30px;
+   }
+   .network-button {
+     background: var(--navy);
+     color: white;
+   }
+   .network-button:hover {
+     background: #245582;
+   }
+   .network-note {
+     color: #53717b;
+     font: 700 11px/1.6 var(--mono);
+     margin-top: 16px;
+     max-width: 550px;
+   }
+   .network-panel {
+     position: relative;
+     overflow: hidden;
+     background: linear-gradient(160deg,#143c62,#0c294e);
+     color: #f2f7fb;
+     border-radius: 24px;
+     padding: clamp(26px,4vw,42px);
+     min-height: 335px;
+     border: 1px solid rgba(94,171,174,.23);
+     box-shadow: 0 18px 45px rgba(12,36,70,.15);
+   }
+   .network-panel:before {
+     content: "";
+     position: absolute;
+     inset: -55px -95px -80px 24%;
+     background: repeating-radial-gradient(ellipse at 75% 50%,transparent 0 26px,rgba(136,235,211,.13) 27px 28px,transparent 29px 53px);
+     opacity: .7;
+     pointer-events: none;
+   }
+   .network-panel-content {
+     position: relative;
+     z-index: 1;
+   }
+   .network-panel-label {
+     display: inline-flex;
+     align-items: center;
+     gap: 9px;
+     color: var(--aqua);
+     font: 900 10px/1.4 var(--mono);
+     letter-spacing: .12em;
+     margin-bottom: 28px;
+   }
+   .network-panel-label:before {
+     content: "";
+     width: 9px;
+     height: 9px;
+     border-radius: 50%;
+     background: var(--aqua);
+     box-shadow: 0 0 0 5px rgba(136,235,211,.14);
+   }
+   .network-principles {
+     display: grid;
+     gap: 17px;
+     list-style: none;
+     padding: 0;
+     margin: 0;
+   }
+   .network-principles li {
+     display: grid;
+     grid-template-columns: 38px 1fr;
+     align-items: center;
+     gap: 14px;
+     padding-bottom: 17px;
+     border-bottom: 1px solid rgba(206,235,239,.16);
+   }
+   .network-principles li:last-child {
+     padding-bottom: 0;
+     border-bottom: 0;
+   }
+   .network-principles li span {
+     font: 900 12px var(--mono);
+     color: var(--aqua);
+   }
+   .network-principles li strong {
+     font-size: clamp(15px,1.35vw,19px);
+     font-weight: 800;
+     line-height: 1.5;
+   }
+   @media (max-width:900px) {
+     .network-layout { grid-template-columns: 1fr; gap: 35px; }
+     .network-section { padding: 78px 0; }
+     .network-panel { min-height: auto; }
+   }
+   @media (max-width:640px) {
+     .network-section { padding: 70px 0; }
+     .network-intro { font-size: 14px; }
+     .network-panel { padding: 27px 23px; border-radius: 18px; }
+     .network-principles li strong { font-size: 15px; }
+     .network-button { width: 100%; white-space: normal; text-align: center; }
+   }
+
    /* timeline */
    .timeline-section {
      background: #f9f5eb;
@@ -1034,6 +1179,25 @@
    .js-ready .reveal.is-visible {
      opacity: 1;
      transform: none;
+   }
+   /* Keep the extended desktop navigation from overflowing on compact laptops. */
+   @media (min-width:901px) and (max-width:1050px) {
+     .desktop-nav,.header-join { display: none; }
+     .menu-button { display: block; }
+     .mobile-nav:not([hidden]) {
+       display: flex;
+       flex-direction: column;
+       border-top: 1px solid rgba(255,255,255,.12);
+       background: #0d2647;
+       padding: 17px 24px 25px;
+     }
+     .mobile-nav a {
+       color: white;
+       font-size: 15px;
+       font-weight: 800;
+       padding: 13px;
+       border-bottom: 1px solid rgba(255,255,255,.1);
+     }
    }
    /* responsive */
    @media (max-width:1160px) {
@@ -1944,6 +2108,9 @@
      <a data-i18n="navFilms" href="#films">
       Οι ιστορίες μας
      </a>
+     <a data-i18n="navNetwork" href="#european-network">
+      Ευρωπαϊκό Δίκτυο
+     </a>
      <a data-i18n="navHome" href="#clubhouse">
       Η λέσχη
      </a>
@@ -2006,6 +2173,9 @@
     </a>
     <a data-i18n="navFilms" href="#films">
      Οι ιστορίες μας
+    </a>
+    <a data-i18n="navNetwork" href="#european-network">
+     Ευρωπαϊκό Δίκτυο
     </a>
     <a data-i18n="navHome" href="#clubhouse">
      Η λέσχη
@@ -2423,6 +2593,41 @@
      </div>
     </div>
    </section>
+   <!-- EUROPEAN MARINE SCOUTING NETWORK: gateway for interested Scout groups -->
+   <section aria-labelledby="network-heading" class="network-section" id="european-network">
+    <div class="container network-layout">
+     <div class="network-copy reveal">
+      <p class="section-kicker">
+       <span aria-hidden="true" class="kicker-star">✳</span>
+       <span data-i18n="networkKicker">ΜΙΑ ΕΥΡΩΠΑΪΚΗ ΠΡΩΤΟΒΟΥΛΙΑ · ΥΠΟ ΔΙΑΜΟΡΦΩΣΗ</span>
+      </p>
+      <h2 class="section-title network-title" data-i18n="networkTitle" id="network-heading">
+       Μια θάλασσα. <em>Πολλές ομάδες.</em> Κοινή αποστολή.
+      </h2>
+      <p class="network-intro" data-i18n="networkIntro">
+       Από την Αλόννησο προτείνουμε τη δημιουργία ενός ευρωπαϊκού δικτύου Προσκόπων που ζουν και δρουν σε Θαλάσσιες Προστατευόμενες Περιοχές. Θέλουμε να ανταλλάσσουμε εμπειρίες, να μαθαίνουμε ο ένας από τον άλλο και να σχεδιάζουμε κοινές δράσεις για τη θάλασσα.
+      </p>
+      <div class="network-actions">
+       <a class="button network-button" href="european-scout-network.html">
+        <span data-i18n="networkCTA">Μπες στη σελίδα του δικτύου</span>
+        <svg aria-hidden="true"><use href="#i-outer-arrow"></use></svg>
+       </a>
+      </div>
+      <p class="network-note" data-i18n="networkNote">Ο χώρος ενημέρωσης των ενδιαφερόμενων Προσκοπικών Συστημάτων ετοιμάζεται. Περισσότερες πληροφορίες σύντομα.</p>
+     </div>
+     <aside aria-label="Οι βασικές ιδέες του προτεινόμενου δικτύου" class="network-panel reveal">
+      <div class="network-panel-content">
+       <p class="network-panel-label" data-i18n="networkPanelLabel">ΑΠΟ ΤΗΝ ΑΛΟΝΝΗΣΟ · ΠΡΟΣ ΤΗΝ ΕΥΡΩΠΗ</p>
+       <ul class="network-principles">
+        <li><span>01 /</span><strong data-i18n="networkValue1">Ανταλλαγή εμπειριών &amp; καλών πρακτικών</strong></li>
+        <li><span>02 /</span><strong data-i18n="networkValue2">Κοινές δράσεις για το θαλάσσιο περιβάλλον</strong></li>
+        <li><span>03 /</span><strong data-i18n="networkValue3">Νέες φιλίες ανάμεσα σε ευρωπαϊκές Προσκοπικές ομάδες</strong></li>
+       </ul>
+      </div>
+     </aside>
+    </div>
+   </section>
+
    <!-- MILESTONES, including corrected Agrinio / Volos record -->
    <section aria-labelledby="timeline-heading" class="section timeline-section">
     <div class="container">
@@ -2476,7 +2681,7 @@
         2013
        </strong>
        <h3 data-i18n="time3Title">
-        Σχολή ΣΒΑΓ
+        Φιλοξενούμε σχολή
        </h3>
        <p data-i18n="time3Body">
         Η Αλόννησος φιλοξενεί την 25η Σχολή Βασικών Γνώσεων Αεροπροσκοπισμού και ζωντανεύει με εργαστήρια και συνεργασίες.
@@ -2489,36 +2694,36 @@
         2017
        </strong>
        <h3 data-i18n="time4Title">
-        Σχολή Σκαπανικής
+        Πρωτοπορία &amp; προσφορά
        </h3>
        <p data-i18n="time4Body">
-        Στην 51η Σχολή Σκαπανικής χτίζονται χρήσιμες κατασκευές και γίνονται εργασίες στον Άγιο Παντελεήμονα.
+        Στην 51η Σχολή Πρωτοπορίας χτίζονται χρήσιμες κατασκευές και γίνονται εργασίες στον Άγιο Παντελεήμονα.
        </p>
       </article>
       <article class="timeline-item reveal">
        <span class="timeline-dot">
        </span>
        <strong>
-        2021
+        2021—22
        </strong>
        <h3 data-i18n="time5Title">
-        Το πρώτο ντοκιμαντέρ ξεκινά
+        Από την έρευνα στο ντοκιμαντέρ
        </h3>
        <p data-i18n="time5Body">
-        Ξεκινούν τα γυρίσματα του πρώτου μας ντοκιμαντέρ για το Εθνικό Θαλάσσιο Πάρκο Αλοννήσου - Βορείων Σποράδων, σε συνεργασία με το Ίδρυμα Thalassa και την βοήθεια της Αποστολίας Παπαιωάννου.
+        Ξεκινούν τα γυρίσματα με το Ίδρυμα Thalassa και το 2022 παρουσιάζουμε και την έρευνά μας για το Υποβρύχιο Μουσείο στην ΠΑΠΕ Αγρινίου.
        </p>
       </article>
       <article class="timeline-item reveal">
        <span class="timeline-dot">
        </span>
        <strong>
-        2023—25
+        2024—25
        </strong>
        <h3 data-i18n="time6Title">
         Η ταινία ταξιδεύει
        </h3>
        <p data-i18n="time6Body">
-        Το ντοκιμαντέρ ανοίγει νέες πόρτες, ταξιδεύουμε τον κόσμο και επιστρέφουμε πίσω τις εμπειρίες μας.
+        Το ντοκιμαντέρ ανοίγει νέες πόρτες, ενώ το ταξίδι στον Βόλο μένει αξέχαστο όταν μια διήμερη γίνεται πενθήμερη περιπέτεια.
        </p>
       </article>
       <article class="timeline-item reveal">
@@ -2531,7 +2736,7 @@
         Νέα ιστορία από τη θάλασσα
        </h3>
        <p data-i18n="time7Body">
-        Στην ΠΑΠΕ Τρικάλων παρουσιάζουμε την έρευνα για την παράκτια αλιεία και ανακοινώνουμε την δεύτερη παραγωγή μας.
+        Στην ΠΑΠΕ Τρικάλων παρουσιάζουμε την έρευνα για την παράκτια αλιεία και περνάμε στη μεταπαραγωγή της δεύτερης ταινίας μας.
        </p>
       </article>
      </div>
@@ -2558,7 +2763,7 @@
        </h2>
       </div>
       <p class="section-aside" data-i18n="clubIntro">
-       Αναμνηστικά, ζωγραφιές, χρώματα και ιδέες. Οι χώροι μας αλλάζουν μαζί μας.
+       Ξύλο, αναμνηστικά, ζωγραφιές, χρώματα και ιδέες. Ο χώρος μας αλλάζει μαζί μας — κάποια κομμάτια του ακόμη ετοιμάζονται.
       </p>
      </div>
      <div class="clubhouse-grid clubhouse-pair">
@@ -2829,6 +3034,7 @@
       navAbout: 'Our group',
       navActivities: 'What we do',
       navFilms: 'Our stories',
+      navNetwork: 'European Network',
       navHome: 'Our huts',
       navContact: 'Contact',
       navArticles: 'Articles',
@@ -2865,6 +3071,15 @@
       filmsKicker: 'STORIES WE TELL',
       filmsTitle: 'Our island has <em>a voice.</em> We hold the camera.',
       filmsBody: 'We discover our home through the people who live here, its nature and its stories. Our first documentary explores the natural wealth of Alonissos and Northern Sporades National Marine Park.',
+      networkKicker: 'A EUROPEAN INITIATIVE · IN DEVELOPMENT',
+      networkTitle: 'One sea. <em>Many groups.</em> One shared mission.',
+      networkIntro: 'From Alonissos, we propose a European network connecting Scout groups that live and work in or near Marine Protected Areas. We want to share experiences, learn from one another and plan joint actions for our seas.',
+      networkCTA: 'Explore the network project',
+      networkNote: 'The information hub for interested Scout groups is being prepared. More details are coming soon.',
+      networkPanelLabel: 'FROM ALONISSOS · ACROSS EUROPE',
+      networkValue1: 'Sharing experiences & good practices',
+      networkValue2: 'Joint actions to protect marine life',
+      networkValue3: 'New connections between European Scout groups',
       watchFilm: 'Watch our documentary',
       journeyButton: 'More info & the documentary journey',
       journeyNote: 'A dedicated page with more information about the research, filming, collaborations and the full journey of the documentary will be added soon.',
@@ -2876,16 +3091,16 @@
       time1Body: 'In December, the 1st Scout Group of Alonissos is founded and a new Scouting story begins on the island.',
       time2Title: 'Kyra Panagia',
       time2Body: 'One of our first big expeditions: a monastery visit, trail mapping and an exploration down to Agios Petros bay.',
-      time3Title: 'Hosting BASKS',
+      time3Title: 'Hosting a national school',
       time3Body: 'Alonissos hosts the 25th Basic Air Scouting Knowledge School and fills with workshops, visitors and local collaborations.',
       time4Title: 'Pioneering & service',
       time4Body: 'During the 51st Pioneering School, useful constructions are built and repair work is carried out at Agios Panteleimon.',
       time5Title: 'From research to documentary',
-      time5Body: 'The filming of our first documentary about the Alonissos - Northern Sporades National Marine Park begins, in collaboration with the Thalassa Foundation and with the help of Apostolia Papaioannou.',
+      time5Body: 'Filming begins with Thalassa Foundation, and in 2022 we also present our research on the Underwater Museum at PAPE in Agrinio.',
       time6Title: 'The film starts travelling',
-      time6Body: 'The documentary opens new doors, we travel the world and bring back our experiences.',
+      time6Body: 'The documentary opens new doors, while the Volos trip becomes unforgettable when a two-day outing turns into a five-day adventure.',
       time7Title: 'A new story from the sea',
-      time7Body: 'At PAPE in Trikala we present our coastal-fishing research and announce our second production about coastal-fishing.',
+      time7Body: 'At PAPE in Trikala we present our coastal-fishing research and move the second documentary into post-production.',
       clubKicker: 'INSIDE OUR CLUBHOUSE',
       clubTitle: 'Our walls have <em>stories of their own.</em>',
       clubIntro: 'Wood, mementos, murals, colors and ideas. Our place changes as we do — and some corners are still being made.',
